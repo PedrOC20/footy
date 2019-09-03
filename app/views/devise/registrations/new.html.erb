@@ -4,9 +4,25 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+    <%= f.input :role, as: :select,
+                collection: User.roles.keys.to_a,
+                required: true,
+                autofocus: true %>
+    <%= f.input :first_name,
                 required: true,
                 autofocus: true,
+                input_html: { autocomplete: "first-name" } %>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "last-name" } %>
+    <%= f.input :birth_date, as: :date,
+                start_year: Date.today.year - 90,
+                end_year: Date.today.year - 12,
+                order: [:day, :month, :year],
+                required: true,
+                input_html: { autocomplete: "birth-date" } %>
+    <%= f.input :email,
+                required: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
