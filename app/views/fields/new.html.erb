@@ -1,0 +1,34 @@
+<h1>Fields#new</h1>
+<p>Find me in app/views/fields/new.html.erb</p>
+<%= simple_form_for @field do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name,
+                required: true,
+                autofocus: true %>
+    <%= f.input :location,
+                required: true %>
+    <%= f.input :description,
+                required: true %>
+    <%= f.input :field_size, as: :select,
+                collection: [3, 5, 7, 11],
+                required: true %>
+    <%= f.input :field_type, as: :select,
+                collection: ["Grass", "Synthetic", "Concrete", "Wood", "Sand"],
+                required: true %>
+    <%= f.input :locker_room, as: :select,
+                # collection: Field.locker_room.keys.to_a,
+                required: true %>
+    <%= f.input :indoor, as: :select,
+                # collection: Field.indoor.keys.to_a,
+                required: true %>
+    <%= f.input :parking, as: :select,
+                # collection: Field.parking.keys.to_a,
+                required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create Field" %>
+  </div>
+<% end %>

@@ -4,10 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :role, presence: true
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true, allow_blank: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birth_date, presence: true
-  enum role: [ :Player, :Owner ]
+  enum role: [:Player, :Owner]
   mount_uploader :avatar, AvatarUploader
+  has_many :fields
 end

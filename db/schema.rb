@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_113645) do
+ActiveRecord::Schema.define(version: 2019_09_03_171646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "fields", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.text "description"
+    t.integer "field_size"
+    t.string "field_type"
+    t.boolean "locker_room"
+    t.boolean "indoor"
+    t.boolean "parking"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_fields_on_user_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "min_members"
+    t.integer "max_members"
+    t.integer "status"
+    t.integer "price"
+    t.bigint "field_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["field_id"], name: "index_groups_on_field_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,4 +62,6 @@ ActiveRecord::Schema.define(version: 2019_09_03_113645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "fields", "users"
+  add_foreign_key "groups", "fields"
 end
