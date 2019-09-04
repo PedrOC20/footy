@@ -4,3 +4,26 @@
 <%= link_to "My Fields", fields_path %>
 <%= link_to "Upadte Field", edit_field_path(@field) %>
 <%= link_to "Delete Field", field_path(@field), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} %>
+
+<% @groups.each do |group| %>
+  <%= group.date %>
+<% end %>
+
+<button type="button" class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseAdd" role="button" aria-expanded="false" aria-controls="collapseExample">
+  Add new group <i class="fas fa-plus"></i>
+</button>
+
+<div class="collapse" id="collapseAdd">
+  <h2>Add a new Group</h2>
+  <%= simple_form_for @group do |f| %>
+    <%= f.hidden_field :field_id, value: @field.id %>
+    <%= f.input :date %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.input :min_members %>
+    <%= f.input :max_members %>
+    <%= f.input :price %>
+    <%= f.input :status, value: "Pending", as: :hidden %>
+    <%= f.submit "Add Group", class: "btn btn-primary" %>
+  <% end %>
+</div>
