@@ -9,15 +9,25 @@
   <h1 id="footy-homepage" >FOOTY</h1>
   <h3 id="value-prop">Meet new People.<br>Play Football.</h3>
   <p id="search-phrase">Search for a field, a time, and play!</p>
-
-
-  <%= simple_form_for :search, url: fields_path, method: "GET" do |f| %>
-      <%= f.input :location, value: params[:search], placeholder: "Location"%>
-      <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day"%>
-      <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time" %>
-      <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time" %>
-      <p id="submit-wrapper"><%= f.submit "Go!", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
-  <% end  %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+        <%= simple_form_for :search, url: fields_path, method: "GET" do |f| %>
+          <%= f.input :location, value: params[:search], placeholder: "Location"%>
+          <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day"%>
+          <div class="row justify-content-center">
+            <div class="col-xs-6">
+              <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time" %>
+            </div>
+            <div class="col-xs-6">
+              <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time" %>
+            </div>
+          </div>
+          <p id="submit-wrapper"><%= f.submit "Go!", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
+        <% end  %>
+      </div>
+    </div>
+  </div>
 
   <%= link_to "Sign Up!", new_user_registration_path, class: "sign-up-btn", id: "homepage-sign-up-btn" %>
 </div>
