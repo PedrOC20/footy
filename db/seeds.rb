@@ -5,15 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying all fields"
+Field.destroy_all
+
 puts "Destroying all users"
 User.destroy_all
 
-puts "Destroying all fields"
-Field.destroy_all
+puts "Destroying all groups"
+Group.destroy_all
 
 
 puts "Creating new users"
 user1 = User.create!(
+  role: "Owner",
   email: "pedromiguelcandeias@gmail.com",
   password: "123456",
   first_name: "Pedro",
@@ -44,6 +48,28 @@ field2 = Field.create!(
   indoor: true,
   description: "Aba 69",
   user_id: user1.id
+)
+
+group1 = Group.create!(
+  field_id: field2.id,
+  date: "2019-09-04",
+  start_time: "12:00",
+  end_time: "13:00",
+  min_members: 10,
+  max_members: 12,
+  status: "Pending",
+  price: 40
+)
+
+group2 = Group.create!(
+  field_id: field1.id,
+  date: "2019-09-04",
+  start_time: "12:00",
+  end_time: "13:00",
+  min_members: 10,
+  max_members: 12,
+  status: "Pending",
+  price: 40
 )
 
 puts "Done!!"

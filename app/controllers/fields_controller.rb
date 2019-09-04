@@ -3,19 +3,13 @@ class FieldsController < ApplicationController
 
   def index
     @fields = policy_scope(Field)
-    @fields = @fields.geocoded #returns flats with coordinates
-
-    @markers = @fields.map do |field|
-      {
-        lat: field.latitude,
-        lng: field.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { field: field })
-      }
   end
 
   def show
     @field = Field.find(params[:id])
     @groups = @field.groups
+    @group = Group.new
+    @group.field = @field
 
     authorize @field
   end
@@ -67,8 +61,7 @@ class FieldsController < ApplicationController
 
   def field_params
     params.require(:field).permit(
-      :name,
-      :location,
+      :name, :location,
       :description,
       :field_size,
       :field_type,
@@ -78,7 +71,6 @@ class FieldsController < ApplicationController
       :user_id
     )
   end
-
 
   def check_if_owner
     redirect_to root_path, alert: "Action not allowed!" unless current_user.Owner?

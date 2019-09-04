@@ -11,7 +11,16 @@ class Field < ApplicationRecord
   validates :indoor, inclusion: { in: [true, false] }
   validates :indoor, exclusion: { in: [nil] }
   belongs_to :user
+  has_many :groups
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  def self.search(location, start_time, end_time, date)
+    booked_field_ids = Group.between_dates(start_time, end_time, date).where(status: :Booked).pluck(:field_id)
+    pending_field_ids = Group.between_dates(start_time, end_time, date).where(status: :Pending).pluck(:field_id)
+    near(location, 20)
+      .where(id: pending_field_ids)
+      .where.not(id: booked_field_ids)
+  end
 end
