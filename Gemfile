@@ -7,6 +7,8 @@ gem 'carrierwave', '~> 1.2'
 
 gem 'pundit'
 
+gem 'geocoder'
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'jbuilder', '~> 2.0'

@@ -1,12 +1,22 @@
 class FieldsController < ApplicationController
-  before_action :check_if_owner, only: [:index, :show, :new, :edit, :destroy]
+  before_action :check_if_owner
 
   def index
     @fields = policy_scope(Field)
+    @fields = @fields.geocoded #returns flats with coordinates
+
+    @markers = @fields.map do |field|
+      {
+        lat: field.latitude,
+        lng: field.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { field: field })
+      }
   end
 
   def show
     @field = Field.find(params[:id])
+    @groups = @field.groups
+
     authorize @field
   end
 

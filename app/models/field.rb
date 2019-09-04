@@ -11,4 +11,7 @@ class Field < ApplicationRecord
   validates :indoor, inclusion: { in: [true, false] }
   validates :indoor, exclusion: { in: [nil] }
   belongs_to :user
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
