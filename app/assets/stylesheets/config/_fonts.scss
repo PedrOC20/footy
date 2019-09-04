@@ -1,10 +1,37 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,700&display=swap");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Exo", sans-serif;
+$headers-font: "Exo", sans-serif;
 
+h1 {
+  font-weight: bold;
+  line-height: 74px;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-weight: normal;
+  line-height: 48px;
+}
+
+h3 {
+  font-weight: normal;
+  line-height: 37px;
+}
+
+p {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+a {
+  font-family: "Exo", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+}
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

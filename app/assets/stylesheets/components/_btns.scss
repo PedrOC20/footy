@@ -1,0 +1,18 @@
+.log-in-btn {
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.sign-up-btn {
+  padding: 8px 16px;
+  border-radius: 15px;
+  background-color: $smooth-btn-green;
+}
+
+.solid-btn {
+  padding: 8px 80px;
+  border-radius: 15px;
+  background-color: $solid-btn-green;
+}
