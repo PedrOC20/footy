@@ -1,0 +1,16 @@
+.form-control {
+  color: rgb(101, 116, 125);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 0px 0px 15px 15px;
+  border-bottom: 1px solid white;
+  text-align: center;
+  &:focus {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 0px 0px 15px 15px;
+    border-bottom: 1px solid white;
+    text-align: center;
+  }
+}

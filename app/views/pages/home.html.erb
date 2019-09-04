@@ -1,5 +1,4 @@
 <div class="home-background">
-
   <% if user_signed_in? %>
     <%= render "/shared/navbar" %>
   <% else %>
@@ -11,16 +10,16 @@
   <p id="search-phrase">Search for a field, a time, and play!</p>
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4">
+      <div class="col-10 offset-1">
         <%= simple_form_for :search, url: fields_path, method: "GET" do |f| %>
-          <%= f.input :location, value: params[:search], placeholder: "Location"%>
-          <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day"%>
-          <div class="row justify-content-center">
-            <div class="col-xs-6">
-              <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time" %>
+          <%= f.input :location, value: params[:search], placeholder: "Location", label: false %>
+          <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day", label: false%>
+          <div class="row no-gutters">
+            <div class="col-6">
+              <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time", label: false %>
             </div>
-            <div class="col-xs-6">
-              <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time" %>
+            <div class="col-6">
+              <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time", label: false %>
             </div>
           </div>
           <p id="submit-wrapper"><%= f.submit "Go!", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
