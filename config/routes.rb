@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources :fields
 
   # List all groups so the players can join
-  resources :groups
+  # resources :groups
 
   # List my bookings as a player
-  get "my_bookings", to: 'group_members#index'
+  # get "my_bookings", to: 'group_members#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
