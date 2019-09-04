@@ -1,17 +1,47 @@
 // Specific CSS for your home-page
-.log-in-btn:hover {
-  text-decoration: none;
+.home-background {
+  background-image: url(https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-position: -370px 0px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
-.sign-up-btn {
-  p {
-    color: $solid-btn-green;
-  }
-  &:hover {
-    text-decoration: none;
-  }
+#homepage-log-in-btn {
+  float: right;
+  margin-top: 23px;
+  margin-right: 31px;
 }
 
 #footy-homepage {
   font-weight: bold;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-top: 82px;
+  text-align: center;
 }
+
+#value-prop {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding-top: 62px;
+}
+
+#search-phrase {
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding-top: 30px;
+}
+
+#submit-wrapper {
+  text-align: center;
+  #go-solid-btn-homepage {
+    border: none;
+  }
+}
+
+#homepage-sign-up-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+

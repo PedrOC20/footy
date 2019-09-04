@@ -10,7 +10,7 @@ $body-bg:                 $back-blue;
 $font-size-base: 1rem;
 
 // Colors
-$body-color: $gray;
+$body-color: white;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
@@ -27,3 +27,7 @@ $h1-font-size: 56px;
 $h2-font-size: 36px;
 $h3-font-size: 28px;
 $paragraph-margin-bottom: 0;
+
+$link-color: $solid-btn-green;
+$link-hover-decoration: none;
+$link-hover-color: $solid-btn-green;
