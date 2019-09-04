@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+.log-in-btn:hover {
+  text-decoration: none;
+}
+
+.sign-up-btn {
+  p {
+    color: $solid-btn-green;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+#footy-homepage {
+  font-weight: bold;
+}

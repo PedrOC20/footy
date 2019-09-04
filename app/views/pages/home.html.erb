@@ -1,12 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= link_to "<p>LOG IN</p>".html_safe, new_user_session_path, class: "log-in-btn" %>
+<h1 id="footy-homepage" >FOOTY</h1>
+<h3>Meet new People.<br>Play Football.</h3>
+<p>Search for a field, a time, and play!</p>
+
 
 <%= simple_form_for :search, url: fields_path, method: "GET" do |f| %>
-    <%= f.input :location, value: params[:search], placeholder: "Search Location"%>
-    <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Select Date"%>
+    <%= f.input :location, value: params[:search], placeholder: "Location"%>
+    <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day"%>
     <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time" %>
     <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time" %>
-    <%= f.submit "Search" %>
+    <%= f.submit "Go!" %>
 <% end  %>
 
-
+<%= link_to "<p>Sign up!</p>".html_safe, new_user_registration_path, class: "sign-up-btn" %>
