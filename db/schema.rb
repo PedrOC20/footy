@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_102814) do
+ActiveRecord::Schema.define(version: 2019_09_05_113236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,19 @@ ActiveRecord::Schema.define(version: 2019_09_04_102814) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "photo"
     t.index ["user_id"], name: "index_fields_on_user_id"
+  end
+
+  create_table "group_members", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.integer "field_review_rating"
+    t.text "field_review_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_members_on_group_id"
+    t.index ["user_id"], name: "index_group_members_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -65,5 +77,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_102814) do
   end
 
   add_foreign_key "fields", "users"
+  add_foreign_key "group_members", "groups"
+  add_foreign_key "group_members", "users"
   add_foreign_key "groups", "fields"
 end

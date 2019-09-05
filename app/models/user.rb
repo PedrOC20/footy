@@ -11,4 +11,5 @@ class User < ApplicationRecord
   enum role: [:Player, :Owner]
   mount_uploader :avatar, AvatarUploader
   has_many :fields
+  has_many :group_members
 end

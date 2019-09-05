@@ -5,14 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying all groups"
+Group.destroy_all
+
 puts "Destroying all fields"
 Field.destroy_all
 
 puts "Destroying all users"
 User.destroy_all
 
-puts "Destroying all groups"
-Group.destroy_all
 
 
 puts "Creating new users"
@@ -23,6 +24,15 @@ user1 = User.create!(
   first_name: "Pedro",
   last_name: "Candeias",
   birth_date: "1988-05-31"
+)
+
+user2 = User.create!(
+  role: "Player",
+  email: "pedrocbva@gmail.com",
+  password: "123456",
+  first_name: "Pedro",
+  last_name: "Andrade",
+  birth_date: "1998-05-04"
 )
 
 puts "Creating new fields"
