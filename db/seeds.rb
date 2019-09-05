@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying all group members"
+GroupMember.destroy_all
+
 puts "Destroying all groups"
 Group.destroy_all
 
