@@ -4,4 +4,8 @@ class GroupMemberPolicy < ApplicationPolicy
       scope.includes(:group).where(user: user)
     end
   end
+
+  def update?
+    true
+  end
 end
