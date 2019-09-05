@@ -5,14 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying all group members"
+GroupMember.destroy_all
+
+puts "Destroying all groups"
+Group.destroy_all
+
 puts "Destroying all fields"
 Field.destroy_all
 
 puts "Destroying all users"
 User.destroy_all
 
-puts "Destroying all groups"
-Group.destroy_all
 
 
 puts "Creating new users"
