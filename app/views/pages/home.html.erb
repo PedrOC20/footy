@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-10 offset-1">
-        <%= simple_form_for :search, url: fields_path, method: "GET" do |f| %>
+        <%= simple_form_for :search, url: groups_path, method: "GET" do |f| %>
           <%= f.input :location, value: params[:search], placeholder: "Location", label: false %>
           <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day", label: false%>
           <div class="row no-gutters">

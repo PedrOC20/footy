@@ -12,4 +12,12 @@ class GroupPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def create?
+    true
+  end
+
+  def join?
+    true
+  end
 end

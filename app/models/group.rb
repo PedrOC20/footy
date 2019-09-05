@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
   belongs_to :field
+  has_many :group_members
   enum status: [:Pending, :Booked, :Full]
 
   def self.between_dates(start_time, end_time, date)

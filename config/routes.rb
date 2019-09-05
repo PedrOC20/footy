@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   resources :fields
 
   # List all groups so the players can join
-  resources :groups
+  resources :groups do
+    member do
+      post 'join', to: 'groups#join'
+    end
+  end
 
   # List my bookings as a player
   get "my_bookings", to: 'group_members#index'

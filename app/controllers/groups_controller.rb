@@ -29,10 +29,29 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @field = Field.find(params[:group][:field_id])
     @group.field = @field
+    authorize @group
     if @group.save
       redirect_to @field
     else
       redirect_to @field
+    end
+  end
+
+  def join
+    @group = Group.find(params[:id])
+    joined_members = @group.group_members.count
+    # check if max members < group members
+    authorize @group
+    if joined_members < @group.max_members
+      #join group
+      @group_member = GroupMember.new(user: current_user, group: @group)
+      if @group_member.save
+        redirect_to my_bookings_path
+      else
+        redirect_to group_path(@group), alert: "Fuck you!"
+      end
+    else
+      redirect_to group_path(@group)
     end
   end
 

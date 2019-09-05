@@ -68,7 +68,8 @@ class FieldsController < ApplicationController
       :locker_room,
       :parking,
       :indoor,
-      :user_id
+      :user_id,
+      :photo
     )
   end
 
