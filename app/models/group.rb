@@ -21,4 +21,12 @@ class Group < ApplicationRecord
     Group.where(id: not_full_ids, field_id: near_fields_ids)
          .where.not(id: full_ids)
   end
+
+  def change_status!
+    if group_members.count == self.min_members
+      self.Booked!
+    elsif group_members.count == self.max_members
+      self.Full!
+    end
+  end
 end

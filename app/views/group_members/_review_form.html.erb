@@ -1,0 +1,12 @@
+<button type="button" class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseAdd" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Add new review <i class="fas fa-plus"></i>
+</button>
+
+<div class="collapse" id="collapseAdd">
+  <h2>Add a new review</h2>
+  <%= simple_form_for group_member do |f| %>
+    <%= f.input :field_review_rating %>
+    <%= f.input :field_review_description %>
+    <%= f.submit "Add review", class: "btn btn-primary" %>
+  <% end %>
+</div>
