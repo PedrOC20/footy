@@ -1,8 +1,27 @@
-#log-in-h2 {
+.log-in-sign-up-h2 {
   margin-top: 100px;
   margin-bottom: 100px;
+  text-align: center;
 }
 
 .log-in-email-input {
   margin-bottom: 10px;
+}
+
+.smaller {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.password-forgot {
+  color: white;
+  font-size: 14px;
+}
+
+.mrg-top {
+  margin-top: 30px;
+}
+
+fieldset {
+  margin-bottom: 0 !important;
 }

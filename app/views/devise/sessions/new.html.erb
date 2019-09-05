@@ -1,6 +1,6 @@
 <%= link_to "Go Back", :root, class: "log-in-btn", id: "homepage-log-in-btn" %>
 <br>
-<h2 id="log-in-h2" class="text-center">LOG-IN</h2>
+<h2 class="log-in-sign-up-h2" class="text-center">LOG-IN</h2>
 
 <div class="container">
   <div class="row">
@@ -18,12 +18,16 @@
               placeholder: "Password",
               input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-        <p id="submit-wrapper"><%= f.submit "Log in!", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name), class: "password-forgot"%>
+        <% end %>
+        <p id="submit-wrapper"><%= f.submit "Log in!", class: "solid-btn smaller mrg-top", id: "go-solid-btn-homepage" %></p>
       <% end  %>
     </div>
   </div>
 </div>
 
+<%= link_to "Sign Up!", new_user_registration_path, class: "sign-up-btn", id: "homepage-sign-up-btn" %>
 
 <%= render "devise/shared/links" %>
 
