@@ -1,31 +1,27 @@
-<div class="footy-navbar navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-bars"></i>
-  </button>
-
-  <%= link_to '<h2>FOOTY</h2>'.html_safe, :root, class: "footy-link-navbar" %>
-
+<div class="footy-navbar navbar dropdown-menu-left navbar-light navbar-lewagon fixed-top">
   <ul class="no-list-icon">
     <li class="nav-item dropdown">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <div class="dropdown-menu dropdown-menu-right avatar-menu-navbar" aria-labelledby="navbarDropdown">
-        <%= link_to "My Profile", "#", class: "dropdown-item" %>
-        <%= link_to "My Bookings", my_bookings_path, class: "dropdown-item bord-bot" %>
-        <%= link_to "Edit Profile", "#", class: "dropdown-item" %>
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <button onclick="" id="navbar-list-home" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars drop"></i>
+      </button>
+
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" id="close-nav">&times;</a>
+        <%= link_to "Search for a match", :root, class: "nav-link" %>
+        <%= link_to "Rent a field", new_field_path, class: "nav-link bord-bot" %>
+        <%= link_to "My Profile", "#", class: "nav-link" %>
+        <%= link_to "My Bookings", my_bookings_path, class: "nav-link" %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link bord-bot" %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
       </div>
     </li>
   </ul>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Search for a field", destroy_user_session_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Rent a field", "#", class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
-</div>
+  <%= link_to '<h2>FOOTY</h2>'.html_safe, :root, class: "footy-link-navbar" %>
 
+  <ul class="no-list-icon">
+    <li class="nav-item avatar-link">
+      <%= link_to image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier") %>
+    </li>
+  </ul>
+</div>
