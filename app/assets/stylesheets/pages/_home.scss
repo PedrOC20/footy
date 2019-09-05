@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .home-background {
   background-image: url(https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
-  background-position: -370px 0px;
+  background-position: 45% 0px;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -46,3 +46,28 @@
   left: 15px;
 }
 
+.ap-dataset-places {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ap-dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 0px 0px 15px 15px;
+  border-bottom: 1px solid white;
+}
+
+.ap-cursor {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: $solid-btn-green;
+  .ap-address {
+    color: $solid-btn-green;
+  }
+}
+
+.ap-footer {
+  display: none;
+}
+
+.ap-suggestion-icon {
+  display: none;
+}
