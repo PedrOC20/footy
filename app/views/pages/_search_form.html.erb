@@ -1,7 +1,0 @@
-<%= simple_form_for :search, url: groups_path, method: "GET" do |f| %>
-    <%= f.input :location, value: params[:search], placeholder: "Search Location"%>
-    <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Select Date"%>
-    <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time" %>
-    <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time" %>
-    <%= f.submit "Search" %>
-<% end  %>

@@ -1,5 +1,7 @@
 class Group < ApplicationRecord
   belongs_to :field
+  has_many :group_members
+  has_many :users, through: :group_members
   enum status: [:Pending, :Booked, :Full]
 
   def self.between_dates(start_time, end_time, date)
@@ -19,5 +21,13 @@ class Group < ApplicationRecord
     near_fields_ids = Field.near(location, 20, { order: "" }).pluck(:id)
     Group.where(id: not_full_ids, field_id: near_fields_ids)
          .where.not(id: full_ids)
+  end
+
+  def change_status!
+    if group_members.count == self.min_members
+      self.Booked!
+    elsif group_members.count == self.max_members
+      self.Full!
+    end
   end
 end

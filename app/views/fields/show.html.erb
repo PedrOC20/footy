@@ -1,12 +1,22 @@
 <h1>Fields#show</h1>
 <p>Find me in app/views/fields/show.html.erb</p>
 <%= @field.name %>
+
+
 <%= link_to "My Fields", fields_path %>
 <%= link_to "Upadte Field", edit_field_path(@field) %>
 <%= link_to "Delete Field", field_path(@field), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} %>
 
 <% @groups.each do |group| %>
   <%= group.date %>
+  <%= group.start_time %>
+<% end %>
+
+<% @field.group_members.each do |review| %>
+  <% if review.field_review_rating.present? %>
+    <p>Rating: <%= review.field_review_rating %></p>
+    <p>Description: <%= review.field_review_description %></p>
+  <% end %>
 <% end %>
 
 <button type="button" class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseAdd" role="button" aria-expanded="false" aria-controls="collapseExample">

@@ -1,0 +1,14 @@
+<ul>
+  <% @group_members.each do |group_member| %>
+    <li><%= group_member.group.field.name %></li>
+    <li><%= group_member.group.status %></li>
+    <li><%= group_member.group.date.strftime("%-d %B") %> <%= group_member.group.start_time.strftime("%R") %>-<%= group_member.group.end_time.strftime("%R") %></li>
+    <li><%= GroupMember.where(group: group_member.group).count %>/<%= group_member.group.max_members %></li>
+    <%= link_to "Play Group", group_path(group_member.group_id) %>
+    <% if group_member.can_add_review?(current_user) %>
+      <%= link_to "Add a review" %>
+      <%= render 'review_form', group_member: group_member %>
+    <% end %>
+    <br>
+  <% end %>
+</ul>

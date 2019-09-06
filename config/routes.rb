@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   resources :fields
 
   # List all groups so the players can join
-  resources :groups
+  resources :groups do
+    member do
+      post 'join', to: 'groups#join'
+    end
+  end
 
   # List my bookings as a player
   get "my_bookings", to: 'group_members#index'
+  patch "my_bookings/:id", to: 'group_members#update', as: 'group_member'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

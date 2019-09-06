@@ -5,28 +5,21 @@
     <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn", id: "homepage-log-in-btn" %>
   <% end %>
 
-  <h1 id="footy-homepage" >FOOTY</h1>
+  <% if user_signed_in? %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  <% else %>
+    <h1 id="footy-homepage">FOOTY</h1>
+  <% end %>
+
   <h3 id="value-prop">Meet new People.<br>Play Football.</h3>
   <p id="search-phrase">Search for a field, a time, and play!</p>
-  <div class="container">
-    <div class="row">
-      <div class="col-10 offset-1">
-        <%= simple_form_for :search, url: fields_path, method: "GET" do |f| %>
-          <%= f.input :location, value: params[:search], placeholder: "Location", label: false %>
-          <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "Day", label: false%>
-          <div class="row no-gutters">
-            <div class="col-6">
-              <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "Start Time", label: false %>
-            </div>
-            <div class="col-6">
-              <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "End Time", label: false %>
-            </div>
-          </div>
-          <p id="submit-wrapper"><%= f.submit "Go!", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
-        <% end  %>
-      </div>
-    </div>
-  </div>
+
+  <%= render "/shared/search_form" %>
 
   <%= link_to "Sign Up!", new_user_registration_path, class: "sign-up-btn", id: "homepage-sign-up-btn" %>
 </div>

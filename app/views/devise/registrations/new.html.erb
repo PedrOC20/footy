@@ -1,41 +1,61 @@
-<h2>Sign up</h2>
+<%= link_to "Go Back", :root, class: "log-in-btn", id: "homepage-log-in-btn" %>
+<br>
+<h2 class="log-in-sign-up-h2 sign-up-h2" class="text-center">SIGN-UP</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :role, as: :select,
-                collection: User.roles.keys.to_a,
-                required: true,
-                autofocus: true %>
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first-name" } %>
-    <%= f.input :last_name,
-                required: true,
-                input_html: { autocomplete: "last-name" } %>
-    <%= f.input :birth_date, as: :date,
-                start_year: Date.today.year - 90,
-                end_year: Date.today.year - 12,
-                order: [:day, :month, :year],
-                required: true,
-                input_html: { autocomplete: "birth-date" } %>
-    <%= f.input :email,
-                required: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+          <%= f.input :first_name,
+                      required: true,
+                      autofocus: true,
+                      label: false,
+                      placeholder: "First Name",
+                      input_html: { autocomplete: "first-name" } %>
+          <%= f.input :last_name,
+                      required: true,
+                      label: false,
+                      placeholder: "Last Name",
+                      input_html: { autocomplete: "last-name" } %>
+          <%= f.input :birth_date, as: :date,
+                      placeholder: "Birth Date",
+                      start_year: Date.today.year - 90,
+                      end_year: Date.today.year - 12,
+                      order: [:day, :month, :year],
+                      label: false,
+                      required: true,
+                      input_html: { autocomplete: "birth-date" } %>
+          <%= f.input :role, as: :select,
+                      collection: User.roles.keys.to_a,
+                      required: true,
+                      placeholder: "Role",
+                      label: false,
+                      autofocus: true %>
+          <%= f.input :email,
+                      required: true,
+                      placeholder: "Email",
+                      label: false,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      placeholder: "Password",
+                      label: false,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      label: false,
+                      placeholder: "Confirm Password",
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+          <p id="submit-wrapper"><%= f.submit "Sign up!", class: "solid-btn smaller mrg-top", id: "go-solid-btn-homepage" %></p>
+      <% end  %>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name), class: "sign-up-btn", id: "homepage-sign-up-btn" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+

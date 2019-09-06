@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :check_if_owner, only: [:create]
-  before_action :check_if_player, only: [:index, :show]
+  before_action :check_if_player, only: [:join]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @groups = policy_scope(Group)
@@ -29,10 +30,31 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     @field = Field.find(params[:group][:field_id])
     @group.field = @field
+    authorize @group
     if @group.save
       redirect_to @field
     else
       redirect_to @field
+    end
+  end
+
+  def join
+    @group = Group.find(params[:id])
+    # @current_user_group_member = @group.group_members.where(user: current_user).first
+    joined_members = @group.group_members.count
+    # check if max members < group members
+    authorize @group
+    if joined_members < @group.max_members
+      # join group
+      @group_member = GroupMember.new(user: current_user, group: @group)
+      if @group_member.save
+        @group.change_status!
+        redirect_to my_bookings_path
+      else
+        redirect_to group_path(@group), alert: "You are already in that group! Fuck You Nigga!"
+      end
+    else
+      redirect_to group_path(@group)
     end
   end
 
@@ -49,4 +71,6 @@ class GroupsController < ApplicationController
   def check_if_player
     redirect_to root_path, alert: "Action not allowed!" unless current_user.Player?
   end
+
+
 end
