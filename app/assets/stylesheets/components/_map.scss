@@ -6,3 +6,15 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+a.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+.mapboxgl-ctrl-bottom-right > .mapboxgl-ctrl-attrib.mapboxgl-compact::after {
+  display: none !important;
+}
+
+.mapboxgl-map {
+  margin-bottom: 15px;
+}

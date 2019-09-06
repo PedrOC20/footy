@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for :search, url: groups_path, method: "GET" do |f| %>
+        <%= f.input :location, autofocus: true, value: params[:search], placeholder: "#{params.dig(:search, :location)}", label: false %>
+        <%= f.input :date, as: :date, html5: true, value: params[:search], placeholder: "#{params.dig(:search, :date)}", label: false%>
+        <div class="row no-gutters">
+          <div class="col-6">
+            <%= f.input :start_time, as: :time, html5: true, value: params[:search], placeholder: "#{params.dig(:search, :start_time)}", label: false %>
+          </div>
+          <div class="col-6">
+            <%= f.input :end_time, as: :time, html5: true, value: params[:search], placeholder: "#{params.dig(:search, :end_time)}", label: false %>
+          </div>
+        </div>
+        <p id="submit-wrapper"><%= f.submit "Search", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
+      <% end  %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+.filter-drop {
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  margin-left: 15px;
+  color: $solid-btn-green;
+  margin-bottom: 5px;
+  &:hover {
+    color: black;
+    background-color: $solid-btn-green;
+  }
+}
+
+.form-group .search_parking {
+  float: left;
+}
+
+.filter-checkbox{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  width: -webkit-fill-available;
+}
+
+.filter-checkbox input[type="checkbox"]{
+  display:none;
+}
+
+.filter-checkbox i{
+  color: lightgrey;
+  font-size: 25px;
+  input:checked{
+    color: green;
+  }
+}
+
+
+.filter-parking{
+  display: inline-flex;
+  i{
+    padding-right: 4px;
+  }
+}
+
+.filter-locker-room{
+  display: inline-flex;
+  i{
+    padding-right: 4px;
+  }
+}
+
+.filter-indoor{
+  display: inline-flex;
+  i{
+    padding-right: 4px;
+  }
+}
+
+.filter-filter-button{
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.filter-label label{
+  margin-bottom: 0px !important;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .fas {
+    color: #22B24C;
+}
+
+.filter-btn-inside-form {
+  color: $solid-btn-green;
+  background-color: $smooth-btn-green;
+  border: none;
+}

@@ -1,0 +1,56 @@
+<div class="row">
+  <button type="button" class="sign-up-btn filter-drop" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fas fa-filter"></i>
+  </button>
+</div>
+<div class="row search-index p-0 m-0">
+  <div class="col-12 collapse" id="collapseExample">
+    <%= form_for :search, url: groups_path, method: "GET" do |f| %>
+      <div class="d-none">
+        <%= f.hidden_field :location, value: params.dig(:search, :location) %>
+        <%= f.hidden_field :start_time, value: params.dig(:search, :start_time) %>
+        <%= f.hidden_field :end_time, value: params.dig(:search, :end_time) %>
+      </div>
+      <div class="filter-checkbox">
+        <div class="filter-parking">
+          <div class="form-group string optional search_parking fancy-checkbox">
+            <%= f.label :parking, class: 'form-control-label string optional text-center' do %>
+              <%= check_box_tag 'search[parking]' %>
+              <i class="fas fa-parking"></i><br>
+              Parking
+            <% end %>
+          </div>
+        </div>
+        <div class="filter-locker-room">
+          <div class="form-group string optional search_parking fancy-checkbox">
+            <%= f.label :locker_room, class: 'form-control-label string optional text-center' do %>
+              <%= check_box_tag 'search[locker_room]' %>
+              <i class="fas fa-shower"></i><br>
+              Locker Room
+            <% end %>
+          </div>
+        </div>
+        <div class="filter-indoor">
+          <div class="form-group string optional search_parking fancy-checkbox">
+            <%= f.label :indoor, class: 'form-control-label string optional text-center' do %>
+              <%= check_box_tag 'search[indoor]' %>
+              <i class="fas fa-warehouse"></i><br>
+              Indoor
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="filter-label">
+        <div class="form-group">
+          <%= f.label :field_size %>
+          <%= f.select :field_size, options_for_select([["3vs3", "3"], ["5vs5", "5"], ["7vs7", "7"], ["11vs11", "11"], ["All", ""]], params.dig(:search, :field_size)), {}, class: 'form-control select optional mb-2' %>
+          <%= f.label :field_type %>
+          <%= f.select :field_type, options_for_select([["Synthetic", "synthetic"], ["Grass", "grass"], ["Wood", "wood"], ["Sand", "sand"], ["Concrete", "concrete"], ["All", ""]], params.dig(:search, :field_type)), {}, class: 'form-control select optional' %>
+          </div>
+        <div class="filter-filter-button">
+          <%= f.submit "Filter", class: "sign-up-btn filter-btn-inside-form"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
