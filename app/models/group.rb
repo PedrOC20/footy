@@ -5,14 +5,15 @@ class Group < ApplicationRecord
   enum status: [:Pending, :Booked, :Full]
 
   def self.between_dates(start_time, end_time, date)
-    condition = '(start_time <= :start_time_param and end_time > :start_time_param) ' \
+    condition = '((start_time <= :start_time_param and end_time > :start_time_param) ' \
                 'or (start_time < :end_time_param and end_time >= :end_time_param)' \
-                'or (start_time > :start_time_param and end_time < :end_time_param)' \
+                'or (start_time > :start_time_param and end_time < :end_time_param))' \
                 'and (date = :date_param)'
 
     where(condition, start_time_param: Time.zone.parse(start_time),
                       end_time_param: Time.zone.parse(end_time),
                       date_param: Time.zone.parse(date))
+
   end
 
   def self.search(location, start_time, end_time, date)
