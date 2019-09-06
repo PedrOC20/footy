@@ -1,2 +1,18 @@
 <%= @group.field.name %>
+<!-- if user is not alreay a group member of that group -->
+
+<%# if @group.group_members.includes?(current_user) %>
+
+
+<% if @group.users.include?(current_user) %>
+<p>You are already in this group</p>
+<% else %>
 <%= link_to "Join Group", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}  %>
+<% end %>
+
+<% @group.group_members.each do |review| %>
+  <% if review.field_review_rating.present? %>
+    <p>Rating: <%= review.field_review_rating %></p>
+    <p>Description: <%= review.field_review_description %></p>
+  <% end %>
+<% end %>
