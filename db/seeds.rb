@@ -42,336 +42,336 @@ user1 = User.create!(
   remote_avatar_url: 'https://cdn5.jornaldenegocios.pt/images/2019-07/img_817x460$2019_07_26_11_33_53_358120.jpg'
 )
 
-# user2 = User.create!(
-#   role: "Owner",
-#   email: "godinho_lopes@gmail.com",
-#   password: "123456",
-#   first_name: "Godinho",
-#   last_name: "Lopes",
-#   birth_date: "1952-04-21",
-#   avatar_remote_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/13404823/960'
-# )
+user2 = User.create!(
+  role: "Owner",
+  email: "godinho_lopes@gmail.com",
+  password: "123456",
+  first_name: "Godinho",
+  last_name: "Lopes",
+  birth_date: "1952-04-21",
+  remote_avatar_url: 'https://cdn.record.pt/images/2018-07/img_920x518$2018_07_02_19_00_23_1418543.jpg'
+)
 
-# user3 = User.create!(
-#   role: "Owner",
-#   email: "luis_figo@gmail.com",
-#   password: "123456",
-#   first_name: "Luís",
-#   last_name: "Figo",
-#   username: "pesetero",
-#   birth_date: "1972-11-04",
-#   avatar_remote_url: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/L._Figo_2017.jpg'
-# )
+user3 = User.create!(
+  role: "Owner",
+  email: "luis_figo@gmail.com",
+  password: "123456",
+  first_name: "Luís",
+  last_name: "Figo",
+  username: "pesetero",
+  birth_date: "1972-11-04",
+  remote_avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/8/82/L._Figo_2017_%28cropped%29.jpg'
+)
 
-# user4 = User.create!(
-#   role: "Owner",
-#   email: "antonio_oliveira@gmail.com",
-#   password: "123456",
-#   first_name: "António",
-#   last_name: "Oliveira",
-#   birth_date: "1952-06-10",
-#   avatar_remote_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/1722770/960'
-# )
+user4 = User.create!(
+  role: "Owner",
+  email: "antonio_oliveira@gmail.com",
+  password: "123456",
+  first_name: "António",
+  last_name: "Oliveira",
+  birth_date: "1952-06-10",
+  remote_avatar_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/1722770/960'
+)
 
-# user5 = User.create!(
-#   role: "Owner",
-#   email: "valentim_loureiro@gmail.com",
-#   password: "123456",
-#   first_name: "Valentim",
-#   last_name: "Loureiro",
-#   username: "Major",
-#   birth_date: "1938-12-24",
-#   avatar_remote_url: 'https://cdn1.newsplex.pt/media/2017/5/31/587826.png?type=artigo'
-# )
+user5 = User.create!(
+  role: "Owner",
+  email: "valentim_loureiro@gmail.com",
+  password: "123456",
+  first_name: "Valentim",
+  last_name: "Loureiro",
+  username: "Major",
+  birth_date: "1938-12-24",
+  remote_avatar_url: 'https://cdn1.newsplex.pt/media/2017/5/31/587826.png?type=artigo'
+)
 
-# user6 = User.create!(
-#   role: "Owner",
-#   email: "frederico_varandas@gmail.com",
-#   password: "123456",
-#   first_name: "Frederico",
-#   last_name: "Varandas",
-#   birth_date: "1979-09-19",
-#   avatar_remote_url: 'https://jornaldiario.pt/wp-content/uploads/2019/01/img_920x5182018_08_27_15_45_32_1440630.jpg'
-# )
+user6 = User.create!(
+  role: "Owner",
+  email: "frederico_varandas@gmail.com",
+  password: "123456",
+  first_name: "Frederico",
+  last_name: "Varandas",
+  birth_date: "1979-09-19",
+  remote_avatar_url: 'https://jornaldiario.pt/wp-content/uploads/2019/01/img_920x5182018_08_27_15_45_32_1440630.jpg'
+)
 
-# user7 = User.create!(
-#   role: "Owner",
-#   email: "jorge_costa@gmail.com",
-#   password: "123456",
-#   first_name: "Jorge",
-#   last_name: "Pinto da Costa",
-#   username: "Pitinho",
-#   birth_date: "1937-12-28",
-#   avatar_remote_url: 'http://images-cdn.impresa.pt/caras/2017-09-24-0.jpg?v=w870h555'
-# )
+user7 = User.create!(
+  role: "Owner",
+  email: "jorge_costa@gmail.com",
+  password: "123456",
+  first_name: "Jorge",
+  last_name: "Pinto da Costa",
+  username: "Pitinho",
+  birth_date: "1937-12-28",
+  remote_avatar_url: 'http://images-cdn.impresa.pt/caras/2017-09-24-0.jpg?v=w870h555'
+)
 
-# user8 = User.create!(
-#   role: "Owner",
-#   email: "carlos_pereira@gmail.com",
-#   password: "123456",
-#   first_name: "Carlos",
-#   last_name: "Pereira",
-#   birth_date: "1952-07-28",
-#   avatar_remote_url: 'https://thumbs.web.sapo.io/?epic=ZTZhxk8nIcTt+IeSj1Nz74ZIxRQt6bMi66awPFBxv0iZY2idsy0IweSua63W7n3WEVe60U2jLh/37bDmKB2n0zNGD3MztQCyaYFwPoT1wrJ5b18=&W=1550&H=0&delay_optim=1'
-# )
+user8 = User.create!(
+  role: "Owner",
+  email: "carlos_pereira@gmail.com",
+  password: "123456",
+  first_name: "Carlos",
+  last_name: "Pereira",
+  birth_date: "1952-07-28",
+  remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=ZTZhxk8nIcTt+IeSj1Nz74ZIxRQt6bMi66awPFBxv0iZY2idsy0IweSua63W7n3WEVe60U2jLh/37bDmKB2n0zNGD3MztQCyaYFwPoT1wrJ5b18=&W=1550&H=0&delay_optim=1'
+)
 
-# user9 = User.create!(
-#   role: "Owner",
-#   email: "bruno_carvalho@gmail.com",
-#   password: "123456",
-#   first_name: "Bruno",
-#   last_name: "Carvalho",
-#   birth_date: "1972-02-08",
-#   avatar_remote_url: 'https://cdn.record.pt/images/2018-07/img_920x518$2018_07_04_12_21_21_1419191.jpg'
-# )
+user9 = User.create!(
+  role: "Owner",
+  email: "bruno_carvalho@gmail.com",
+  password: "123456",
+  first_name: "Bruno",
+  last_name: "Carvalho",
+  birth_date: "1972-02-08",
+  remote_avatar_url: 'https://cdn.record.pt/images/2018-07/img_920x518$2018_07_04_12_21_21_1419191.jpg'
+)
 
-# user10 = User.create!(
-#   role: "Owner",
-#   email: "footyapplewagon@gmail.com",
-#   password: "123456",
-#   first_name: "Footy",
-#   last_name: "App",
-#   username: "Footy",
-#   birth_date: "2019-09-01",
-#   avatar_remote_url: 'https://www.gmcrafts.co.uk/wp-content/uploads/2018/11/Football-Main-Product-Image.jpg'
-# )
+user10 = User.create!(
+  role: "Owner",
+  email: "footyapplewagon@gmail.com",
+  password: "123456",
+  first_name: "Footy",
+  last_name: "App",
+  username: "Footy",
+  birth_date: "2019-09-01",
+  remote_avatar_url: 'https://www.gmcrafts.co.uk/wp-content/uploads/2018/11/Football-Main-Product-Image.jpg'
+)
 
-# puts "Creating new users Player"
+puts "Creating new users Player"
 
-# # user = User.create!(
-# #   role: "Player",
-# #   email: "@gmail.com",
-# #   password: "123456",
-# #   first_name: "",
-# #   last_name: "",
-# #   username: "",
-# #   birth_date: "ano-mes-dia",
-# #   avatar_remote_url: ''
-# # )
-
-# user11 = User.create!(
+# user = User.create!(
 #   role: "Player",
-#   email: "pedrocbva@gmail.com",
+#   email: "@gmail.com",
 #   password: "123456",
-#   first_name: "Pedro",
-#   last_name: "Andrade",
-#   birth_date: "1998-05-04",
-#   avatar_remote_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/dzizijdgey43gmb8ybza.jpg'
+#   first_name: "",
+#   last_name: "",
+#   username: "",
+#   birth_date: "ano-mes-dia",
+#   remote_avatar_url: ''
 # )
 
-# user12 = User.create!(
-#   role: "Player",
-#   email: "miguelpfigueiredo@gmail.com",
-#   password: "123456",
-#   first_name: "Miguel",
-#   last_name: "Figueiredo",
-#   birth_date: "1994-01-24",
-#   avatar_remote_url: 'https://avatars3.githubusercontent.com/u/40830749?v=4'
-# )
+user11 = User.create!(
+  role: "Player",
+  email: "pedrocbva@gmail.com",
+  password: "123456",
+  first_name: "Pedro",
+  last_name: "Andrade",
+  birth_date: "1998-05-04",
+  remote_avatar_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/dzizijdgey43gmb8ybza.jpg'
+)
 
-# user13 = User.create!(
-#   role: "Player",
-#   email: "vianney.thomasset@gmail.com",
-#   password: "123456",
-#   first_name: "Vianney",
-#   last_name: "Thomasset",
-#   birth_date: "1994-07-10",
-#   avatar_remote_url: 'https://avatars0.githubusercontent.com/u/52930791?v=4'
-# )
+user12 = User.create!(
+  role: "Player",
+  email: "miguelpfigueiredo@gmail.com",
+  password: "123456",
+  first_name: "Miguel",
+  last_name: "Figueiredo",
+  birth_date: "1994-01-24",
+  remote_avatar_url: 'https://avatars3.githubusercontent.com/u/40830749?v=4'
+)
 
-# user14 = User.create!(
-#   role: "Player",
-#   email: "pedromiguelcandeias@gmail.com",
-#   password: "123456",
-#   first_name: "Pedro",
-#   last_name: "Candeias",
-#   birth_date: "1988-05-31",
-#   avatar_remote_url: 'https://avatars3.githubusercontent.com/u/52099157?s=400&v=4'
-# )
+user13 = User.create!(
+  role: "Player",
+  email: "vianney.thomasset@gmail.com",
+  password: "123456",
+  first_name: "Vianney",
+  last_name: "Thomasset",
+  birth_date: "1994-07-10",
+  remote_avatar_url: 'https://avatars0.githubusercontent.com/u/52930791?v=4'
+)
 
-# user15 = User.create!(
-#   role: "Player",
-#   email: "cristiano_ronaldo@gmail.com",
-#   password: "123456",
-#   first_name: "Cristiano",
-#   last_name: "Ronaldo",
-#   username: "Champ",
-#   birth_date: "1985-02-05",
-#   avatar_remote_url: 'https://www.noticiasdecoimbra.pt/wp-content/uploads/2019/06/cristiano-ronaldo-liga-das-na%C3%A7%C3%B5es.jpg?x75216'
-# )
+user14 = User.create!(
+  role: "Player",
+  email: "pedromiguelcandeias@gmail.com",
+  password: "123456",
+  first_name: "Pedro",
+  last_name: "Candeias",
+  birth_date: "1988-05-31",
+  remote_avatar_url: 'https://avatars3.githubusercontent.com/u/52099157?s=400&v=4'
+)
 
-# user16 = User.create!(
-#   role: "Player",
-#   email: "deco@gmail.com",
-#   password: "123456",
-#   first_name: "Anderson",
-#   last_name: "Souza",
-#   username: "Deco",
-#   birth_date: "1977-08-27 ",
-#   avatar_remote_url: 'https://static-img.zz.pt/history/imgS620I11694T20190325175353.jpg'
-# )
+user15 = User.create!(
+  role: "Player",
+  email: "cristiano_ronaldo@gmail.com",
+  password: "123456",
+  first_name: "Cristiano",
+  last_name: "Ronaldo",
+  username: "Champ",
+  birth_date: "1985-02-05",
+  remote_avatar_url: 'https://www.noticiasdecoimbra.pt/wp-content/uploads/2019/06/cristiano-ronaldo-liga-das-na%C3%A7%C3%B5es.jpg?x75216'
+)
 
-# user17 = User.create!(
-#   role: "Player",
-#   email: "trivela@gmail.com",
-#   password: "123456",
-#   first_name: "Ricardo",
-#   last_name: "Quaresma",
-#   username: "Ciganinho",
-#   birth_date: "1983-09-26",
-#   avatar_remote_url: 'https://thumbs.web.sapo.io/?epic=MzU5M8bHI4vUyYFaO+YIATqaLsRgao0fAz2HBv566bDWrHeqoltoM84OEBBjpHoOjY9xn+8eBBUCp78GBteA8cXriXiqysHrfmWxYdnbsH3+cQU=&W=1550&H=0&delay_optim=1'
-# )
+user16 = User.create!(
+  role: "Player",
+  email: "deco@gmail.com",
+  password: "123456",
+  first_name: "Anderson",
+  last_name: "Souza",
+  username: "Deco",
+  birth_date: "1977-08-27 ",
+  remote_avatar_url: 'https://static-img.zz.pt/history/imgS620I11694T20190325175353.jpg'
+)
 
-# user18 = User.create!(
-#   role: "Player",
-#   email: "coentros@gmail.com",
-#   password: "123456",
-#   first_name: "Fábio",
-#   last_name: "Coentrão",
-#   username: "Figo da Vila",
-#   birth_date: "1988-03-11",
-#   avatar_remote_url: 'https://www.abola.pt//img/fotos/abola2015/RIOAVE/2018/fabiocoentrao6.jpg'
-# )
+user17 = User.create!(
+  role: "Player",
+  email: "trivela@gmail.com",
+  password: "123456",
+  first_name: "Ricardo",
+  last_name: "Quaresma",
+  username: "Ciganinho",
+  birth_date: "1983-09-26",
+  remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=MzU5M8bHI4vUyYFaO+YIATqaLsRgao0fAz2HBv566bDWrHeqoltoM84OEBBjpHoOjY9xn+8eBBUCp78GBteA8cXriXiqysHrfmWxYdnbsH3+cQU=&W=1550&H=0&delay_optim=1'
+)
 
-# user19 = User.create!(
-#   role: "Player",
-#   email: "paim@gmail.com",
-#   password: "123456",
-#   first_name: "Fábio",
-#   last_name: "Paím",
-#   username: "Dorgas",
-#   birth_date: "1988-02-15",
-#   avatar_remote_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/58136d1a0cf2d549d555ed01/800'
-# )
+user18 = User.create!(
+  role: "Player",
+  email: "coentros@gmail.com",
+  password: "123456",
+  first_name: "Fábio",
+  last_name: "Coentrão",
+  username: "Figo da Vila",
+  birth_date: "1988-03-11",
+  remote_avatar_url: 'https://www.abola.pt//img/fotos/abola2015/RIOAVE/2018/fabiocoentrao6.jpg'
+)
 
-# user20 = User.create!(
-#   role: "Player",
-#   email: "pizzi@gmail.com",
-#   password: "123456",
-#   first_name: "Luís Fernandes",
-#   last_name: "Fernandes",
-#   username: "Pizzi",
-#   birth_date: "1989-10-06",
-#   avatar_remote_url: 'https://thumbs.web.sapo.io/?epic=YjM0nhwLJDFnSHvAE/DyaT7ickMIkNizNT0vYsuVCyUM7ZqXrKQCRfX3qOBLWpFPC6QfO2svC3ZrZk4faQ3T4YmVTgY9a6emy1y5qfUaju9Yvjc=&W=1550&H=0&delay_optim=1'
-# )
+user19 = User.create!(
+  role: "Player",
+  email: "paim@gmail.com",
+  password: "123456",
+  first_name: "Fábio",
+  last_name: "Paím",
+  username: "Dorgas",
+  birth_date: "1988-02-15",
+  remote_avatar_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/58136d1a0cf2d549d555ed01/800'
+)
 
-# user21 = User.create!(
-#   role: "Player",
-#   email: "nani@gmail.com",
-#   password: "123456",
-#   first_name: "Luís",
-#   last_name: "Cunha",
-#   username: "Nani",
-#   birth_date: "1986-11-17",
-#   avatar_remote_url: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/New_Zealand-Portugal_Nani.jpg'
-# )
+user20 = User.create!(
+  role: "Player",
+  email: "pizzi@gmail.com",
+  password: "123456",
+  first_name: "Luís Fernandes",
+  last_name: "Fernandes",
+  username: "Pizzi",
+  birth_date: "1989-10-06",
+  remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=YjM0nhwLJDFnSHvAE/DyaT7ickMIkNizNT0vYsuVCyUM7ZqXrKQCRfX3qOBLWpFPC6QfO2svC3ZrZk4faQ3T4YmVTgY9a6emy1y5qfUaju9Yvjc=&W=1550&H=0&delay_optim=1'
+)
 
-# user22 = User.create!(
-#   role: "Player",
-#   email: "maniche@gmail.com",
-#   password: "123456",
-#   first_name: "Nuno",
-#   last_name: "Ribeiro",
-#   username: "Maniche",
-#   birth_date: "1977-11-11",
-#   avatar_remote_url: 'https://tmssl.akamaized.net//images/portrait/header/9822-1486128348.jpg?lm=1486128361'
-# )
+user21 = User.create!(
+  role: "Player",
+  email: "nani@gmail.com",
+  password: "123456",
+  first_name: "Luís",
+  last_name: "Cunha",
+  username: "Nani",
+  birth_date: "1986-11-17",
+  remote_avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/New_Zealand-Portugal_Nani.jpg'
+)
 
-# user23 = User.create!(
-#   role: "Player",
-#   email: "alves@gmail.com",
-#   password: "123456",
-#   first_name: "Bruno",
-#   last_name: "Alves",
-#   birth_date: "1981-11-27",
-#   avatar_remote_url: 'https://cdn.record.pt/images/2018-07/img_920x518$2018_07_12_09_49_05_1422659.jpg'
-# )
+user22 = User.create!(
+  role: "Player",
+  email: "maniche@gmail.com",
+  password: "123456",
+  first_name: "Nuno",
+  last_name: "Ribeiro",
+  username: "Maniche",
+  birth_date: "1977-11-11",
+  remote_avatar_url: 'https://tmssl.akamaized.net//images/portrait/header/9822-1486128348.jpg?lm=1486128361'
+)
 
-# user24 = User.create!(
-#   role: "Player",
-#   email: "sabrosa@gmail.com",
-#   password: "123456",
-#   first_name: "Simão",
-#   last_name: "Sabrosa",
-#   birth_date: "1979-08-31",
-#   avatar_remote_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/12032507/960'
-# )
+user23 = User.create!(
+  role: "Player",
+  email: "alves@gmail.com",
+  password: "123456",
+  first_name: "Bruno",
+  last_name: "Alves",
+  birth_date: "1981-11-27",
+  remote_avatar_url: 'https://cdn.record.pt/images/2018-07/img_920x518$2018_07_12_09_49_05_1422659.jpg'
+)
 
-# user25 = User.create!(
-#   role: "Player",
-#   email: "renato@gmail.com",
-#   password: "123456",
-#   first_name: "Renato",
-#   last_name: "Sanches",
-#   birth_date: "1997-08-18",
-#   avatar_remote_url: 'https://www.opinantes.pt/wp-content/uploads/2017/09/renato-sanches.jpg'
-# )
+user24 = User.create!(
+  role: "Player",
+  email: "sabrosa@gmail.com",
+  password: "123456",
+  first_name: "Simão",
+  last_name: "Sabrosa",
+  birth_date: "1979-08-31",
+  remote_avatar_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/12032507/960'
+)
 
-# user26 = User.create!(
-#   role: "Player",
-#   email: "beto@gmail.com",
-#   password: "123456",
-#   first_name: "António",
-#   last_name: "Pimparel",
-#   username: "Beto",
-#   birth_date: "1982-05-01",
-#   avatar_remote_url: 'https://cdn.record.pt/images/2018-11/img_920x518$2018_11_20_22_06_23_1474629.jpg'
-# )
+user25 = User.create!(
+  role: "Player",
+  email: "renato@gmail.com",
+  password: "123456",
+  first_name: "Renato",
+  last_name: "Sanches",
+  birth_date: "1997-08-18",
+  remote_avatar_url: 'https://www.opinantes.pt/wp-content/uploads/2017/09/renato-sanches.jpg'
+)
 
-# user27 = User.create!(
-#   role: "Player",
-#   email: "bebe@gmail.com",
-#   password: "123456",
-#   first_name: "Tiago",
-#   last_name: "Correia",
-#   username: "Bebé",
-#   birth_date: "1990-07-12",
-#   avatar_remote_url: 'https://thumbs.web.sapo.io/?epic=MjI3BI3LNg0AjMyrwGv3R9Z7YqqJ9YUQ8TdmTbBWRAsnRyNAgEo6tkqOu2HNQ3I8GsnrcS/ujFSCk/KCQixFyB7y4w==&W=1550&H=0&delay_optim=1'
-# )
+user26 = User.create!(
+  role: "Player",
+  email: "beto@gmail.com",
+  password: "123456",
+  first_name: "António",
+  last_name: "Pimparel",
+  username: "Beto",
+  birth_date: "1982-05-01",
+  remote_avatar_url: 'https://cdn.record.pt/images/2018-11/img_920x518$2018_11_20_22_06_23_1474629.jpg'
+)
 
-# user28 = User.create!(
-#   role: "Player",
-#   email: "pepe@gmail.com",
-#   password: "123456",
-#   first_name: "Képler",
-#   last_name: "Ferreira",
-#   username: "Pepe",
-#   birth_date: "1983-02-26",
-#   avatar_remote_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Russia-Portugal_CC2017_%2811_%28cropped%29.jpg'
-# )
+user27 = User.create!(
+  role: "Player",
+  email: "bebe@gmail.com",
+  password: "123456",
+  first_name: "Tiago",
+  last_name: "Correia",
+  username: "Bebé",
+  birth_date: "1990-07-12",
+  remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=MjI3BI3LNg0AjMyrwGv3R9Z7YqqJ9YUQ8TdmTbBWRAsnRyNAgEo6tkqOu2HNQ3I8GsnrcS/ujFSCk/KCQixFyB7y4w==&W=1550&H=0&delay_optim=1'
+)
 
-# user29 = User.create!(
-#   role: "Player",
-#   email: "ukra@gmail.com",
-#   password: "123456",
-#   first_name: "André",
-#   last_name: "Monteiro",
-#   username: "Ukra",
-#   birth_date: "1988-03-16",
-#   avatar_remote_url: 'https://images.impresa.pt/olimpia/2016-10-20-untitled-3-3185/original/mw-1920'
-# )
+user28 = User.create!(
+  role: "Player",
+  email: "pepe@gmail.com",
+  password: "123456",
+  first_name: "Képler",
+  last_name: "Ferreira",
+  username: "Pepe",
+  birth_date: "1983-02-26",
+  remote_avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Russia-Portugal_CC2017_%2811_%28cropped%29.jpg'
+)
 
-# user30 = User.create!(
-#   role: "Player",
-#   email: "pele@gmail.com",
-#   password: "123456",
-#   first_name: "Vitor",
-#   last_name: "Passos",
-#   username: "Pelé",
-#   birth_date: "1987-09-14",
-#   avatar_remote_url: 'https://www.pronounceitright.com/upload/pronuncia/5289/0000245.jpg'
-# )
+user29 = User.create!(
+  role: "Player",
+  email: "ukra@gmail.com",
+  password: "123456",
+  first_name: "André",
+  last_name: "Monteiro",
+  username: "Ukra",
+  birth_date: "1988-03-16",
+  remote_avatar_url: 'https://images.impresa.pt/olimpia/2016-10-20-untitled-3-3185/original/mw-1920'
+)
 
-# user31 = User.create!(
-#   role: "Player",
-#   email: "tarantini@gmail.com",
-#   password: "123456",
-#   first_name: "Ricardo",
-#   last_name: "Monteiro",
-#   username: "Tarantini",
-#   birth_date: "1983-10-07",
-#   avatar_remote_url: 'https://jornaleconomico.sapo.pt/wp-content/uploads/2018/01/tarantini-rio-ave.jpg?w=850&h=531&q=60&compress=auto,format&fit=crop'
-# )
+user30 = User.create!(
+  role: "Player",
+  email: "pele@gmail.com",
+  password: "123456",
+  first_name: "Vitor",
+  last_name: "Passos",
+  username: "Pelé",
+  birth_date: "1987-09-14",
+  remote_avatar_url: 'https://www.pronounceitright.com/upload/pronuncia/5289/0000245.jpg'
+)
+
+user31 = User.create!(
+  role: "Player",
+  email: "tarantini@gmail.com",
+  password: "123456",
+  first_name: "Ricardo",
+  last_name: "Monteiro",
+  username: "Tarantini",
+  birth_date: "1983-10-07",
+  remote_avatar_url: 'https://jornaleconomico.sapo.pt/wp-content/uploads/2018/01/tarantini-rio-ave.jpg?w=850&h=531&q=60&compress=auto,format&fit=crop'
+)
 
 puts "Creating new fields"
 # field = Field.create!(
@@ -383,8 +383,8 @@ puts "Creating new fields"
 #   locker_room: true,
 #   indoor: false,
 #   description: "",
-#   user_id: user.id,
-#   photo_remote_url: ''
+#   user: user,
+#   remote_photo_url: ''
 # )
 
 field1 = Field.create!(
@@ -396,929 +396,772 @@ field1 = Field.create!(
   locker_room: true,
   indoor: false,
   description: "Estádio da Luz, officially named Estádio do Sport Lisboa e Benfica, was built to provide Benfica with a new and modern home, and to serve as the playing venue for the Euro 2004 final. Estádio da Luz got built in place of the old Estádio da Luz. Construction works started in 2002, and in March 2003 Benfica played their last game at the partly demolished old stadium. The new stadium opened on the 25th of October 2003 with a match between Benfica and Uruguayan side Club Nacional (2-1). During the Euro 2004 Championships, Estadio da Luz hosted three group matches, the quarter-final between Portugal and England (2-2), and the final between Greece and Portugal (1-0). In 2014, the stadium hosted the Champions League final between Real Madrid and Atletico Madrid (4-1).",
-  user_id: user1.id,
+  user: user1,
   remote_photo_url: 'https://www.stadiumguide.com/wp-content/uploads/lisboa_top.jpg'
 )
 
-# field2 = Field.create!(
-#   name: "Pavilhão Fidelidade",
-#   location: "Avenida Eusébio da Silva Ferreira/2ª Circular, Benfica, Área Metropolitana de Lisboa, Portugal",
-#   field_size: 5,
-#   field_type: "Wood",
-#   parking: true,
-#   locker_room: true,
-#   indoor: true,
-#   description: "The Pavilhão Fidelidade is the one with the largest capacity (2,400 seats), with an oval shaped metal cover, acoustically prepared to nullify the reflection of the sound, draining and releasing it. Futsal, roller hockey and basketball are the ways to use this venue. It has 2 floors, 4 stands, press room, Presidential Tribune and 1 Megascreen.",
-#   user_id: user1.id,
-#   photo_remote_url: 'https://media.slbenfica.pt/-/media/benficadp/images/generic_content_pages/espacos/comp_desportivo/images/pavilhao_fidelidade_meio.jpg?la=pt-pt&v=636470482650000000&hash=E67BBA377F8B0B9BDE0631F04DFC37464D996E0C'
-# )
+field2 = Field.create!(
+  name: "Pavilhão Fidelidade",
+  location: "Avenida Eusébio da Silva Ferreira/2ª Circular, Benfica, Área Metropolitana de Lisboa, Portugal",
+  field_size: 5,
+  field_type: "Wood",
+  parking: true,
+  locker_room: true,
+  indoor: true,
+  description: "The Pavilhão Fidelidade is the one with the largest capacity (2,400 seats), with an oval shaped metal cover, acoustically prepared to nullify the reflection of the sound, draining and releasing it. Futsal, roller hockey and basketball are the ways to use this venue. It has 2 floors, 4 stands, press room, Presidential Tribune and 1 Megascreen.",
+  user: user1,
+  remote_photo_url: 'https://media.slbenfica.pt/-/media/benficadp/images/generic_content_pages/espacos/comp_desportivo/images/pavilhao_fidelidade_meio.jpg?la=pt-pt&v=636470482650000000&hash=E67BBA377F8B0B9BDE0631F04DFC37464D996E0C'
+)
 
-# field3 = Field.create!(
-#   name: "Pavilhão n.º 2",
-#   location: "Avenida Eusébio da Silva Ferreira/2ª Circular, Benfica, Área Metropolitana de Lisboa, Portugal",
-#   field_size: 5,
-#   field_type: "Wood",
-#   parking: true,
-#   locker_room: true,
-#   indoor: true,
-#   description: "Pavilhão n.º 2 has some differences with respect to Fidelity. With a parabolic metal roof, it has a capacity of 1,800 people. It has 2 side benches, press room and Presidential Tribune. The most selected options for using this complex are handball and volleyball. Futsal also uses this feature frequently.",
-#   user_id: user1.id,
-#   photo_remote_url: 'http://zerozero.co.mz/img/estadios/717/48717_ori_pavilhao_n_2_do_sport_lisboa_e_benfica.jpg'
-# )
+field3 = Field.create!(
+  name: "Pavilhão n.º 2",
+  location: "Avenida Eusébio da Silva Ferreira/2ª Circular, Benfica, Área Metropolitana de Lisboa, Portugal",
+  field_size: 5,
+  field_type: "Wood",
+  parking: true,
+  locker_room: true,
+  indoor: true,
+  description: "Pavilhão n.º 2 has some differences with respect to Fidelity. With a parabolic metal roof, it has a capacity of 1,800 people. It has 2 side benches, press room and Presidential Tribune. The most selected options for using this complex are handball and volleyball. Futsal also uses this feature frequently.",
+  user: user1,
+  remote_photo_url: 'http://zerozero.co.mz/img/estadios/717/48717_ori_pavilhao_n_2_do_sport_lisboa_e_benfica.jpg'
+)
 
-# field4 = Field.create!(
-#   name: "Caixa Futebol Campus",
-#   location: "Caixa Futebol Campus, 2840-600 Seixal",
-#   field_size: 11,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Caixa Futebol Campus is the training and training center of Sport Lisboa e Benfica and is the home of Benfica B. It has nine soccer fields and the main field has 1600 covered seats. It is mainly used by the first team and by the teams.",
-#   user_id: user1.id,
-#   photo_remote_url: 'https://media.slbenfica.pt/-/media/benficadp/images/departamento-de-comunicacao/epoca_2017_2018/caixa-futebol-campus/caixa-futebol-campus-campo-1-new.jpg?h=742&la=pt-PT&w=1320&v=636549123140000000&hash=49639CB7106DE1739466D5CB3F50AD17E3D2D1EE'
-# )
+field4 = Field.create!(
+  name: "Caixa Futebol Campus",
+  location: "Caixa Futebol Campus, 2840-600 Seixal",
+  field_size: 11,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Caixa Futebol Campus is the training and training center of Sport Lisboa e Benfica and is the home of Benfica B. It has nine soccer fields and the main field has 1600 covered seats. It is mainly used by the first team and by the teams.",
+  user: user1,
+  remote_photo_url: 'https://media.slbenfica.pt/-/media/benficadp/images/departamento-de-comunicacao/epoca_2017_2018/caixa-futebol-campus/caixa-futebol-campus-campo-1-new.jpg?h=742&la=pt-PT&w=1320&v=636549123140000000&hash=49639CB7106DE1739466D5CB3F50AD17E3D2D1EE'
+)
 
-# field5 = Field.create!(
-#   name: "Estádio José Alvalade",
-#   location: "Rua Professor Fernando da Fonseca, 1501-806 Lisboa",
-#   field_size: 11,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "The José Alvalade Stadium, or Sporting Clube de Portugal Stadium, is a football stadium located in Lisbon, Portugal, belonging to Sporting Clube de Portugal. It is framed in the Alvalade XXI complex. It was the first Portuguese stadium to receive the 5 stars of UEFA.",
-#   user_id: user6.id,
-#   photo_remote_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/569035b40cf2468d8fd07fb2/960'
-# )
+field5 = Field.create!(
+  name: "Estádio José Alvalade",
+  location: "Rua Professor Fernando da Fonseca, 1501-806 Lisboa",
+  field_size: 11,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "The José Alvalade Stadium, or Sporting Clube de Portugal Stadium, is a football stadium located in Lisbon, Portugal, belonging to Sporting Clube de Portugal. It is framed in the Alvalade XXI complex. It was the first Portuguese stadium to receive the 5 stars of UEFA.",
+  user: user6,
+  remote_photo_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/569035b40cf2468d8fd07fb2/960'
+)
 
-# field6 = Field.create!(
-#   name: "Pavilhão João Rocha",
-#   location: "R. Francisco Stromp, 1600-464 Lisboa",
-#   field_size: 5,
-#   field_type: "Wood",
-#   parking: true,
-#   locker_room: true,
-#   indoor: true,
-#   description: "The João Rocha Pavilion is a gymnastics pavilion located in the parish of Lumiar, in Lisbon. With capacity for 3 000 people, it is the current home of the high performance sports of the Sporting Clube de Portuga.",
-#   user_id: user6.id,
-#   photo_remote_url: 'https://thumbs.web.sapo.io/?epic=ODMxZ73OW6g2MV/g1zrEjs4eMsO5kXiGc1AIDhG4srFePJB2lpCYEYd0DxLCUFhnsYqBxXDc7ilsl9R9owTipqkpbohWIqC8XGaq4f85v/nGpiU=&W=1550&H=0&delay_optim=1'
-# )
+field6 = Field.create!(
+  name: "Pavilhão João Rocha",
+  location: "R. Francisco Stromp, 1600-464 Lisboa",
+  field_size: 5,
+  field_type: "Wood",
+  parking: true,
+  locker_room: true,
+  indoor: true,
+  description: "The João Rocha Pavilion is a gymnastics pavilion located in the parish of Lumiar, in Lisbon. With capacity for 3 000 people, it is the current home of the high performance sports of the Sporting Clube de Portuga.",
+  user: user6,
+  remote_photo_url: 'https://thumbs.web.sapo.io/?epic=ODMxZ73OW6g2MV/g1zrEjs4eMsO5kXiGc1AIDhG4srFePJB2lpCYEYd0DxLCUFhnsYqBxXDc7ilsl9R9owTipqkpbohWIqC8XGaq4f85v/nGpiU=&W=1550&H=0&delay_optim=1'
+)
 
-# field7 = Field.create!(
-#   name: "Estádio do Dragão",
-#   location: "Via Futebol Clube do Porto, 4350-415 Porto",
-#   field_size: 11,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Estádio do Dragão is a football stadium, located in the parish of Campanhã, Porto city, currently owned by FC Porto, where the football team plays their matches at home. The stadium opened on November 16, 2003 and has a capacity of 50,033 spectators.",
-#   user_id: user7.id,
-#   photo_remote_url: 'https://europeanleagues.com/wp-content/uploads/ESSMA-Website-pic.jpg'
-# )
+field7 = Field.create!(
+  name: "Estádio do Dragão",
+  location: "Via Futebol Clube do Porto, 4350-415 Porto",
+  field_size: 11,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Estádio do Dragão is a football stadium, located in the parish of Campanhã, Porto city, currently owned by FC Porto, where the football team plays their matches at home. The stadium opened on November 16, 2003 and has a capacity of 50,033 spectators.",
+  user: user7,
+  remote_photo_url: 'https://europeanleagues.com/wp-content/uploads/ESSMA-Website-pic.jpg'
+)
 
-# field8 = Field.create!(
-#   name: "Dragão Arena",
-#   location: "Alameda das Antas, 4350-414 Porto",
-#   field_size: 5,
-#   field_type: "Wood",
-#   parking: true,
-#   locker_room: true,
-#   indoor: true,
-#   description: "The Dragão Arena is the current Football Club of Porto pavilion for the club modalities. With a capacity for two thousand spectators, the pavilion opened on April 23, 2009.",
-#   user_id: user7.id,
-#   photo_remote_url: 'https://zerozero.co.mz/img/estadios/427/574427_ori__20190530101327_dragao_caixa.jpg'
-# )
+field8 = Field.create!(
+  name: "Dragão Arena",
+  location: "Alameda das Antas, 4350-414 Porto",
+  field_size: 5,
+  field_type: "Wood",
+  parking: true,
+  locker_room: true,
+  indoor: true,
+  description: "The Dragão Arena is the current Football Club of Porto pavilion for the club modalities. With a capacity for two thousand spectators, the pavilion opened on April 23, 2009.",
+  user: user7,
+  remote_photo_url: 'https://zerozero.co.mz/img/estadios/427/574427_ori__20190530101327_dragao_caixa.jpg'
+)
 
-# field9 = Field.create!(
-#   name: "Air Fut Figo Maduro campo-1",
-#   location: "Rua 25 de Abril 10 A, Lisbon",
-#   field_size: 5,
-#   field_type: "Synthetic",
-#   parking: false,
-#   locker_room: true,
-#   indoor: true,
-#   description: "AIRFUT is a space to practice football in Lisbon, located next to the 2nd Circular ideal for those who like to practice football regularly. AirFut has several infrastructures for football practice with 1 synthetic 5 football pitch. If you like to get your group of friends together for a game, then this space is right for you, featuring extended hours that are compatible with the most hectic daily life.",
-#   user_id: user3.id,
-#   photo_remote_url: 'https://aircourts.com/uploads/courts/airfut2.jpg'
-# )
+field9 = Field.create!(
+  name: "Air Fut Figo Maduro campo-1",
+  location: "Rua 25 de Abril 10 A, Lisbon",
+  field_size: 5,
+  field_type: "Synthetic",
+  parking: false,
+  locker_room: true,
+  indoor: true,
+  description: "AIRFUT is a space to practice football in Lisbon, located next to the 2nd Circular ideal for those who like to practice football regularly. AirFut has several infrastructures for football practice with 1 synthetic 5 football pitch. If you like to get your group of friends together for a game, then this space is right for you, featuring extended hours that are compatible with the most hectic daily life.",
+  user: user3,
+  remote_photo_url: 'https://aircourts.com/uploads/courts/airfut2.jpg'
+)
 
-# field10 = Field.create!(
-#   name: "Air Fut Figo Maduro campo-2",
-#   location: "Rua 25 de Abril 10 A, Lisbon",
-#   field_size: 5,
-#   field_type: "Synthetic",
-#   parking: false,
-#   locker_room: true,
-#   indoor: true,
-#   description: "AIRFUT is a space to practice football in Lisbon, located next to the 2nd Circular ideal for those who like to practice football regularly. AirFut has several infrastructures for football practice with 1 synthetic 5 football pitch. If you like to get your group of friends together for a game, then this space is right for you, featuring extended hours that are compatible with the most hectic daily life.",
-#   user_id: user3.id,
-#   photo_remote_url: 'https://aircourts.com/uploads/courts/airfut2.jpg'
-# )
+field10 = Field.create!(
+  name: "Air Fut Figo Maduro campo-2",
+  location: "Rua 25 de Abril 10 A, Lisbon",
+  field_size: 5,
+  field_type: "Synthetic",
+  parking: false,
+  locker_room: true,
+  indoor: true,
+  description: "AIRFUT is a space to practice football in Lisbon, located next to the 2nd Circular ideal for those who like to practice football regularly. AirFut has several infrastructures for football practice with 1 synthetic 5 football pitch. If you like to get your group of friends together for a game, then this space is right for you, featuring extended hours that are compatible with the most hectic daily life.",
+  user: user3,
+  remote_photo_url: 'https://aircourts.com/uploads/courts/airfut2.jpg'
+)
 
-# field11 = Field.create!(
-#   name: "Air Fut Figo Maduro campo-3",
-#   location: "Rua 25 de Abril 10 A, Lisbon",
-#   field_size: 5,
-#   field_type: "Synthetic",
-#   parking: false,
-#   locker_room: true,
-#   indoor: true,
-#   description: "AIRFUT is a space to practice football in Lisbon, located next to the 2nd Circular ideal for those who like to practice football regularly. AirFut has several infrastructures for football practice with 1 synthetic 5 football pitch. If you like to get your group of friends together for a game, then this space is right for you, featuring extended hours that are compatible with the most hectic daily life.",
-#   user_id: user3.id,
-#   photo_remote_url: 'https://aircourts.com/uploads/courts/airfut2.jpg'
-# )
-
-
-# field12 = Field.create!(
-#   name: "Totalfoot campo-1",
-#   location: "Rua Aliança Operária 41 C, Lisbon",
-#   field_size: 5,
-#   field_type: "Grass",
-#   parking: false,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Football Field equipped with natural lawn, for rental to formal or informal groups, birthdays, parties, training and activities.",
-#   user_id: user4.id,
-#   photo_remote_url: 'https://scontent.flis8-1.fna.fbcdn.net/v/t31.0-1/c122.0.720.720a/p720x720/11129354_548100065329100_749164143854311261_o.jpg?_nc_cat=105&_nc_oc=AQkuigRo3fFgAGQH-o3YVC0TNFhzTQNMkip1pPduUjp01lhihQrdTqSPENYQkbqXWcc&_nc_ht=scontent.flis8-1.fna&oh=1182bb1429b49285a8aa4df21624efe3&oe=5E00DE9A'
-# )
-
-# field13 = Field.create!(
-#   name: "Totalfoot campo-2",
-#   location: "Rua Aliança Operária 41 C, Lisbon",
-#   field_size: 3,
-#   field_type: "Grass",
-#   parking: false,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Football Field equipped with natural lawn, for rental to formal or informal groups, birthdays, parties, training and activities.",
-#   user_id: user4.id,
-#   photo_remote_url: 'https://scontent.flis8-1.fna.fbcdn.net/v/t31.0-1/c122.0.720.720a/p720x720/11129354_548100065329100_749164143854311261_o.jpg?_nc_cat=105&_nc_oc=AQkuigRo3fFgAGQH-o3YVC0TNFhzTQNMkip1pPduUjp01lhihQrdTqSPENYQkbqXWcc&_nc_ht=scontent.flis8-1.fna&oh=1182bb1429b49285a8aa4df21624efe3&oe=5E00DE9A'
-# )
-
-# field14 = Field.create!(
-#   name: "Totalfoot campo-3",
-#   location: "Rua Aliança Operária 41 C, Lisbon",
-#   field_size: 3,
-#   field_type: "Grass",
-#   parking: false,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Football Field equipped with natural lawn, for rental to formal or informal groups, birthdays, parties, training and activities.",
-#   user_id: user4.id,
-#   photo_remote_url: 'https://scontent.flis8-1.fna.fbcdn.net/v/t31.0-1/c122.0.720.720a/p720x720/11129354_548100065329100_749164143854311261_o.jpg?_nc_cat=105&_nc_oc=AQkuigRo3fFgAGQH-o3YVC0TNFhzTQNMkip1pPduUjp01lhihQrdTqSPENYQkbqXWcc&_nc_ht=scontent.flis8-1.fna&oh=1182bb1429b49285a8aa4df21624efe3&oe=5E00DE9A'
-# )
-
-# field15 = Field.create!(
-#   name: "Futebol 5 Low Cost campo-1",
-#   location: "Av. Estados Unidos da América 110, Lisbon",
-#   field_size: 5,
-#   field_type: "Synthetic",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Futebol Low Cost offers for rent a synthetic turf 5 football ring located in the center of Lisbon (Av. EUA). The course has its own lighting and parking on United States Avenue or António Patrício Street.",
-#   user_id: user8.id,
-#   photo_remote_url: 'https://scontent.flis8-2.fna.fbcdn.net/v/t31.0-8/14054507_1755131358091413_3786426600994310232_o.jpg?_nc_cat=107&_nc_oc=AQnIBEPw_U9-ApozqAnN6Y_kzZrOml3nURBRer8hEAnZakSo59QKRrhyqp0dGHEgGL0&_nc_ht=scontent.flis8-2.fna&oh=823a24dd778fe2d9de41e0c0e604b683&oe=5E021D27'
-# )
-
-# field16 = Field.create!(
-#   name: "Futebol 5 Low Cost campo-2",
-#   location: "Av. Estados Unidos da América 110, Lisbon",
-#   field_size: 5,
-#   field_type: "Synthetic",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Futebol Low Cost offers for rent a synthetic turf 5 football ring located in the center of Lisbon (Av. EUA). The course has its own lighting and parking on United States Avenue or António Patrício Street.",
-#   user_id: user8.id,
-#   photo_remote_url: 'https://scontent.flis8-2.fna.fbcdn.net/v/t31.0-8/14054507_1755131358091413_3786426600994310232_o.jpg?_nc_cat=107&_nc_oc=AQnIBEPw_U9-ApozqAnN6Y_kzZrOml3nURBRer8hEAnZakSo59QKRrhyqp0dGHEgGL0&_nc_ht=scontent.flis8-2.fna&oh=823a24dd778fe2d9de41e0c0e604b683&oe=5E021D27'
-# )
-
-# field17 = Field.create!(
-#   name: "Futebol 5 Low Cost campo-3",
-#   location: "Av. Estados Unidos da América 110, Lisbon",
-#   field_size: 5,
-#   field_type: "Synthetic",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Futebol Low Cost offers for rent a synthetic turf 5 football ring located in the center of Lisbon (Av. EUA). The course has its own lighting and parking on United States Avenue or António Patrício Street.",
-#   user_id: user8.id,
-#   photo_remote_url: 'https://scontent.flis8-2.fna.fbcdn.net/v/t31.0-8/14054507_1755131358091413_3786426600994310232_o.jpg?_nc_cat=107&_nc_oc=AQnIBEPw_U9-ApozqAnN6Y_kzZrOml3nURBRer8hEAnZakSo59QKRrhyqp0dGHEgGL0&_nc_ht=scontent.flis8-2.fna&oh=823a24dd778fe2d9de41e0c0e604b683&oe=5E021D27'
-# )
-
-# field18 = Field.create!(
-#   name: "Campo de Futebol Vicente Lucas campo-1",
-#   location: "Avenida do Restelo, Lisbon",
-#   field_size: 7,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Located in Estadio do Restelo, and named after Mozambican player Vicente Lucas, these sports facilities feature a fully renovated outdoor lawn field for rent. In addition, guests can make use of the changing rooms, private parking and a terrace bar. The field can be rented from 35 euros per hour.",
-#   user_id: user2.id,
-#   photo_remote_url: 'https://aircourts.com/uploads/courts/courts_1677_1543856326.jpg'
-# )
-
-# field19 = Field.create!(
-#   name: "Campo de Futebol Vicente Lucas campo-2",
-#   location: "Avenida do Restelo, Lisbon",
-#   field_size: 7,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Located in Estadio do Restelo, and named after Mozambican player Vicente Lucas, these sports facilities feature a fully renovated outdoor lawn field for rent. In addition, guests can make use of the changing rooms, private parking and a terrace bar. The field can be rented from 35 euros per hour.",
-#   user_id: user2.id,
-#   photo_remote_url: 'https://aircourts.com/uploads/courts/courts_1677_1543856326.jpg'
-# )
-
-# field20 = Field.create!(
-#   name: "Campo de Futebol Vicente Lucas campo-3",
-#   location: "Avenida do Restelo, Lisbon",
-#   field_size: 7,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Located in Estadio do Restelo, and named after Mozambican player Vicente Lucas, these sports facilities feature a fully renovated outdoor lawn field for rent. In addition, guests can make use of the changing rooms, private parking and a terrace bar. The field can be rented from 35 euros per hour.",
-#   user_id: user2.id,
-#   photo_remote_url: 'https://aircourts.com/uploads/courts/courts_1677_1543856326.jpg'
-# )
-
-# field21 = Field.create!(
-#   name: "Outurela campo-1",
-#   location: "Estrada Outurela 44, Lisbon",
-#   field_size: 5,
-#   field_type: "Concrete",
-#   parking: false,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Campo de cimento, gerido pelo clube Sporting Clube Linda-a-Velha.",
-#   user_id: user9.id,
-#   photo_remote_url: 'https://image.shutterstock.com/image-photo/goal-street-football-260nw-395037316.jpg'
-# )
-
-# field22 = Field.create!(
-#   name: "Outurela campo-2",
-#   location: "Estrada Outurela 44, Lisbon",
-#   field_size: 5,
-#   field_type: "Concrete",
-#   parking: false,
-#   locker_room: true,
-#   indoor: false,
-#   description: "Campo de cimento, gerido pelo clube Sporting Clube Linda-a-Velha.",
-#   user_id: user9.id,
-#   photo_remote_url: 'https://image.shutterstock.com/image-photo/goal-street-football-260nw-395037316.jpg'
-# )
+field11 = Field.create!(
+  name: "Air Fut Figo Maduro campo-3",
+  location: "Rua 25 de Abril 10 A, Lisbon",
+  field_size: 5,
+  field_type: "Synthetic",
+  parking: false,
+  locker_room: true,
+  indoor: true,
+  description: "AIRFUT is a space to practice football in Lisbon, located next to the 2nd Circular ideal for those who like to practice football regularly. AirFut has several infrastructures for football practice with 1 synthetic 5 football pitch. If you like to get your group of friends together for a game, then this space is right for you, featuring extended hours that are compatible with the most hectic daily life.",
+  user: user3,
+  remote_photo_url: 'https://aircourts.com/uploads/courts/airfut2.jpg'
+)
 
 
-# field23 = Field.create!(
-#   name: "Parque de Jogos 1º de Maio",
-#   location: "Avenida Rio de Janeiro, Lisbon",
-#   field_size: 11,
-#   field_type: "Grass",
-#   parking: true,
-#   locker_room: true,
-#   indoor: true,
-#   description: "Located on Avenida Rio de Janeiro, this park offers the ideal conditions for soccer practice. It has field with natural grass. It is also possible to practice other sports such as tennis or athletics. In this space there is also room for family leisure activities.",
-#   user_id: user10.id,
-#   photo_remote_url: 'https://thumbs.web.sapo.io/?epic=9p1dT4n88DuKlIpr0MndfWAKkaON6PxPXwZDngo/oj//SwqeomVTs+Fk6GiG/pmL/wbgS1jfXrksDNDZ98A/5ToYJg==&Q=85&crop=center&errorpic=transparent&W=160'
-# )
+field12 = Field.create!(
+  name: "Totalfoot campo-1",
+  location: "Rua Aliança Operária 41 C, Lisbon",
+  field_size: 5,
+  field_type: "Grass",
+  parking: false,
+  locker_room: true,
+  indoor: false,
+  description: "Football Field equipped with natural lawn, for rental to formal or informal groups, birthdays, parties, training and activities.",
+  user: user4,
+  remote_photo_url: 'https://scontent.flis8-1.fna.fbcdn.net/v/t31.0-1/c122.0.720.720a/p720x720/11129354_548100065329100_749164143854311261_o.jpg?_nc_cat=105&_nc_oc=AQkuigRo3fFgAGQH-o3YVC0TNFhzTQNMkip1pPduUjp01lhihQrdTqSPENYQkbqXWcc&_nc_ht=scontent.flis8-1.fna&oh=1182bb1429b49285a8aa4df21624efe3&oe=5E00DE9A'
+)
+
+field13 = Field.create!(
+  name: "Totalfoot campo-2",
+  location: "Rua Aliança Operária 41 C, Lisbon",
+  field_size: 3,
+  field_type: "Grass",
+  parking: false,
+  locker_room: true,
+  indoor: false,
+  description: "Football Field equipped with natural lawn, for rental to formal or informal groups, birthdays, parties, training and activities.",
+  user: user4,
+  remote_photo_url: 'https://scontent.flis8-1.fna.fbcdn.net/v/t31.0-1/c122.0.720.720a/p720x720/11129354_548100065329100_749164143854311261_o.jpg?_nc_cat=105&_nc_oc=AQkuigRo3fFgAGQH-o3YVC0TNFhzTQNMkip1pPduUjp01lhihQrdTqSPENYQkbqXWcc&_nc_ht=scontent.flis8-1.fna&oh=1182bb1429b49285a8aa4df21624efe3&oe=5E00DE9A'
+)
+
+field14 = Field.create!(
+  name: "Totalfoot campo-3",
+  location: "Rua Aliança Operária 41 C, Lisbon",
+  field_size: 3,
+  field_type: "Grass",
+  parking: false,
+  locker_room: true,
+  indoor: false,
+  description: "Football Field equipped with natural lawn, for rental to formal or informal groups, birthdays, parties, training and activities.",
+  user: user4,
+  remote_photo_url: 'https://scontent.flis8-1.fna.fbcdn.net/v/t31.0-1/c122.0.720.720a/p720x720/11129354_548100065329100_749164143854311261_o.jpg?_nc_cat=105&_nc_oc=AQkuigRo3fFgAGQH-o3YVC0TNFhzTQNMkip1pPduUjp01lhihQrdTqSPENYQkbqXWcc&_nc_ht=scontent.flis8-1.fna&oh=1182bb1429b49285a8aa4df21624efe3&oe=5E00DE9A'
+)
+
+field15 = Field.create!(
+  name: "Futebol 5 Low Cost campo-1",
+  location: "Av. Estados Unidos da América 110, Lisbon",
+  field_size: 5,
+  field_type: "Synthetic",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Futebol Low Cost offers for rent a synthetic turf 5 football ring located in the center of Lisbon (Av. EUA). The course has its own lighting and parking on United States Avenue or António Patrício Street.",
+  user: user8,
+  remote_photo_url: 'https://scontent.flis8-2.fna.fbcdn.net/v/t31.0-8/14054507_1755131358091413_3786426600994310232_o.jpg?_nc_cat=107&_nc_oc=AQnIBEPw_U9-ApozqAnN6Y_kzZrOml3nURBRer8hEAnZakSo59QKRrhyqp0dGHEgGL0&_nc_ht=scontent.flis8-2.fna&oh=823a24dd778fe2d9de41e0c0e604b683&oe=5E021D27'
+)
+
+field16 = Field.create!(
+  name: "Futebol 5 Low Cost campo-2",
+  location: "Av. Estados Unidos da América 110, Lisbon",
+  field_size: 5,
+  field_type: "Synthetic",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Futebol Low Cost offers for rent a synthetic turf 5 football ring located in the center of Lisbon (Av. EUA). The course has its own lighting and parking on United States Avenue or António Patrício Street.",
+  user: user8,
+  remote_photo_url: 'https://scontent.flis8-2.fna.fbcdn.net/v/t31.0-8/14054507_1755131358091413_3786426600994310232_o.jpg?_nc_cat=107&_nc_oc=AQnIBEPw_U9-ApozqAnN6Y_kzZrOml3nURBRer8hEAnZakSo59QKRrhyqp0dGHEgGL0&_nc_ht=scontent.flis8-2.fna&oh=823a24dd778fe2d9de41e0c0e604b683&oe=5E021D27'
+)
+
+field17 = Field.create!(
+  name: "Futebol 5 Low Cost campo-3",
+  location: "Av. Estados Unidos da América 110, Lisbon",
+  field_size: 5,
+  field_type: "Synthetic",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Futebol Low Cost offers for rent a synthetic turf 5 football ring located in the center of Lisbon (Av. EUA). The course has its own lighting and parking on United States Avenue or António Patrício Street.",
+  user: user8,
+  remote_photo_url: 'https://scontent.flis8-2.fna.fbcdn.net/v/t31.0-8/14054507_1755131358091413_3786426600994310232_o.jpg?_nc_cat=107&_nc_oc=AQnIBEPw_U9-ApozqAnN6Y_kzZrOml3nURBRer8hEAnZakSo59QKRrhyqp0dGHEgGL0&_nc_ht=scontent.flis8-2.fna&oh=823a24dd778fe2d9de41e0c0e604b683&oe=5E021D27'
+)
+
+field18 = Field.create!(
+  name: "Campo de Futebol Vicente Lucas campo-1",
+  location: "Avenida do Restelo, Lisbon",
+  field_size: 7,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Located in Estadio do Restelo, and named after Mozambican player Vicente Lucas, these sports facilities feature a fully renovated outdoor lawn field for rent. In addition, guests can make use of the changing rooms, private parking and a terrace bar. The field can be rented from 35 euros per hour.",
+  user: user2,
+  remote_photo_url: 'https://aircourts.com/uploads/courts/courts_1677_1543856326.jpg'
+)
+
+field19 = Field.create!(
+  name: "Campo de Futebol Vicente Lucas campo-2",
+  location: "Avenida do Restelo, Lisbon",
+  field_size: 7,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Located in Estadio do Restelo, and named after Mozambican player Vicente Lucas, these sports facilities feature a fully renovated outdoor lawn field for rent. In addition, guests can make use of the changing rooms, private parking and a terrace bar. The field can be rented from 35 euros per hour.",
+  user: user2,
+  remote_photo_url: 'https://aircourts.com/uploads/courts/courts_1677_1543856326.jpg'
+)
+
+field20 = Field.create!(
+  name: "Campo de Futebol Vicente Lucas campo-3",
+  location: "Avenida do Restelo, Lisbon",
+  field_size: 7,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: false,
+  description: "Located in Estadio do Restelo, and named after Mozambican player Vicente Lucas, these sports facilities feature a fully renovated outdoor lawn field for rent. In addition, guests can make use of the changing rooms, private parking and a terrace bar. The field can be rented from 35 euros per hour.",
+  user: user2,
+  remote_photo_url: 'https://aircourts.com/uploads/courts/courts_1677_1543856326.jpg'
+)
+
+field21 = Field.create!(
+  name: "Outurela campo-1",
+  location: "Estrada Outurela 44, Lisbon",
+  field_size: 5,
+  field_type: "Concrete",
+  parking: false,
+  locker_room: true,
+  indoor: false,
+  description: "Campo de cimento, gerido pelo clube Sporting Clube Linda-a-Velha.",
+  user: user9,
+  remote_photo_url: 'https://image.shutterstock.com/image-photo/goal-street-football-260nw-395037316.jpg'
+)
+
+field22 = Field.create!(
+  name: "Outurela campo-2",
+  location: "Estrada Outurela 44, Lisbon",
+  field_size: 5,
+  field_type: "Concrete",
+  parking: false,
+  locker_room: true,
+  indoor: false,
+  description: "Campo de cimento, gerido pelo clube Sporting Clube Linda-a-Velha.",
+  user: user9,
+  remote_photo_url: 'https://image.shutterstock.com/image-photo/goal-street-football-260nw-395037316.jpg'
+)
+
+
+field23 = Field.create!(
+  name: "Parque de Jogos 1º de Maio",
+  location: "Avenida Rio de Janeiro, Lisbon",
+  field_size: 11,
+  field_type: "Grass",
+  parking: true,
+  locker_room: true,
+  indoor: true,
+  description: "Located on Avenida Rio de Janeiro, this park offers the ideal conditions for soccer practice. It has field with natural grass. It is also possible to practice other sports such as tennis or athletics. In this space there is also room for family leisure activities.",
+  user: user10,
+  remote_photo_url: 'https://thumbs.web.sapo.io/?epic=9p1dT4n88DuKlIpr0MndfWAKkaON6PxPXwZDngo/oj//SwqeomVTs+Fk6GiG/pmL/wbgS1jfXrksDNDZ98A/5ToYJg==&Q=85&crop=center&errorpic=transparent&W=160'
+)
 
 
 puts "Creating new groups"
 
+# group = Group.create!(
+#   field: field,
+#   date: "ano-mes-dia",
+#   start_time: "00:00",
+#   end_time: "00:00",
+#   min_members: ,
+#   max_members: ,
+#   status: "Pending",
+#   price:
+# )
+
 group1 = Group.create!(
-  field_id: field1.id,
+  field: field1,
   date: "2019-09-20",
   start_time: "09:00",
   end_time: "11:00",
   min_members: 22,
-  max_members: 40,
+  max_members: 36,
   status: "Pending",
   price: 5000
 )
 
 group2 = Group.create!(
-  field_id: field1.id,
+  field: field1,
   date: "2019-09-20",
   start_time: "11:00",
   end_time: "13:00",
   min_members: 22,
-  max_members: 40,
+  max_members: 36,
   status: "Pending",
   price: 5000
 )
 
 group3 = Group.create!(
-  field_id: field1.id,
+  field: field1,
   date: "2019-09-20",
   start_time: "14:00",
   end_time: "16:00",
   min_members: 22,
-  max_members: 40,
+  max_members: 36,
   status: "Pending",
   price: 5000
 )
 
 group4 = Group.create!(
-  field_id: field1.id,
+  field: field2,
   date: "2019-09-20",
-  start_time: "16:00",
-  end_time: "18:00",
-  min_members: 22,
-  max_members: 40,
+  start_time: "9:00",
+  end_time: "10:00",
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group5 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-21",
-  start_time: "09:00",
-  end_time: "11:00",
-  min_members: 22,
-  max_members: 40,
+  field: field2,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "12:00",
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group6 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-21",
-  start_time: "11:00",
+  field: field2,
+  date: "2019-09-20",
+  start_time: "12:00",
   end_time: "13:00",
-  min_members: 22,
-  max_members: 40,
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group7 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-21",
+  field: field2,
+  date: "2019-09-20",
   start_time: "14:00",
-  end_time: "16:00",
-  min_members: 22,
-  max_members: 40,
+  end_time: "15:00",
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group8 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-21",
-  start_time: "16:00",
-  end_time: "18:00",
-  min_members: 22,
-  max_members: 40,
+  field: field3,
+  date: "2019-09-20",
+  start_time: "9:00",
+  end_time: "10:00",
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group9 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-22",
-  start_time: "09:00",
-  end_time: "11:00",
-  min_members: 22,
-  max_members: 40,
+  field: field3,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "12:00",
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group10 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-22",
-  start_time: "11:00",
+  field: field3,
+  date: "2019-09-20",
+  start_time: "12:00",
   end_time: "13:00",
-  min_members: 22,
-  max_members: 40,
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group11 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-22",
+  field: field3,
+  date: "2019-09-20",
   start_time: "14:00",
-  end_time: "16:00",
-  min_members: 22,
-  max_members: 40,
+  end_time: "15:00",
+  min_members: 10,
+  max_members: 15,
   status: "Pending",
-  price: 5000
+  price: 200
 )
 
 group12 = Group.create!(
-  field_id: field1.id,
-  date: "2019-09-22",
-  start_time: "16:00",
-  end_time: "18:00",
+  field: field4,
+  date: "2019-09-20",
+  start_time: "09:00",
+  end_time: "11:00",
   min_members: 22,
-  max_members: 40,
+  max_members: 36,
+  status: "Pending",
+  price: 2000
+)
+
+group13 = Group.create!(
+  field: field4,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "13:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 2000
+)
+
+group14 = Group.create!(
+  field: field4,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "16:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 2000
+)
+
+group15 = Group.create!(
+  field: field5,
+  date: "2019-09-20",
+  start_time: "09:00",
+  end_time: "11:00",
+  min_members: 22,
+  max_members: 36,
   status: "Pending",
   price: 5000
 )
 
-# group13 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-20",
-#   start_time: "10:00",
-#   end_time: "11:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group16 = Group.create!(
+  field: field5,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "13:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 5000
+)
 
-# group14 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-20",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group17 = Group.create!(
+  field: field5,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "16:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 5000
+)
 
-# group15 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-20",
-#   start_time: "14:00",
-#   end_time: "15:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group18 = Group.create!(
+  field: field6,
+  date: "2019-09-20",
+  start_time: "9:00",
+  end_time: "10:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group16 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-20",
-#   start_time: "15:00",
-#   end_time: "16:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group19 = Group.create!(
+  field: field6,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "12:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group17 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-21",
-#   start_time: "10:00",
-#   end_time: "11:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group20 = Group.create!(
+  field: field6,
+  date: "2019-09-20",
+  start_time: "12:00",
+  end_time: "13:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group18 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-21",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group21 = Group.create!(
+  field: field6,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "15:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group19 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-21",
-#   start_time: "14:00",
-#   end_time: "15:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group22 = Group.create!(
+  field: field7,
+  date: "2019-09-20",
+  start_time: "09:00",
+  end_time: "11:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 5000
+)
 
-# group20 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-21",
-#   start_time: "15:00",
-#   end_time: "16:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group23 = Group.create!(
+  field: field7,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "13:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 5000
+)
 
-# group21 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-22",
-#   start_time: "10:00",
-#   end_time: "11:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group24 = Group.create!(
+  field: field7,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "16:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 5000
+)
 
-# group22 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-22",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group25 = Group.create!(
+  field: field8,
+  date: "2019-09-20",
+  start_time: "9:00",
+  end_time: "10:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group23 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-22",
-#   start_time: "14:00",
-#   end_time: "15:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group26 = Group.create!(
+  field: field8,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "12:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group24 = Group.create!(
-#   field_id: field2.id,
-#   date: "2019-09-22",
-#   start_time: "15:00",
-#   end_time: "16:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 200
-# )
+group27 = Group.create!(
+  field: field8,
+  date: "2019-09-20",
+  start_time: "12:00",
+  end_time: "13:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group25 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-20",
-#   start_time: "10:00",
-#   end_time: "11:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group28 = Group.create!(
+  field: field8,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "15:00",
+  min_members: 10,
+  max_members: 15,
+  status: "Pending",
+  price: 200
+)
 
-# group26 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-20",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group29 = Group.create!(
+  field: field13,
+  date: "2019-09-20",
+  start_time: "9:00",
+  end_time: "10:00",
+  min_members: 6,
+  max_members: 10,
+  status: "Pending",
+  price: 45
+)
 
-# group27 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-20",
-#   start_time: "14:00",
-#   end_time: "15:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group30 = Group.create!(
+  field: field13,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "12:00",
+  min_members: 6,
+  max_members: 10,
+  status: "Pending",
+  price: 45
+)
 
-# group28 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-20",
-#   start_time: "15:00",
-#   end_time: "16:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group31 = Group.create!(
+  field: field13,
+  date: "2019-09-20",
+  start_time: "12:00",
+  end_time: "13:00",
+  min_members: 6,
+  max_members: 10,
+  status: "Pending",
+  price: 45
+)
 
-# group29 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-21",
-#   start_time: "10:00",
-#   end_time: "11:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group32 = Group.create!(
+  field: field13,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "15:00",
+  min_members: 6,
+  max_members: 10,
+  status: "Pending",
+  price: 45
+)
 
-# group30 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-21",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group33 = Group.create!(
+  field: field18,
+  date: "2019-09-20",
+  start_time: "9:00",
+  end_time: "10:00",
+  min_members: 14,
+  max_members: 22,
+  status: "Pending",
+  price: 50
+)
 
-# group31 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-21",
-#   start_time: "14:00",
-#   end_time: "15:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group34 = Group.create!(
+  field: field18,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "12:00",
+  min_members: 14,
+  max_members: 22,
+  status: "Pending",
+  price: 45
+)
 
-# group32 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-21",
-#   start_time: "15:00",
-#   end_time: "16:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group35 = Group.create!(
+  field: field18,
+  date: "2019-09-20",
+  start_time: "12:00",
+  end_time: "13:00",
+  min_members: 14,
+  max_members: 22,
+  status: "Pending",
+  price: 45
+)
 
-# group33 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-22",
-#   start_time: "10:00",
-#   end_time: "11:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group36 = Group.create!(
+  field: field18,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "15:00",
+  min_members: 14,
+  max_members: 22,
+  status: "Pending",
+  price: 45
+)
 
-# group34 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-22",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group37 = Group.create!(
+  field: field23,
+  date: "2019-09-20",
+  start_time: "09:00",
+  end_time: "11:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 15000
+)
 
-# group35 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-22",
-#   start_time: "14:00",
-#   end_time: "15:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
+group38 = Group.create!(
+  field: field23,
+  date: "2019-09-20",
+  start_time: "11:00",
+  end_time: "13:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 15000
+)
 
-# group36 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-22",
-#   start_time: "15:00",
-#   end_time: "16:00",
-#   min_members: 10,
-#   max_members: 16,
-#   status: "Pending",
-#   price: 180
-# )
-
-# group37 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-20",
-#   start_time: "09:00",
-#   end_time: "11:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group38 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-20",
-#   start_time: "11:00",
-#   end_time: "13:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group39 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-20",
-#   start_time: "14:00",
-#   end_time: "16:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group40 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-20",
-#   start_time: "16:00",
-#   end_time: "18:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group41 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-21",
-#   start_time: "09:00",
-#   end_time: "11:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group42 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-21",
-#   start_time: "11:00",
-#   end_time: "13:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group43 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-21",
-#   start_time: "14:00",
-#   end_time: "16:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group44 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-21",
-#   start_time: "16:00",
-#   end_time: "18:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group45 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-22",
-#   start_time: "09:00",
-#   end_time: "11:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group46 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-22",
-#   start_time: "11:00",
-#   end_time: "13:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group47 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-22",
-#   start_time: "14:00",
-#   end_time: "16:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-# group48 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-22",
-#   start_time: "16:00",
-#   end_time: "18:00",
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# )
-
-
-# 5.times do
-#   array = [Time.parse("9:00"),"10:00","11:00","12:00","13:00"]
-#   item_deleted = array.delete_at(1)
-#   Group.create(field: field5,
-#   date:  Date.today + 15,
-#   start_time: item_deleted,
-#   end_time: item_deleted + 1 ,
-#   min_members: 22,
-#   max_members: 40,
-#   status: "Pending",
-#   price: 3000
-# ))
-# end
-
-
-
-# group = Group.create!(
-#   field_id: field.id,
-#   date: "2019-09-",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 12,
-#   status: "Pending",
-#   price: 40
-# )
-
-
-
-
-# group1 = Group.create!(
-#   field_id: field3.id,
-#   date: "2019-09-04",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 12,
-#   status: "Pending",
-#   price: 40
-# )
-
-# group2 = Group.create!(
-#   field_id: field4.id,
-#   date: "2019-09-04",
-#   start_time: "12:00",
-#   end_time: "13:00",
-#   min_members: 10,
-#   max_members: 12,
-#   status: "Pending",
-#   price: 40
-# )
+group39 = Group.create!(
+  field: field23,
+  date: "2019-09-20",
+  start_time: "14:00",
+  end_time: "16:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Pending",
+  price: 15000
+)
 
 puts "Creating new group members"
 
+
 groupmember1 = GroupMember.create!(
-  user_id: user1.id,
-  group_id: group1.id,
+  user: user11,
+  group: group30,
 )
 
-# groupmember2 = GroupMember.create!(
-#   user_id: user3.id,
-#   group_id: group1.id,
-# )
+groupmember2 = GroupMember.create!(
+  user: user13,
+  group: group30,
+)
 
-# groupmember3 = GroupMember.create!(
-#   user_id: user4.id,
-#   group_id: group1.id,
-# )
+groupmember3 = GroupMember.create!(
+  user: user14,
+  group: group30,
+)
 
-# groupmember4 = GroupMember.create!(
-#   user_id: user5.id,
-#   group_id: group1.id,
-# )
+groupmember4 = GroupMember.create!(
+  user: user15,
+  group: group30,
+)
 
-# groupmember5 = GroupMember.create!(
-#   user_id: user6.id,
-#   group_id: group1.id,
-# )
 
-# groupmember6 = GroupMember.create!(
-#   user_id: user7.id,
-#   group_id: group1.id,
-# )
-
-# groupmember7 = GroupMember.create!(
-#   user_id: user8.id,
-#   group_id: group1.id,
-# )
-
-# groupmember8 = GroupMember.create!(
-#   user_id: user9.id,
-#   group_id: group1.id,
-# )
-
-# groupmember9 = GroupMember.create!(
-#   user_id: user10.id,
-#   group_id: group1.id,
-# )
-
+Group.all.each do |group|
+  @overdue = User.where("id >= ?", 11).sample
+  groupmember = GroupMember.create!(
+  user: @overdue,
+  group: group,
+)
+end
 
 
 
