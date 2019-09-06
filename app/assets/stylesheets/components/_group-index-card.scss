@@ -1,0 +1,25 @@
+.card-contain {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.group-index-card {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 5px 5px 3px #000000;
+  margin-bottom: 15px;
+  padding: 5px 15px 5px 15px;
+}
+
+.green {
+  color: $solid-btn-green;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.stadium {
+  img {
+    height: 245px;
+    object-fit: cover;
+  }
+}

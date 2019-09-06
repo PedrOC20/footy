@@ -1,12 +1,29 @@
-<div
-  id="map"
-  style="width: 100%;
-  height: 300px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+<% if user_signed_in? %>
+  <%= render "/shared/navbar" %>
+<% else %>
+  <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn", id: "homepage-log-in-btn" %>
+<% end %>
+
+<div class="search-index">
+  <%= render "/groups/search-form-groups-index" %>
+</div>
+
+<div class="container">
+  <%= render "/groups/search-filter" %>
+</div>
+
+<h3 class="text-center my-2" >Search Results:</h3>
+
+<div class="container">
+  <div
+    id="map"
+    style="width: 100%;
+    height: 300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
 
 <% @groups.each do |group| %>
-  <%= render "card", group: group %>
-  <%= link_to "Show Group", group %>
+  <%= render "/shared/group-index-card", group: group %>
 <% end %>
