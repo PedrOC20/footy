@@ -19,8 +19,21 @@
 
 .stadium {
   img {
-    height: 245px;
+    height: 169px;
     max-width: 100%;
     object-fit: cover;
   }
+}
+
+.bord-left {
+  border-left: 1px solid white;
+  padding-left: 10px !important;
+}
+
+.price-group-card {
+  float: left;
+}
+
+.members-p {
+  padding-left: 15px;
 }
