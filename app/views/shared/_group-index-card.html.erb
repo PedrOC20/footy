@@ -9,22 +9,28 @@
       <div class="col-9 px-0 py-0">
         <div class="col-12 group-index-card">
           <h3 class="mb-0 bold"><%= group.field.name %></h2>
-          <p><%= group.date.strftime("%-d %B") %>, <%= group.start_time.strftime("%R") %>-<%= group.end_time.strftime("%R") %></p>
-          <p class="mt-1" style="font-size: 14px"><%= group.field.location %></p>
+          <p class="location-search-group-card"><%= group.start_time.strftime("%R") %>-<%= group.end_time.strftime("%R") %>, <%= group.date.strftime("%-d %B") %></p>
+          <p class="mt-1 location-search-group-card" style="font-size: 14px"><%= group.field.location %></p>
           <div class="row mb-2 mt-2">
             <div class="col-2 pl-3">
               <% if group.field.locker_room %>
                 <i class="fas fa-shower green"></i>
+              <% else %>
+                <i class="fas fa-shower gray"></i>
               <% end %>
             </div>
             <div class="col-1 pl-2 pr-2 mr-3">
               <% if group.field.parking %>
                 <i class="fas fa-parking green"></i>
+              <% else %>
+                <i class="fas fa-parking gray"></i>
               <% end %>
             </div>
             <div class="col-2 pl-2 pr-0">
               <%if group.field.indoor %>
                 <i class="fas fa-warehouse green"></i>
+              <% else %>
+                <i class="fas fa-warehouse gray"></i>
               <% end %>
             </div>
             <div class="col-3 pl-0 bord-left">

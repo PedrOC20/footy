@@ -1,16 +1,20 @@
 .card-contain {
   margin-right: 15px;
   margin-left: 15px;
+  margin-bottom: 15px;
 }
 .group-index-card {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 5px 5px 3px #000000;
-  margin-bottom: 15px;
   padding: 5px 15px 5px 15px;
 }
 
 .green {
   color: $solid-btn-green;
+}
+
+.gray {
+  color: lightgray;
 }
 
 .bold {
@@ -19,9 +23,11 @@
 
 .stadium {
   img {
-    height: 169px;
+    position: absolute;
+    height: 100%;
     max-width: 100%;
     object-fit: cover;
+    box-shadow: 0px 5px 3px #000000;
   }
 }
 
@@ -36,4 +42,10 @@
 
 .members-p {
   padding-left: 15px;
+}
+
+.location-search-group-card {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
