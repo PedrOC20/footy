@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :check_if_owner, only: [:create]
-  before_action :check_if_player, only: [:index, :show, :join]
+  before_action :check_if_player, only: [:join]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @groups = policy_scope(Group)

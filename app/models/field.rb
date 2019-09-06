@@ -12,6 +12,7 @@ class Field < ApplicationRecord
   validates :indoor, exclusion: { in: [nil] }
   belongs_to :user
   has_many :groups
+  has_many :group_members, through: :groups
   mount_uploader :photo, PhotoUploader
 
   geocoded_by :location
