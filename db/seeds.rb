@@ -39,7 +39,7 @@ user1 = User.create!(
   last_name: "Vieira",
   username: "Orelhas",
   birth_date: "1949-06-22",
-  avatar: 'https://cdn5.jornaldenegocios.pt/images/2019-07/img_817x460$2019_07_26_11_33_53_358120.jpg'
+  remote_avatar_url: 'https://cdn5.jornaldenegocios.pt/images/2019-07/img_817x460$2019_07_26_11_33_53_358120.jpg'
 )
 
 # user2 = User.create!(
@@ -397,7 +397,7 @@ field1 = Field.create!(
   indoor: false,
   description: "Estádio da Luz, officially named Estádio do Sport Lisboa e Benfica, was built to provide Benfica with a new and modern home, and to serve as the playing venue for the Euro 2004 final. Estádio da Luz got built in place of the old Estádio da Luz. Construction works started in 2002, and in March 2003 Benfica played their last game at the partly demolished old stadium. The new stadium opened on the 25th of October 2003 with a match between Benfica and Uruguayan side Club Nacional (2-1). During the Euro 2004 Championships, Estadio da Luz hosted three group matches, the quarter-final between Portugal and England (2-2), and the final between Greece and Portugal (1-0). In 2014, the stadium hosted the Champions League final between Real Madrid and Atletico Madrid (4-1).",
   user_id: user1.id,
-  photo: 'https://www.stadiumguide.com/wp-content/uploads/lisboa_top.jpg'
+  remote_photo_url: 'https://www.stadiumguide.com/wp-content/uploads/lisboa_top.jpg'
 )
 
 # field2 = Field.create!(
