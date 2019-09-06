@@ -24,6 +24,12 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     authorize @group
+    @markers =
+      {
+        lat: @group.field.latitude,
+        lng: @group.field.longitude
+        # infoWindow: render_to_string(partial: "info_window", locals: { group: group })
+      }
   end
 
   def create

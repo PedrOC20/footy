@@ -24,5 +24,7 @@
 </div>
 
 <% @groups.each do |group| %>
-  <%= render "/shared/group-index-card", group: group %>
+  <%= link_to group, style:"color: white" do %>
+    <%= render "/shared/group-index-card", group: group %>
+  <% end %>
 <% end %>
