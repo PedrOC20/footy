@@ -52,10 +52,7 @@
       <% end  %>
     </div>
   </div>
+  <div class="row log-in-row-sign-up-page">
+    <%= link_to "Log in", new_session_path(resource_name), class: "sign-up-btn", id: "homepage-sign-up-btn" %>
+  </div>
 </div>
-
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name), class: "sign-up-btn", id: "homepage-sign-up-btn" %>
-<% end %>
-
-

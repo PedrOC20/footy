@@ -4,7 +4,7 @@
   background-position: 45% 0px;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100%;
 }
 
 #homepage-log-in-btn {
@@ -23,7 +23,11 @@
 #value-prop {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   text-align: center;
-  padding-top: 62px;
+}
+
+.value-prop-row {
+  padding-top: 40px;
+  padding-bottom: 22px;
 }
 
 #search-phrase {
@@ -38,12 +42,6 @@
   #go-solid-btn-homepage {
     border: none;
   }
-}
-
-#homepage-sign-up-btn {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
 }
 
 .ap-dataset-places {
@@ -70,4 +68,8 @@
 
 .ap-suggestion-icon {
   display: none;
+}
+
+.sign-up-btn-row {
+  padding: 107px 0px 15px 15px;
 }
