@@ -23,6 +23,9 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    #@chat_room = @group.chat_room.includes(messages: :group_member)
+    @chat_room = ChatRoom.includes(messages: :group_member).find(@group.chat_room.id)
+
     authorize @group
     @markers =
       {
@@ -77,6 +80,4 @@ class GroupsController < ApplicationController
   def check_if_player
     redirect_to root_path, alert: "Action not allowed!" unless current_user.Player?
   end
-
-
 end
