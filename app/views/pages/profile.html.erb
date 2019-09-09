@@ -1,0 +1,44 @@
+<%= render "/shared/navbar" %>
+<div style="padding-top: 120px; padding-bottom: 20px;">
+  <h2 class="text-center">MY PROFILE</h2>
+</div>
+
+<div class="back-transp-black my-profile-container">
+  <div class="container profile">
+    <div class="row justify-content-center image-my-profile">
+      <%= cl_image_tag current_user.avatar, class: "lg-avatar" %>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 my-profile-info">
+        <% if current_user.username.nil? %>
+          <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+        <% else %>
+          <h3><%= current_user.username %></h3>
+        <% end %>
+      </div>
+    </div>
+    <div class="row pt-3">
+      <div class="col-12">
+        <ul class="profile-list">
+          <li class="d-flex">
+            <i class="fas fa-address-card grey pr-2"></i> <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+          </li>
+          <li class="d-flex">
+            <i class="fas fa-envelope grey pr-2" style="font-size: 27px"></i><p style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= current_user.email %></p>
+          </li>
+          <li class="d-flex justify-content-between">
+            <p><i class="far fa-futbol grey pr-2" style="font-size: 27px"></i><%= current_user.role %></p>
+            <%= link_to "My Bookings", my_bookings_path, class: "underline" %>
+          </li>
+          <li id="field_icon" class="d-flex justify-content-center">
+            <%= image_tag("field_icon.png") %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <%= link_to "EDIT MY PROFILE", edit_user_registration_path, class: "mb-3 solid-btn edit-profile-btn" %>
+    </div>
+  </div>
+</div>
+

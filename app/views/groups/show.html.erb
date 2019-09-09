@@ -8,55 +8,146 @@
   <%= link_to "javascript:history.back()", class:"link-home" do %>
     <i class="fas fa-chevron-left"></i>
   <% end %>
-  <a id="a-ex"href="#map">Location</a>
+  <a id="a-ex"href="#map-show">Location</a>
   <p>|</p>
-  <a href="#details-title">Details</a>
+  <a href="#google-maps">Details</a>
   <p>|</p>
-  <a href="#field-img">Description</a>
+  <a href="#field-size">Description</a>
   <p>|</p>
-  <a id="a-ex"href="#reviews">Reviews</a>
+  <a id="a-ex"href="#reviews-row">Reviews</a>
 </div>
 
 <div class="field-name-show-group">
-  <h2><%= @group.field.name %></h2>
+  <h3><%= @group.field.name %></h3>
 </div>
 
-<div class="container back-transp-black">
-  <div class="field-img-show-group">
-    <%= cl_image_tag(@group.field.photo) %>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <p style="font-weight: bold">Location:</p>
-      <div
-        id="map"
-        style="width: 100%;
-        height: 300px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-      ></div>
-      <h3 class="text-center"><%= @group.field.location %></h2>
+<div class="back-transp-black">
+  <div class="container">
+    <div class="row">
+      <div id="map-show" class="field-img-show-group">
+        <%= cl_image_tag(@group.field.photo) %>
+        <div class="overlay-info-div">
+          <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+          <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
+          <% if @group.users.include?(current_user) %>
+            <%= link_to "See My Group", group_path(@group), class: "solid-btn with-shadow", style:"color: black;" %>
+          <% else %>
+            <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn with-shadow", style:"color: black;" %>
+          <% end %>
+        </div>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p id="google-maps" style="font-weight: bold" class="mt-2">Location:</p>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 200px;" class="mt-2"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+        <p class="mt-1"><%= @group.field.location %></p>
+        <%= link_to "https://www.google.com/maps/search/?api=1&query=#{@markers[:lat]},#{@markers[:lng]}", target: "_blank" do%>
+          <p class="mt-2 maps-link pb-2">Open in Google Maps</p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p style="font-weight: bold" class="mt-2">Details:</p>
+        <ul id="details-list" class="list-details mt-1 pb-2 mb-0">
+          <li>
+            <p>Parking:
+              <% if @group.field.parking %>
+                <i class="fas fa-check-circle green-icon"></i>
+              <% else %>
+                <i class="fas fa-times-circle red-icon"></i>
+              <% end %>
+            </p>
+          </li>
+          <li>
+            <p>Locker Room:
+              <% if @group.field.locker_room %>
+                <i class="fas fa-check-circle green-icon"></i>
+              <% else %>
+                <i class="fas fa-times-circle red-icon"></i>
+              <% end %>
+            </p>
+          </li>
+          <li>
+            <p>Indoors:
+              <% if @group.field.indoor %>
+                <i class="fas fa-check-circle green-icon"></i>
+              <% else %>
+                <i class="fas fa-times-circle red-icon"></i>
+              <% end %>
+            </p>
+          </li>
+          <li>
+            <p id="field-size">Field Size: <strong><%= @group.field.field_size %> vs <%= @group.field.field_size %></strong></p>
+          </li>
+          <li>
+            <p>Field Type: <strong><%= @group.field.field_type %></strong></p>
+          </li>
+          <li style="display: inline-flex;">
+            <p>Members: <strong><%= @group.group_members.count %>/<%= @group.max_members %></strong> <p style="font-size: 14px; padding-left: 10px;">(minimum players: <%= @group.min_members %>)</p></p>
+          </li>
+          <li style="display: inline-flex;">
+            <p>Current Price: <strong><%= @group.price / @group.group_members.count %> €</strong> <p style="font-size: 14px; padding-left: 10px;">(<%= @group.price %>€ / <%= @group.group_members.count %>)</p></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p style="font-weight: bold" class="mt-2">Description:</p>
+        <p id="description-border" class="mt-1 pb-2" style="text-align: justify"><%= @group.field.description %></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p style="font-weight: bold" class="mt-2">Reviews:</p>
+      </div>
+    </div>
+    <% @group.group_members.each do |user| %>
+      <% if !user.field_review_description.nil? %>
+        <% arr << user %>
+        <div class="row">
+          <div class="avatar-link">
+            <div class="col-12 d-flex align-items-center pt-2">
+              <%= image_tag("avatar_player.jpg") %>
+              <p class="pl-1"><strong><%= user.user.first_name %></strong></p>
+              <i class="fas fa-star yellow-icon pl-1"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="review-message">
+              <p><%= user.field_review_description %></p>
+              <p style="font-size: 12px; font-style: italic; text-align: right;"><%= user.created_at %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
-<!-- if user is not alreay a group member of that group -->
-
-<%# if @group.group_members.includes?(current_user) %>
-
-
-<% if @group.users.include?(current_user) %>
-  <p>You are already in this group</p>
-<% else %>
-  <%= link_to "Join Group", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}  %>
-<% end %>
-
-<% @group.group_members.each do |review| %>
-  <% if review.field_review_rating.present? %>
-    <p>Rating: <%= review.field_review_rating %></p>
-    <p>Description: <%= review.field_review_description %></p>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center mt-2 mb-2">
+    <% if @group.users.include?(current_user) %>
+      <%= link_to "See My Group", group_path(@group), class: "solid-btn", style:"color: black;" %>
+    <% else %>
+      <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn", style:"color: black;" %>
+    <% end %>
+  </div>
+</div>
 
 <% if @group.users.include?(current_user) %>
   <%= link_to 'Chat Room', group_chat_room_path(@group, @chat_room) %>

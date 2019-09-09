@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   # List my bookings as a player
   get "my_bookings", to: 'group_members#index'
   patch "my_bookings/:id", to: 'group_members#update', as: 'group_member'
+  get "my_profile", to: 'pages#profile', as: 'profile'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
