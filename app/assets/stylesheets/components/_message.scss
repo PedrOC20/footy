@@ -54,7 +54,6 @@
 }
 
 .message-content {
-  justify-content: flex-end;
   padding-right: 62px;
   margin-bottom: 15px;
   p {
@@ -62,4 +61,8 @@
     background: rgba(255, 255, 255, 0.15);
     border-radius: 10px;
   }
+}
+
+.flex-end-message {
+  justify-content: flex-end;
 }
