@@ -1,5 +1,5 @@
 function answer() {
-  const messagesContainer = document.querySelector('.messages');
+  const messagesContainer = document.querySelector('.mess-cont');
   messagesContainer.insertAdjacentHTML('beforeend', '<%= j render "message", message: @message, user_is_messages_author: true %>');
   const input = document.querySelector('#message_content');
   input.value = '';
