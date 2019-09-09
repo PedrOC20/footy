@@ -14,7 +14,7 @@
   <p>|</p>
   <a href="#field-size">Description</a>
   <p>|</p>
-  <a id="a-ex"href="#reviews">Reviews</a>
+  <a id="a-ex"href="#reviews-row">Reviews</a>
 </div>
 
 <div class="field-name-show-group">
@@ -23,19 +23,29 @@
 
 <div class="back-transp-black">
   <div class="container">
-
     <div class="row">
       <div id="map-show" class="field-img-show-group">
         <%= cl_image_tag(@group.field.photo) %>
+        <div class="overlay-info-div">
+          <h2><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+          <p>(minimum <%= @group.min_members %> players)</p>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-12">
         <p id="google-maps" style="font-weight: bold" class="mt-2">Location:</p>
+        <div
+          id="map"
+          style="width: 100%;
+          height: 200px;" class="mt-2"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
         <p class="mt-1"><%= @group.field.location %></p>
         <%= link_to "https://www.google.com/maps/search/?api=1&query=#{@markers[:lat]},#{@markers[:lng]}", target: "_blank" do%>
-          <p class="text-center mt-2 maps-link pb-2">Open in Google Maps</p>
+          <p class="mt-2 maps-link pb-2">Open in Google Maps</p>
         <% end %>
       </div>
     </div>
@@ -100,40 +110,40 @@
       </div>
     </div>
     <% @group.group_members.each do |user| %>
-      <div class="row">
-        <div class="avatar-link">
-          <div class="col-12 d-flex align-items-center pt-2">
-            <%= image_tag("avatar_player.jpg") %>
-            <p class="pl-1"><strong><%= user.user.first_name %></strong></p>
-            <i class="fas fa-star yellow-icon pl-1"></i>
+      <% if !user.field_review_description.nil? %>
+        <div class="row">
+          <div class="avatar-link">
+            <div class="col-12 d-flex align-items-center pt-2">
+              <%= image_tag("avatar_player.jpg") %>
+              <p class="pl-1"><strong><%= user.user.first_name %></strong></p>
+              <i class="fas fa-star yellow-icon pl-1"></i>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <p class="review-message"><%= user.field_review_description %> Or my review is something that I think this field is awesome because yes or note maybe. What?</p>
+        <div class="row">
+          <div class="col-12">
+            <div class="review-message">
+              <p><%= user.field_review_description %></p>
+              <p style="font-size: 12px; font-style: italic; text-align: right;"><%= user.created_at %></p>
+            </div>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
+    <div id="reviews-row" class="row mt-2">
+      <div class="col-12">
+        <%= render "/shared/review_form" %>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- if user is not alreay a group member of that group -->
-
-<%# if @group.group_members.includes?(current_user) %>
-
-
-<% if @group.users.include?(current_user) %>
-  <p>You are already in this group</p>
-<% else %>
-  <%= link_to join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn" do %>
-    <p>Join</p>
-  <% end %>
-<% end %>
-
-<% @group.group_members.each do |review| %>
-  <% if review.field_review_rating.present? %>
-    <p>Rating: <%= review.field_review_rating %></p>
-    <p>Description: <%= review.field_review_description %></p>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center mt-2 mb-2">
+    <% if @group.users.include?(current_user) %>
+      <%= link_to "See My Group", group_path(@group), class: "solid-btn", style:"color: black;" %>
+    <% else %>
+      <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn", style:"color: black;" %>
+    <% end %>
+  </div>
+</div>
