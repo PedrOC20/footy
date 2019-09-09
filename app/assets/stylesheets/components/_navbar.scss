@@ -12,6 +12,12 @@
   }
 }
 
+.add-border {
+  border: 20px solid black;
+  transition: 1s ease;
+  margin-top: 0px;
+}
+
 .changeColor {
   background: black !important;
   transition: 1s ease;
