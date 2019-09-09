@@ -24,10 +24,10 @@
             <i class="fas fa-address-card grey pr-2"></i> <p><%= current_user.first_name %> <%= current_user.last_name %></p>
           </li>
           <li class="d-flex">
-            <i class="fas fa-envelope grey pr-2"></i><p><%= current_user.email %></p>
+            <i class="fas fa-envelope grey pr-2" style="font-size: 27px"></i><p style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= current_user.email %></p>
           </li>
           <li class="d-flex justify-content-between">
-            <p><i class="far fa-futbol grey pr-2"></i> <%= current_user.role %></p>
+            <p><i class="far fa-futbol grey pr-2" style="font-size: 27px"></i><%= current_user.role %></p>
             <%= link_to "My Bookings", my_bookings_path, class: "underline" %>
           </li>
           <li id="field_icon" class="d-flex justify-content-center">
