@@ -39,17 +39,17 @@
   margin-bottom: 0;
 }
 
-input.form-control {
-  border: 1px solid #ECECEC;
-  box-shadow: none;
-  font-size: 14px;
-  color: #868686;
-  &:focus {
-    outline: none;
-    border: 1px solid blue;
-    box-shadow: none;
-  }
-}
+// input.form-control {
+//   border: 1px solid #ECECEC;
+//   box-shadow: none;
+//   font-size: 14px;
+//   color: #868686;
+//   &:focus {
+//     outline: none;
+//     border: 1px solid blue;
+//     box-shadow: none;
+//   }
+// }
 
 .chat-header {
   background-color: #4F2F4C;
