@@ -6,12 +6,50 @@
 .field-img-show-group {
   img {
     width: 100%;
+    height: 215px;
     object-fit: cover;
   }
 }
 
 .back-transp-black {
+  margin: 0px 15px;
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 0px 0px 25px 25px;
+}
+
+.list-details {
+  list-style: none;
+  padding-left: 0;
+  border-bottom: 1px solid white;
+}
+
+.green-icon {
+  color: $solid-btn-green;
+}
+
+.red-icon {
+  color: #ff0000;
+}
+
+.yellow-icon {
+  color: #FFE347;
+}
+
+.maps-link {
+  border-bottom: 1px solid white;
+  font-size: 14px;
+}
+
+#description-border {
+  border-bottom: 1px solid white;
+}
+
+.review-message {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 8px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: justify;
 }
