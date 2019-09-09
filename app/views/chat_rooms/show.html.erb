@@ -1,7 +1,11 @@
+<%= render "/shared/navbar" %>
+
+<h3 class="log-in-sign-up-h2 mb-0" class="text-center"><%= @chat_room.name %></h3>
+<p class="text-center"><%= @group.field.location %></p>
+<p class="text-center"><%= @group.start_time.strftime("%R") %>-<%= @group.end_time.strftime("%R") %>, <%= @group.date.strftime("%-d %B") %></p>
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <div class="chat-header"><h4>#<%= @chat_room.name %></h4></div>
       <div class="messages">
         <% @chat_room.messages.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.user ==current_user %>
