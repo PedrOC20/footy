@@ -21,7 +21,9 @@
 
   <ul class="no-list-icon">
     <li class="nav-item avatar-link">
-      <%= link_to image_tag("avatar_player.jpg") %>
+      <%= link_to profile_path do %>
+        <%= cl_image_tag current_user.avatar %>
+      <% end %>
     </li>
   </ul>
 </div>
