@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     member do
       post 'join', to: 'groups#join'
     end
+    resources :chat_rooms, only: [:show] do
+      resources :messages, only: [:create]
+    end
   end
 
   # List my bookings as a player
