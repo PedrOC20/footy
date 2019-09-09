@@ -30,8 +30,14 @@
     <div class="row">
       <%= render "/shared/search_form" %>
     </div>
-    <div class="row sign-up-btn-row">
-      <%= link_to "Sign Up!", new_user_registration_path, class: "sign-up-btn", id: "homepage-sign-up-btn" %>
-    </div>
+    <% if user_signed_in?%>
+      <div class="row no-sign-up-btn">
+
+      </div>
+    <% else %>
+      <div class="row sign-up-btn-row">
+        <%= link_to "Sign Up!", new_user_registration_path, class: "sign-up-btn", id: "homepage-sign-up-btn" %>
+      </div>
+    <% end %>
   </div>
 </div>
