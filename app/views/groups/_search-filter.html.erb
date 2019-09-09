@@ -10,6 +10,7 @@
         <%= f.hidden_field :location, value: params.dig(:search, :location) %>
         <%= f.hidden_field :start_time, value: params.dig(:search, :start_time) %>
         <%= f.hidden_field :end_time, value: params.dig(:search, :end_time) %>
+        <%= f.hidden_field :date, value: params.dig(:search, :date) %>
       </div>
       <div class="filter-checkbox">
         <div class="filter-parking">
@@ -45,7 +46,7 @@
           <%= f.label :field_size %>
           <%= f.select :field_size, options_for_select([["3vs3", "3"], ["5vs5", "5"], ["7vs7", "7"], ["11vs11", "11"], ["All", ""]], params.dig(:search, :field_size)), {}, class: 'form-control select optional mb-2' %>
           <%= f.label :field_type %>
-          <%= f.select :field_type, options_for_select([["Synthetic", "synthetic"], ["Grass", "grass"], ["Wood", "wood"], ["Sand", "sand"], ["Concrete", "concrete"], ["All", ""]], params.dig(:search, :field_type)), {}, class: 'form-control select optional' %>
+          <%= f.select :field_type, options_for_select([["Synthetic", "synthetic"], ["Grass", "grass"], ["Wood", "wood"], ["Concrete", "concrete"], ["All", ""]], params.dig(:search, :field_type)), {}, class: 'form-control select optional' %>
           </div>
         <div class="filter-filter-button">
           <%= f.submit "Filter", class: "sign-up-btn filter-btn-inside-form"%>
