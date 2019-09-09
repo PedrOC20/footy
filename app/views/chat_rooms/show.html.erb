@@ -10,7 +10,7 @@
       <div id="create-message">
         <%= simple_form_for [@group, @chat_room, Message.new], remote: true do |f| %>
           <%#= f.hidden :group %>
-          <%= f.input :content, label: false %>
+          <%= f.input :content, label: false, input_html: { autocomplete: "off" } %>
         <% end %>
       </div>
     </div>
