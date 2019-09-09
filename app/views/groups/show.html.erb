@@ -5,9 +5,7 @@
 <% end %>
 
 <div class="show-nav">
-  <%= link_to "javascript:history.back()", class:"link-home" do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %>
+  <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back %>
   <a id="a-ex"href="#map-show">Location</a>
   <p>|</p>
   <a href="#google-maps">Details</a>
