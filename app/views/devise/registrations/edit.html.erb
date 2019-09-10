@@ -34,6 +34,10 @@
                       required: false,
                       input_html: { autocomplete: "username" } %>
           <%= f.input :email, required: true, autofocus: true %>
+          <% if resource.Player? %>
+            <%= f.input :position,as: :select, collection: ["Goalkeeper", "Defense", "Midfielder", "Forward"] %>
+            <%= f.input :foot,as: :select, collection: ["Right", "Left"] %>
+          <% end %>
           <%= f.input :avatar %>
           <%= f.input :avatar_cache, as: :hidden %>
           <%= f.input :password,
