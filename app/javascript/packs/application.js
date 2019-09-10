@@ -6,10 +6,12 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { navAction } from '../plugins/navbar_slide';
 import { navScroll } from '../plugins/scroll_navbar';
 import { hoverCard } from '../plugins/hover_card';
+import { checkbox } from '../plugins/checkbox';
 
 initMapbox();
 initAutocomplete();
 hoverCard();
+checkbox();
 
 const navbar = document.querySelector(".footy-navbar")
 if(navbar) {

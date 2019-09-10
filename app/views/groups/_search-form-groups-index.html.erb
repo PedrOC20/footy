@@ -2,14 +2,14 @@
   <div class="row">
     <div class="col-12">
       <%= simple_form_for :search, url: groups_path, method: "GET" do |f| %>
-        <%= f.input :location, autofocus: true, input_html: { value: params[:search][:location] }, placeholder: "#{params.dig(:search, :location)}", label: false %>
-        <%= f.input :date, as: :date, html5: true, input_html: { value: params[:search][:date] }, placeholder: "#{params.dig(:search, :date)}", label: false%>
+        <%= f.input :location, autofocus: true, input_html: { value: params[:search][:location] || "Lisboa, Área Metropolitana de Lisboa, Portugal" }, placeholder: "#{params.dig(:search, :location)}", label: false %>
+        <%= f.input :date, as: :date, html5: true, input_html: { value: params[:search][:date] || "2019-09-20" }, placeholder: "#{params.dig(:search, :date)}", label: false%>
         <div class="row no-gutters">
           <div class="col-6">
-            <%= f.input :start_time, as: :time, html5: true, input_html: { value: params[:search][:start_time] }, placeholder: "#{params.dig(:search, :start_time)}", label: false %>
+            <%= f.input :start_time, as: :time, html5: true, input_html: { value: params[:search][:start_time] || '10:00' }, placeholder: "#{params.dig(:search, :start_time)}", label: false %>
           </div>
           <div class="col-6">
-            <%= f.input :end_time, as: :time, html5: true,input_html: { value: params[:search][:end_time] }, placeholder: "#{params.dig(:search, :end_time)}", label: false %>
+            <%= f.input :end_time, as: :time, html5: true,input_html: { value: params[:search][:end_time] || '16:00' }, placeholder: "#{params.dig(:search, :end_time)}", label: false %>
           </div>
         </div>
         <p id="submit-wrapper"><%= f.submit "Search", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
