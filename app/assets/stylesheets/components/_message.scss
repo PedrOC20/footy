@@ -66,3 +66,13 @@
 .flex-end-message {
   justify-content: flex-end;
 }
+
+.word-wrap {
+  word-wrap: break-word;
+  max-width: 220px;
+}
+
+.transp {
+  background-color: rgba(30, 30, 30, 1);
+  border-radius: 15px 15px 0px 0px;
+}

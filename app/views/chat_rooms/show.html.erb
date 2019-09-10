@@ -7,13 +7,14 @@
 <% end %>
 
 <div class="shadow-round">
-  <div class="container mb-4 mt-2">
-    <div class="row small-font justify-content-end align-items-center pt-1 pr-3">
+  <div class="container mb-2 mt-2">
+    <div class="row small-font justify-content-between align-items-center pt-1 pr-3 transp">
+      <p class="pl-3"><strong><%= @group.group_members.count %></strong> member<%= "s" if @group.group_members.count > 1 %></p>
       <% if @group.status == "Pending" %>
-        <i class="fas fa-circle yellow pr-1"></i><p><%= @group.status %></p>
+        <div class="d-flex align-items-center"><i class="fas fa-circle yellow pr-1"></i><p><%= @group.status %></p></div>
       <% else %>
-        <i class="fas fa-circle green pr-1"></i><p><%= @group.status %></p>
-      <% end %>
+        <div class="d-flex align-items-center"><i class="fas fa-circle green pr-1"></i><p><%= @group.status %></p>
+      <% end %></div>
     </div>
     <div class="row">
       <div class="col-12 mess-cont">
