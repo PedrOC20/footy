@@ -1,0 +1,39 @@
+<% @group_members.each do |group_member| %>
+  <%= link_to group_chat_room_path(group_member.group_id, group_member.group.chat_room_id), style:"color: white" do %>
+    <div class="container mb-3">
+      <div class="row relative-box">
+        <%= cl_image_tag(group_member.group.field.photo, class: "md-avatar", style: "z-index: 1") %>
+        <div class="col-10 booking-card-background">
+          <div class="row justify-content-between" style="padding-left: 60px">
+            <p class="location-search-group-card" style="max-width: 60%"><strong><%= group_member.group.field.name %></strong></p>
+            <% if group_member.group.status == "Pending" %>
+              <div class="d-flex align-items-center"><i class="fas fa-circle yellow small-icon pr-1"></i><p class="status-booking"><%= group_member.group.status %></p></div>
+            <% else %>
+              <div class="d-flex align-items-center"><i class="fas fa-circle green pr-1 small-icon"></i><p class="status-booking"><%= group_member.group.status %></p></div>
+            <% end %>
+          </div>
+          <div class="row justify-content-between pr-1" style="padding-left: 60px">
+            <p class="status-booking location-search-group-card" style="line-height: 10px; max-width: 60%"><%= group_member.group.start_time.strftime("%R") %>-<%= group_member.group.end_time.strftime("%R") %>, <%= group_member.group.date.strftime("%-d %B") %></p>
+            <div class="d-flex">
+              <% if group_member.group.field.parking %>
+                <i class="fas fa-parking green md-icon pr-2"></i>
+              <% end %>
+              <% if group_member.group.field.locker_room %>
+                <i class="fas fa-shower green md-icon pr-2"></i>
+              <% end %>
+              <% if group_member.group.field.indoor %>
+                <i class="fas fa-warehouse green md-icon pr-2"></i>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <p class="status-booking location-search-group-card location-book-p" style="line-height: 10px"><%= group_member.group.field.location %></p>
+          </div>
+          <div class="row">
+            <p><%= group_member.group.chat_room.messages.last.user.first_name %>: <%= group_member.group.chat_room.messages.last.content %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
