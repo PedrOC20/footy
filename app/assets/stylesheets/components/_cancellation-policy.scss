@@ -11,3 +11,12 @@
   border: none;
   color: $solid-btn-green;
 }
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+
+.modal-body{
+    max-height: 450px;
+    overflow-y: auto;
+}

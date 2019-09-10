@@ -9,7 +9,15 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Details about the cancellation policy...</p>
+        <p><strong>Our Policy:</strong> <br> <br>
+          Any cancellation or reschedule made less than [Time Period] will result in a cancellation fee. The amount of the fee will be equal to [Percentage] of the reserved services or [Amount], whichever is more. <br> <br>
+
+          If you are more than [Time Period] late for your service, we may not be able to accommodate you. In this case, the same cancellation fee will apply. We will do our very best to reschedule your service for another time that is convenient to you. <br> <br>
+
+          We require a credit card to hold your appointment. Cancellation fees will be charged to your card on file. <br> <br>
+
+          In the event of a true, unavoidable emergency, all or part of your cancellation fee may be applied to future services.
+        </p>
       </div>
       <div class="modal-footer">
         <%= link_to "Pay and Join", join_group_path(@group), method: "POST", class: "cancellation-btn", style: "color: black;" %>
