@@ -8,8 +8,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :birth_date, presence: true
-  validates :position, inclusion: { in: ["Goalkeeper", "Defense", "Midfielder", "Forward"] }
-  validates :foot, inclusion: { in: ["Right", "Left"] }
+  validates :position, inclusion: { in: [nil, "Goalkeeper", "Defense", "Midfielder", "Forward"] }
+  validates :foot, inclusion: { in: [nil, "Right", "Left"] }
   enum role: [:Player, :Owner, :Admin]
   mount_uploader :avatar, AvatarUploader
   has_many :fields
