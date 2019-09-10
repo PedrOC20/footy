@@ -7,8 +7,10 @@
 
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" id="close-nav">&times;</a>
-        <%= link_to "Search for a match", :root, class: "nav-link" %>
+        <%= link_to "Search for a match", :root, class: "nav-link bord-bot" %>
+        <% if current_user.role == "Owner" %>
         <%= link_to "Rent a field", new_field_path, class: "nav-link bord-bot" %>
+        <% end %>
         <%= link_to "My Profile", profile_path, class: "nav-link" %>
         <%= link_to "My Bookings", my_bookings_path, class: "nav-link" %>
         <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link bord-bot" %>
@@ -21,7 +23,9 @@
 
   <ul class="no-list-icon">
     <li class="nav-item avatar-link">
-      <%= link_to image_tag("avatar_player.jpg") %>
+      <%= link_to profile_path do %>
+        <%= cl_image_tag current_user.avatar %>
+      <% end %>
     </li>
   </ul>
 </div>

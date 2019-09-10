@@ -5,9 +5,7 @@
 <% end %>
 
 <div class="show-nav">
-  <%= link_to "javascript:history.back()", class:"link-home" do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %>
+  <%= link_to '<i class="fas fa-chevron-left"></i>'.html_safe, :back %>
   <a id="a-ex"href="#map-show">Location</a>
   <p>|</p>
   <a href="#google-maps">Details</a>
@@ -27,8 +25,13 @@
       <div id="map-show" class="field-img-show-group">
         <%= cl_image_tag(@group.field.photo) %>
         <div class="overlay-info-div">
-          <h2><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
-          <p>(minimum <%= @group.min_members %> players)</p>
+          <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+          <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
+          <% if @group.users.include?(current_user) %>
+            <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
+          <% else %>
+            <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn with-shadow", style:"color: black;" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -111,6 +114,7 @@
     </div>
     <% @group.group_members.each do |user| %>
       <% if !user.field_review_description.nil? %>
+        <% arr << user %>
         <div class="row">
           <div class="avatar-link">
             <div class="col-12 d-flex align-items-center pt-2">
@@ -130,18 +134,13 @@
         </div>
       <% end %>
     <% end %>
-    <div id="reviews-row" class="row mt-2">
-      <div class="col-12">
-        <%= render "/shared/review_form" %>
-      </div>
-    </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row justify-content-center mt-2 mb-2">
     <% if @group.users.include?(current_user) %>
-      <%= link_to "See My Group", group_path(@group), class: "solid-btn", style:"color: black;" %>
+      <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn", style:"color: black;" %>
     <% else %>
       <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn", style:"color: black;" %>
     <% end %>

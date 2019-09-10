@@ -8,6 +8,9 @@
 puts "Destroying all group members"
 GroupMember.destroy_all
 
+puts "Destroying all chat_rooms"
+ChatRoom.destroy_all
+
 puts "Destroying all groups"
 Group.destroy_all
 
@@ -702,6 +705,11 @@ puts "Creating new groups"
 #   price:
 # )
 
+
+chat_room1 = ChatRoom.create!(
+  name: "Test"
+)
+
 group1 = Group.create!(
   field: field1,
   date: "2019-09-20",
@@ -1162,7 +1170,5 @@ Group.all.each do |group|
   group: group,
 )
 end
-
-
 
 puts "Done!!"

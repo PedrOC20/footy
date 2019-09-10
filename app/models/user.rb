@@ -12,4 +12,5 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   has_many :fields
   has_many :group_members
+  has_many :groups, through: :group_members
 end

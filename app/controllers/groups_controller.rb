@@ -6,7 +6,9 @@ class GroupsController < ApplicationController
   def index
     @groups = policy_scope(Group)
     if params.dig(:search, :location).present? && params.dig(:search, :start_time).present? && params.dig(:search, :end_time).present? && params.dig(:search, :date).present?
+
       @groups = Group.search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
+      @groups = @groups - current_user.groups
 
       if params.dig(:search, :parking).present? || params.dig(:search, :indoor).present? || params.dig(:search, :locker_room).present? || params.dig(:search, :field_type).present? || params.dig(:search, :field_size).present?
         filter_by_field_size
@@ -14,6 +16,7 @@ class GroupsController < ApplicationController
         @filtered_fields = @filtered_fields.by_filter(params.dig(:search, :parking), params.dig(:search)[:indoor], params.dig(:search)[:locker_room])
         fields_groups
       end
+      
       @markers = @groups.map do |group|
         {
           lat: group.field.latitude,
@@ -29,6 +32,9 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    #@chat_room = @group.chat_room.includes(messages: :group_member)
+    @chat_room = ChatRoom.includes(messages: :group_member).find(@group.chat_room.id)
+
     authorize @group
     @markers =
       {

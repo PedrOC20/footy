@@ -5,6 +5,7 @@ const navScroll = () => {
   window.addEventListener("scroll",(e) => {
     if(pageYOffset > 20) {
       nav.classList.add('changeColor');
+      nav.classList.add('add-border');
       if(shownav) {
         shownav.classList.add('changeColor');
       }
@@ -12,6 +13,7 @@ const navScroll = () => {
     };
     if(pageYOffset < 20) {
       nav.classList.remove('changeColor');
+      nav.classList.remove('add-border');
       if(shownav) {
         shownav.classList.remove('changeColor');
       }
