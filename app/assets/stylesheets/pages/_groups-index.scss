@@ -6,3 +6,17 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.nav-no-log {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav-no-log-with-scroll {
+  background: black;
+  border: 20px solid black;
+  transition: 1s ease;
+  margin-top: 0px !important;
+}

@@ -1,7 +1,16 @@
 <% if user_signed_in? %>
   <%= render "/shared/navbar" %>
 <% else %>
-  <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn", id: "homepage-log-in-btn" %>
+<div class="container">
+  <div class="row justify-content-between align-items-center nav-no-log" style="margin-top: 15px; margin-bottom: -60px">
+    <%= link_to '<h2>FOOTY</h2>'.html_safe, :root, class: "footy-link-navbar pl-3" %>
+    <div class="d-flex align-items-center">
+      <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn pr-2" %>
+      <p>|</p>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "pl-2", style: "font-weight: bold; margin-right: 15px"%>
+    </div>
+  </div>
+</div>
 <% end %>
 <div class="search-index">
   <%= render "/groups/search-form-groups-index" %>
