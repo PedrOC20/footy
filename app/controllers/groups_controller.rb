@@ -7,11 +7,12 @@ class GroupsController < ApplicationController
     @groups = policy_scope(Group)
     if params.dig(:search, :location).present? && params.dig(:search, :start_time).present? && params.dig(:search, :end_time).present? && params.dig(:search, :date).present?
       @groups = Group.search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
-      if params.dig(:search, :parking).present? || params.dig(:search, :indoor).present? || params.dig(:search, :locker_room).present? || params.dig(:search, :field_size).present? || params.dig(:search, :field_type).present?
-        # filtered_results
-        # fields_groups
-        @resolts = Field.by_filter(params[:parking], params[:indoor], params[:locker_room], params[:field_type], params[:field_size])
-        @resolts
+
+      if params.dig(:search, :parking).present? || params.dig(:search, :indoor).present? || params.dig(:search, :locker_room).present? || params.dig(:search, :field_type).present? || params.dig(:search, :field_size).present?
+        filter_by_field_size
+        filter_by_field_type
+        @filtered_fields = @filtered_fields.by_filter(params.dig(:search, :parking), params.dig(:search)[:indoor], params.dig(:search)[:locker_room])
+        fields_groups
       end
       @markers = @groups.map do |group|
         {
@@ -26,55 +27,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  # def filtered_results
-
-  #   if params.dig(:search, :parking).present?
-  #     @fields = Field.parking
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :indoor).present?
-  #     @fields = Field.parking.indoor
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present?
-  #     @fields = Field.parking.indoor.locker_room
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present?
-  #     @fields = Field.parking.indoor.locker_room.field_size(params.dig(:search, :field_size))
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.parking.indoor.locker_room.field_size(params.dig(:search, :field_size)).field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.parking.indoor.locker_room.field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :locker_room).present?
-  #     @fields = Field.parking.locker_room
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present?
-  #     @fields = Field.parking.locker_room.field_size(params.dig(:search, :field_size))
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.parking.locker_room.field_size(params.dig(:search, :field_size)).field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :parking).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.parking.locker_room.field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :indoor).present?
-  #     @fields = Field.indoor
-  #   elsif params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present?
-  #     @fields = Field.indoor.locker_room
-  #   elsif params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present?
-  #     @fields = Field.indoor.locker_room.field_size(params.dig(:search, :field_size))
-  #   elsif params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.indoor.locker_room.field_size(params.dig(:search, :field_size)).field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :indoor).present? && params.dig(:search, :locker_room).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.indoor.locker_room.field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :locker_room).present?
-  #     @fields = Field.locker_room
-  #   elsif params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present?
-  #     @fields = Field.locker_room.field_size(params.dig(:search, :field_size))
-  #   elsif params.dig(:search, :locker_room).present? && params.dig(:search, :field_size).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.locker_room.field_size(params.dig(:search, :field_size)).field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :locker_room).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.locker_room.field_type(params.dig(:search, :field_type))
-  #   elsif params.dig(:search, :field_size).present?
-  #     @fields = Field.field_size(params.dig(:search, :field_size))
-  #   elsif params.dig(:search, :field_size).present? && params.dig(:search, :field_type).present?
-  #     @fields = Field.field_size(params.dig(:search, :field_size)).field_type(params.dig(:search, :field_type))
-  #   else
-  #     @fields = Field.field_type(params.dig(:search, :field_type))
-  #   end
-  # end
-
   def show
     @group = Group.find(params[:id])
     authorize @group
@@ -86,11 +38,28 @@ class GroupsController < ApplicationController
       }
   end
 
-  # def fields_groups
-  #   fields_ids = @fields.pluck(:id)
-  #   @groups = Group.where(field: [fields_ids])
-  #   @groups
-  # end
+  def fields_groups
+    fields_ids = @filtered_fields.pluck(:id)
+    @groups = Group.where(field: [fields_ids])
+    @groups
+  end
+
+  def filter_by_field_size
+    if params.dig(:search)[:field_size] == "All"
+      @filtered_fields = Field.all
+    else
+      @filtered_fields = Field.where(field_size: params.dig(:search)[:field_size])
+    end
+  end
+
+
+  def filter_by_field_type
+    if params.dig(:search)[:field_type] == "All"
+      @filtered_fields
+    else
+      @filtered_fields = @filtered_fields.where(field_type: params.dig(:search)[:field_type])
+    end
+  end
 
   def create
     @group = Group.new(group_params)

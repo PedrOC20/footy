@@ -32,30 +32,14 @@ class Field < ApplicationRecord
       .where.not(id: booked_field_ids)
   end
 
-  def self.by_filter(parking = nil, indoor = nil, locker_room = nil, field_size = nil, field_type = nil)
-    return where(parking: parking) if parking
-    return where(parking: parking, indoor: indoor) if parking && indoor
+  def self.by_filter(parking = nil, indoor = nil, locker_room = nil)
     return where(parking: parking, indoor: indoor, locker_room: locker_room) if parking && indoor && locker_room
-    return where(parking: parking, indoor: indoor, locker_room: locker_room, field_size: field_size) if parking && indoor && locker_room && field_size
-    return where(parking: parking, indoor: indoor, locker_room: locker_room, field_size: field_size, field_type: field_type) if parking && indoor && locker_room && field_size && field_type
-    return where(parking: parking, indoor: indoor, locker_room: locker_room, field_type: field_type) if parking && indoor && locker_room && field_type
+    return where(parking: parking, indoor: indoor) if parking && indoor
     return where(parking: parking, locker_room: locker_room) if parking && locker_room
-    return where(parking: parking, locker_room: locker_room, field_size: field_size) if parking && locker_room && field_size
-    return where(parking: parking, locker_room: locker_room, field_size: field_size, field_type: field_type) if parking && locker_room && field_size && field_type
-    return where(parking: parking, locker_room: locker_room, field_type: field_type) if parking && locker_room && field_type
-    return where(indoor: indoor) if indoor
     return where(indoor: indoor, locker_room: locker_room) if indoor && locker_room
-    return where(indoor: indoor, locker_room: locker_room, field_size: field_size) if indoor && locker_room && field_size
-    return where(indoor: indoor, locker_room: locker_room, field_size: field_size, field_type: field_type) if indoor && locker_room && field_size && field_type
-    return where(indoor: indoor, locker_room: locker_room, field_type: field_type) if indoor && locker_room && field_type
+    return where(indoor: indoor) if indoor
+    return where(parking: parking) if parking
     return where(locker_room: locker_room) if locker_room
-    return where(locker_room: locker_room, field_size: field_size) if locker_room && field_size
-    return where(locker_room: locker_room, field_size: field_size, field_type: field_type) if locker_room && field_size && field_type
-    return where(locker_room: locker_room, field_type: field_type) if locker_room && field_type
-    return where(field_size: field_size) if field_size
-    return where(field_size: field_size, field_type: field_type) if field_size && field_type
-    return where(field_type: field_type) if field_type
-
     all
   end
 end
