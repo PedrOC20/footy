@@ -9,7 +9,7 @@ import { hoverCard } from '../plugins/hover_card';
 
 initMapbox();
 initAutocomplete();
-hoverCard();
+// hoverCard();
 
 const navbar = document.querySelector(".footy-navbar")
 if(navbar) {
