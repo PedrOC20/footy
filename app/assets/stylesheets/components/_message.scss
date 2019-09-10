@@ -20,8 +20,9 @@
 }
 
 .mess-cont {
-  max-height: calc(100vh - 285px - 45px - 61px - 30px);
+  max-height: calc(100vh - 295px - 45px - 61px - 30px);
   overflow: scroll;
+  background: rgba(255,255,255, 0.1);
 }
 
 .message {

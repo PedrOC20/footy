@@ -1,7 +1,16 @@
 <% if user_signed_in? %>
   <%= render "/shared/navbar" %>
 <% else %>
-  <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn", id: "homepage-log-in-btn" %>
+<div class="container">
+  <div class="row justify-content-between align-items-center nav-no-log" style="margin-top: 15px; margin-bottom: -60px">
+    <%= link_to '<h2>FOOTY</h2>'.html_safe, :root, class: "footy-link-navbar pl-3" %>
+    <div class="d-flex align-items-center">
+      <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn pr-2" %>
+      <p>|</p>
+      <%= link_to "SIGN UP", new_user_registration_path, class: "pl-2", style: "font-weight: bold; margin-right: 15px"%>
+    </div>
+  </div>
+</div>
 <% end %>
 
 <div class="show-nav">
@@ -30,7 +39,7 @@
           <% if @group.users.include?(current_user) %>
             <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
           <% else %>
-            <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn with-shadow", style:"color: black;" %>
+            <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
           <% end %>
         </div>
       </div>
@@ -139,10 +148,10 @@
 
 <div class="container">
   <div class="row justify-content-center mt-2 mb-2">
-    <% if @group.users.include?(current_user) %>
-      <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn", style:"color: black;" %>
-    <% else %>
-      <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn", style:"color: black;" %>
+    <% if !@group.users.include?(current_user) %>
+      <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
     <% end %>
   </div>
 </div>
+
+<%= render "/shared/cancellation-policy" %>

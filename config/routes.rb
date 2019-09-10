@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
+  mount ActionCable.server => "/cable"
 
   #List groups for each field(only for owner) on the field show action
   resources :fields
