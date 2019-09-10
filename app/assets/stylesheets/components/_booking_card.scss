@@ -22,10 +22,25 @@
 
 .relative-box {
   position: relative;
+  padding-left: 10px;
 }
 
 .location-book-p {
-  line-height: 10px;
+  line-height: 15px;
   max-width: 70%;
-  padding-left: 60px;
+  padding-left: 75px;
+}
+
+.message-show-in-card {
+  padding-left: 75px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+.pd-left-sm-avatar {
+  padding-left: 75px;
 }
