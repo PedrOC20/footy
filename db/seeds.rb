@@ -105,7 +105,7 @@ user7 = User.create!(
   last_name: "Pinto da Costa",
   username: "Pitinho",
   birth_date: "1937-12-28",
-  remote_avatar_url: 'http://images-cdn.impresa.pt/caras/2017-09-24-0.jpg?v=w870h555'
+  # remote_avatar_url: 'http://images-cdn.impresa.pt/caras/2017-09-24-0.jpg?v=w870h555'
 )
 
 user8 = User.create!(
@@ -387,7 +387,7 @@ puts "Creating new fields"
 #   indoor: false,
 #   description: "",
 #   user: user,
-#   remote_photo_url: ''
+# remote_photo_url: ''
 # )
 
 field1 = Field.create!(
