@@ -6,17 +6,18 @@ class GroupsController < ApplicationController
   def index
     @groups = policy_scope(Group)
     if params.dig(:search, :location).present? && params.dig(:search, :start_time).present? && params.dig(:search, :end_time).present? && params.dig(:search, :date).present?
-
-      @groups = Group.search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
-      @groups = @groups - current_user.groups
-
+      if current_user.nil?
+        @groups = Group.search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
+      else
+        @groups = Group.search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
+        @groups = @groups - current_user.groups
+      end
       if params.dig(:search, :parking).present? || params.dig(:search, :indoor).present? || params.dig(:search, :locker_room).present? || params.dig(:search, :field_type).present? || params.dig(:search, :field_size).present?
         filter_by_field_size
         filter_by_field_type
         @filtered_fields = @filtered_fields.by_filter(params.dig(:search, :parking), params.dig(:search)[:indoor], params.dig(:search)[:locker_room])
         fields_groups
       end
-      
       @markers = @groups.map do |group|
         {
           lat: group.field.latitude,
@@ -57,7 +58,6 @@ class GroupsController < ApplicationController
       @filtered_fields = Field.where(field_size: params.dig(:search)[:field_size])
     end
   end
-
 
   def filter_by_field_type
     if params.dig(:search)[:field_type] == "All"
