@@ -7,15 +7,21 @@
     <div class="col-10 offset-1">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
-          <%= f.input :first_name,
-                      required: true,
-                      autofocus: true,
-                      placeholder: "First Name",
-                      input_html: { autocomplete: "first-name" } %>
-          <%= f.input :last_name,
-                      required: true,
-                      placeholder: "Last Name",
-                      input_html: { autocomplete: "last-name" } %>
+          <div class="row no-gutters">
+            <div class="col-6">
+              <%= f.input :first_name,
+                          required: true,
+                          autofocus: true,
+                          placeholder: "First Name",
+                          input_html: { autocomplete: "first-name" } %>
+            </div>
+            <div class="col-6">
+              <%= f.input :last_name,
+                          required: true,
+                          placeholder: "Last Name",
+                          input_html: { autocomplete: "last-name" } %>
+            </div>
+          </div>
           <%= f.input :birth_date, as: :date,
                       placeholder: "Birth Date",
                       start_year: Date.today.year - 90,

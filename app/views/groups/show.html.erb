@@ -28,7 +28,7 @@
           <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
           <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
           <% if @group.users.include?(current_user) %>
-            <%= link_to "See My Group", group_path(@group), class: "solid-btn with-shadow", style:"color: black;" %>
+            <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
           <% else %>
             <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn with-shadow", style:"color: black;" %>
           <% end %>
@@ -140,13 +140,9 @@
 <div class="container">
   <div class="row justify-content-center mt-2 mb-2">
     <% if @group.users.include?(current_user) %>
-      <%= link_to "See My Group", group_path(@group), class: "solid-btn", style:"color: black;" %>
+      <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn", style:"color: black;" %>
     <% else %>
       <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn", style:"color: black;" %>
     <% end %>
   </div>
 </div>
-
-<% if @group.users.include?(current_user) %>
-  <%= link_to 'Chat Room', group_chat_room_path(@group, @chat_room) %>
-<% end %>

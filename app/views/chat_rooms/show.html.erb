@@ -1,28 +1,47 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="chat-header"><h4>#<%= @chat_room.name %></h4></div>
-      <div class="messages">
+<%= render "/shared/navbar" %>
+
+<h3 class="log-in-sign-up-h2 mb-0" class="text-center"><strong><%= @chat_room.name %></strong></h3>
+<p class="text-center"><%= @group.start_time.strftime("%R") %>-<%= @group.end_time.strftime("%R") %>, <%= @group.date.strftime("%-d %B") %></p>
+<%= link_to "https://www.google.com/maps/search/?api=1&query=#{@group.field.latitude},#{@group.field.longitude}", target: "_blank" do%>
+  <p class="pb-2 text-center" style="text-decoration: underline">Get directions</p>
+<% end %>
+
+<div class="shadow-round">
+  <div class="container mb-2 mt-2">
+    <div class="row small-font justify-content-between align-items-center pt-1 pr-3 transp">
+      <p class="pl-3"><strong><%= @group.group_members.count %></strong> member<%= "s" if @group.group_members.count > 1 %></p>
+      <% if @group.status == "Pending" %>
+        <div class="d-flex align-items-center"><i class="fas fa-circle yellow pr-1"></i><p><%= @group.status %></p></div>
+      <% else %>
+        <div class="d-flex align-items-center"><i class="fas fa-circle green pr-1"></i><p><%= @group.status %></p>
+      <% end %></div>
+    </div>
+    <div class="row">
+      <div class="col-12 mess-cont">
         <% @chat_room.messages.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.user ==current_user %>
         <% end %>
       </div>
-      <div id="create-message">
-        <%= simple_form_for [@group, @chat_room, Message.new], remote: true do |f| %>
+    </div>
+    <div class="row justify-content-center">
+      <%= simple_form_for [@group, @chat_room, Message.new], class: "mb-0", remote: true do |f| %>
           <%#= f.hidden :group %>
-          <%= f.input :content, label: false, input_html: { autocomplete: "off" } %>
-        <% end %>
-      </div>
+          <div class="no-bord">
+            <%= f.input :content, label: false, placeholder: "Type here...", input_html: { autocomplete: "off" } %>
+            <p id="submit-wrapper message-send-btn-cont" style="text-align: center; margin-bottom: 10px"><%= f.submit "Send Message", class: "sign-up-btn smaller", id: "send-message-btn" %></p>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>
+
 <% content_for :after_js do %>
   <script>
     scrollLastMessageIntoView();
     App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> }, {
       received: (data) => {
         if (data.current_user_id !== <%= current_user.id %>) {
-          const messagesContainer = document.querySelector('.messages');
+          const messagesContainer = document.querySelector('.mess-cont');
           messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
           scrollLastMessageIntoView();
         }
@@ -30,3 +49,7 @@
     })
   </script>
 <% end %>
+
+
+
+
