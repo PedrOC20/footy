@@ -1,0 +1,20 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content", style="background-color: rgba(0,0,0,0.8)">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Payment & Cancellation Policy</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fas fa-times-circle" style="color: lightgray"></i></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Details about the cancellation policy...</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Pay and Join", join_group_path(@group), method: "POST", class: "cancellation-btn", style: "color: black;" %>
+        <button type="button" class="close-btn" data-dismiss="modal" style="font-size: 18px">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

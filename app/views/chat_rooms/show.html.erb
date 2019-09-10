@@ -2,14 +2,21 @@
 
 <h3 class="log-in-sign-up-h2 mb-0" class="text-center"><strong><%= @chat_room.name %></strong></h3>
 <p class="text-center"><%= @group.start_time.strftime("%R") %>-<%= @group.end_time.strftime("%R") %>, <%= @group.date.strftime("%-d %B") %></p>
-<%= link_to "https://www.google.com/maps/search/?api=1&query=#{@group.field.latitude},#{@group.field.longitude}", target: "_blank" do%>
-  <p class="pb-2 text-center" style="text-decoration: underline">Get directions</p>
+<%= link_to "https://www.google.com/maps/search/?api=1&query=#{@group.field.latitude},#{@group.field.longitude}", class: "text-center", target: "_blank" do%>
+  <div class="d-flex justify-content-center">
+    <i class="fas fa-location-arrow pr-2"></i>
+    <p class="pb-2 text-center" style="text-decoration: underline">Get directions</p>
+  </div>
+<% end %>
+
+<%= link_to group_path(@group) do %>
+  <p class="pb-2 text-center">More info</p>
 <% end %>
 
 <div class="shadow-round">
   <div class="container mb-2 mt-2">
     <div class="row small-font justify-content-between align-items-center pt-1 pr-3 transp">
-      <p class="pl-3"><strong><%= @group.group_members.count %></strong> member<%= "s" if @group.group_members.count > 1 %></p>
+      <p class="pl-3"><strong><%= @group.group_members.count %></strong> player<%= "s" if @group.group_members.count > 1 %> / <%= @group.max_members %></p>
       <% if @group.status == "Pending" %>
         <div class="d-flex align-items-center"><i class="fas fa-circle yellow pr-1"></i><p><%= @group.status %></p></div>
       <% else %>

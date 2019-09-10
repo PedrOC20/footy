@@ -30,7 +30,7 @@
           <% if @group.users.include?(current_user) %>
             <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
           <% else %>
-            <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn with-shadow", style:"color: black;" %>
+            <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
           <% end %>
         </div>
       </div>
@@ -139,10 +139,10 @@
 
 <div class="container">
   <div class="row justify-content-center mt-2 mb-2">
-    <% if @group.users.include?(current_user) %>
-      <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn", style:"color: black;" %>
-    <% else %>
-      <%= link_to "JOIN GROUP!", join_group_path(@group), method: "POST", data: { confirm: "Are you sure you want to join this group?"}, class: "solid-btn", style:"color: black;" %>
+    <% if !@group.users.include?(current_user) %>
+      <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
     <% end %>
   </div>
 </div>
+
+<%= render "/shared/cancellation-policy" %>
