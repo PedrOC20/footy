@@ -6,7 +6,11 @@ class GroupsController < ApplicationController
   def index
     @groups = policy_scope(Group)
     if params.dig(:search, :location).present? && params.dig(:search, :start_time).present? && params.dig(:search, :end_time).present? && params.dig(:search, :date).present?
+
+
       @groups = Group.search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
+
+      @groups = @groups - current_user.groups
 
       @markers = @groups.map do |group|
         {
