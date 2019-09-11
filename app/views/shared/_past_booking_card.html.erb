@@ -1,0 +1,37 @@
+<% @group_members.each do |group_member| %>
+  <% if group_member.group.end_date_time <= DateTime.now %>
+    <%= link_to group_path(group_member.group), style:"color: white" do %>
+      <div class="container mb-3">
+        <div class="row relative-box">
+          <%= cl_image_tag(group_member.group.field.photo, class: "md-avatar", style: "z-index: 1") %>
+          <div class="col-10 booking-card-background">
+            <div class="row justify-content-between" style="padding-left: 75px; padding-top: 2px">
+              <p class=""><strong><%= group_member.group.field.name %></strong></p>
+            </div>
+            <div class="row justify-content-between pr-1" style="padding-left: 75px">
+              <p class="status-booking" style="line-height: 15px"><%= group_member.group.start_time.strftime("%R") %>-<%= group_member.group.end_time.strftime("%R") %>, <%= group_member.group.date.strftime("%-d %B") %></p>
+            </div>
+            <div class="row">
+              <p class="status-booking" style="padding-left: 75px"><%= group_member.group.field.location %></p>
+            </div>
+            <div class="row pd-left-sm-avatar align-items-center justify-content-between" style="position: absolute; bottom: 0px; width: 100%">
+              <div class="d-flex align-items-center">
+                <% if group_member.group.group_members.count <= 3 %>
+                  <% group_member.group.group_members.each do |player| %>
+                    <%= cl_image_tag(player.user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
+                  <% end %>
+                <% else %>
+                  <%= cl_image_tag(group_member.group.group_members[0].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
+                  <%= cl_image_tag(group_member.group.group_members[1].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
+                  <%= cl_image_tag(group_member.group.group_members[2].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
+                  <i class="fas fa-plus-circle small-icon"></i> <p style="font-size: 12px"> <%= group_member.group.group_members.count - 3 %></p>
+                <% end %>
+              </div>
+              <p style="font-size: 12px; padding-right: 15px"><%= group_member.group.group_members.count %>/<%= group_member.group.max_members %> members</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

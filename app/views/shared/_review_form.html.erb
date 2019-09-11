@@ -1,12 +1,13 @@
-<button type="button" class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseAdd" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Add new review <i class="fas fa-plus"></i>
-</button>
-
-<div class="collapse" id="collapseAdd">
-  <h2>Add a new review</h2>
-  <%= simple_form_for group_member do |f| %>
-    <%= f.input :field_review_rating %>
-    <%= f.input :field_review_description %>
-    <%= f.submit "Add review", class: "btn btn-primary" %>
+<div class="row justify-content-center">
+  <%= simple_form_for group_member, class: "mb-0" do |f| %>
+    <div class="no-bord">
+      <div class="rating-div">
+        <%= f.input :field_review_rating, label: false, prompt: "Rating", as: :select, collection: [1, 2, 3, 4, 5] %>
+      </div>
+      <div class="review-desc-div">
+        <%= f.input :field_review_description, label: false, placeholder: "Type here...", input_html: { autocomplete: "off" } %>
+      </div>
+      <p id="submit-wrapper message-send-btn-cont" style="text-align: center; margin-bottom: 10px"><%= f.submit "Send Review", class: "sign-up-btn smaller", id: "send-message-btn" %></p>
+    </div>
   <% end %>
 </div>
