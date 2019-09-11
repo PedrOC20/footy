@@ -11,6 +11,7 @@ import { checkbox } from '../plugins/checkbox';
 import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
+
 initMapbox();
 initAutocomplete();
 checkbox();

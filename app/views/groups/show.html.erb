@@ -119,6 +119,20 @@
           <li style="display: inline-flex;">
             <p>Current Price: <strong><%= @group.price / @group.group_members.count %> €</strong> <p style="font-size: 14px; padding-left: 10px;">(<%= @group.price %>€ / <%= @group.group_members.count %>)</p></p>
           </li>
+          <li>
+            <p>Average Rating:
+              <% if @avg_rating.zero? %>
+                <strong>No Reviews.</strong>
+              <% else %>
+                <% @avg_rating.to_i.times do %>
+                  <i class="fas fa-star yellow" style="font-size: 12px"></i>
+                <% end %>
+                <% (5 - @avg_rating.to_i).times do %>
+                  <i class="fas fa-star gray" style="font-size: 12px"></i>
+                <% end %>
+              <% end %>
+            </p>
+          </li>
         </ul>
       </div>
     </div>
@@ -135,7 +149,7 @@
         <p style="font-weight: bold" class="mt-2">Reviews:</p>
       </div>
     </div>
-    <% if @group.group_members.pluck(:field_review_description).uniq[0].nil? %>
+    <% unless @group_member_has_reviews %>
       <p id="reviews-row" class="pb-2">No Reviews Yet.</p>
     <% end %>
     <% @group.group_members.each do |user| %>
@@ -145,7 +159,14 @@
             <div class="col-12 d-flex align-items-center pt-2">
               <%= image_tag("avatar_player.jpg") %>
               <p class="pl-1"><strong><%= user.user.first_name %></strong></p>
-              <%= user.field_review_rating %>
+              <p id="stars" style="padding-left: 5px;">
+                <% user.field_review_rating.times do %>
+                  <i class="fas fa-star yellow" style="font-size: 12px"></i>
+                <% end %>
+                <% (5 - user.field_review_rating).times do %>
+                  <i class="fas fa-star gray" style="font-size: 12px"></i>
+                <% end %>
+              </p>
             </div>
           </div>
         </div>
@@ -153,14 +174,14 @@
           <div class="col-12">
             <div class="review-message">
               <p><%= user.field_review_description %></p>
-              <p style="font-size: 12px; font-style: italic; text-align: right;"><%= time_ago_in_words(user.created_at) %> ago</p>
+              <p style="font-size: 12px; font-style: italic; text-align: right;"><%= time_ago_in_words(user.updated_at) %> ago</p>
             </div>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
-  <% if @group.end_date_time <= DateTime.now && @group.group_members.where(user: current_user)[0].field_review_description.empty? %>
+  <% if @group.end_date_time <= DateTime.now && @group.group_members.where(user: current_user)[0].field_review_description.nil? %>
     <%= render "shared/review_form", group_member: @group_member %>
   <% end %>
 </div>
