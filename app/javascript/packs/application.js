@@ -12,6 +12,9 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
+// register service worker
+navigator.serviceWorker.register('sw.js');
+
 initMapbox();
 initAutocomplete();
 checkbox();
