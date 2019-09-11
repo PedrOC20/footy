@@ -44,3 +44,22 @@
 .pd-left-sm-avatar {
   padding-left: 75px;
 }
+
+#img-group-book-past {
+  position: relative;
+  z-index: 3;
+  &:before {
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &:after {
+    content: 'Finished';
+    position: absolute;
+    top: 38%;
+    left: 18%;
+  }
+}

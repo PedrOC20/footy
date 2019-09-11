@@ -3,7 +3,9 @@
     <%= link_to group_path(group_member.group), style:"color: white" do %>
       <div class="container mb-3">
         <div class="row relative-box">
-          <%= cl_image_tag(group_member.group.field.photo, class: "md-avatar", style: "z-index: 1") %>
+          <div id="img-group-book-past">
+            <%= cl_image_tag(group_member.group.field.photo, class: "md-avatar", style: "z-index: 1") %>
+          </div>
           <div class="col-10 booking-card-background">
             <div class="row justify-content-between" style="padding-left: 75px; padding-top: 2px">
               <p class=""><strong><%= group_member.group.field.name %></strong></p>
