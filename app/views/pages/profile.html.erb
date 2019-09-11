@@ -4,7 +4,7 @@
 </div>
 
 <div class="back-transp-black my-profile-container">
-  <div class="container profile">
+  <div class="container profile mb-3">
     <div class="row justify-content-center image-my-profile">
       <%= cl_image_tag current_user.avatar, class: "lg-avatar" %>
     </div>
@@ -19,19 +19,52 @@
     </div>
     <div class="row pt-3">
       <div class="col-12">
-        <ul class="profile-list">
+        <ul class="profile-list mb-0">
           <li class="d-flex">
             <i class="fas fa-address-card grey pr-2"></i> <p><%= current_user.first_name %> <%= current_user.last_name %></p>
           </li>
           <li class="d-flex">
             <i class="fas fa-envelope grey pr-2" style="font-size: 27px"></i><p style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= current_user.email %></p>
           </li>
-          <li class="d-flex justify-content-between">
-            <p><i class="far fa-futbol grey pr-2" style="font-size: 27px"></i><%= current_user.role %></p>
+          <li class="row">
+            <% if !current_user.position.nil? %>
+              <div class="col-6">
+                <p><i class="far fa-futbol grey pr-2" style="font-size: 27px"></i><%= current_user.position %></p>
+              </div>
+            <% end %>
+            <% if !current_user.foot.nil? %>
+              <div class="col-6 text-center">
+                <p><i class="fas fa-socks grey pr-2" style="font-size: 27px"></i><%= current_user.foot %></p>
+              </div>
+            <% end %>
+          </li>
+          <li class="d-flex justify-content-center">
             <%= link_to "My Bookings", my_bookings_path, class: "underline" %>
           </li>
           <li id="field_icon" class="d-flex justify-content-center">
-            <%= image_tag("field_icon.png") %>
+            <div class="d-flex" style="position: relative">
+              <%= image_tag("field_icon.png") %>
+              <% if current_user.position == "Goalkeeper" %>
+                <div class="d-flex position-absolute position-gk">
+                  <p class="position-text">GK</p>
+                  <i class="fas fa-running"></i>
+                </div>
+              <% elsif current_user.position == "Defense" %>
+                <div class="d-flex position-absolute position-de">
+                  <p class="position-text">DE</p>
+                  <i class="fas fa-running"></i>
+              <% elsif current_user.position == "Midfielder" %>
+                <div class="d-flex position-absolute position-md">
+                  <p class="position-text">MD</p>
+                  <i class="fas fa-running position-md"></i>
+                </div>
+              <% elsif current_user.position == "Forward" %>
+                <div class="d-flex position-absolute position-fw">
+                  <p class="position-text">FW</p>
+                  <i class="fas fa-running position-fw"></i>
+                </div>
+              <% end %>
+            </div>
           </li>
         </ul>
       </div>
