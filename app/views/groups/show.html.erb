@@ -34,26 +34,28 @@
     <div class="row">
       <div id="map-show" class="field-img-show-group">
         <%= cl_image_tag(@group.field.photo) %>
-        <div class="overlay-info-div">
-          <% if current_user.role == "Player" %>
-            <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
-            <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
-            <% if @group.users.include?(current_user) %>
-              <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
-            <% else %>
-              <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
+        <% if @group.end_date_time > DateTime.now %>
+          <div class="overlay-info-div">
+            <% if current_user.role == "Player" %>
+              <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+              <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
+              <% if @group.users.include?(current_user) && @group.end_date_time > DateTime.now %>
+                <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
+              <% elsif @group.end_date_time > DateTime.now %>
+                <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
+              <% end %>
+            <% elsif current_user.role == "Owner" %>
+              <div class="d-flex justify-content-around" style="width: 100%">
+                <%= link_to group_path(@group) do %>
+                  <p class="edit-field-btn shadow-for-btns-edit-delete">Edit Group</p>
+                <% end %>
+                <%= link_to group_path(@group), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} do %>
+                  <p class="delete-field-btn shadow-for-btns-edit-delete">Delete Group</p>
+                <% end %>
+              </div>
             <% end %>
-          <% elsif current_user.role == "Owner" %>
-            <div class="d-flex justify-content-around" style="width: 100%">
-              <%= link_to group_path(@group) do %>
-                <p class="edit-field-btn shadow-for-btns-edit-delete">Edit Group</p>
-              <% end %>
-              <%= link_to group_path(@group), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} do %>
-                <p class="delete-field-btn shadow-for-btns-edit-delete">Delete Group</p>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
 
@@ -134,7 +136,7 @@
       </div>
     </div>
     <% if @group.group_members.pluck(:field_review_description).uniq[0].nil? %>
-      <p class="pb-2">No Reviews Yet.</p>
+      <p id="reviews-row" class="pb-2">No Reviews Yet.</p>
     <% end %>
     <% @group.group_members.each do |user| %>
       <% if !user.field_review_description.nil? %>
@@ -143,23 +145,22 @@
             <div class="col-12 d-flex align-items-center pt-2">
               <%= image_tag("avatar_player.jpg") %>
               <p class="pl-1"><strong><%= user.user.first_name %></strong></p>
-              <i class="fas fa-star yellow-icon pl-1"></i>
+              <%= user.field_review_rating %>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row pb-2">
           <div class="col-12">
             <div class="review-message">
               <p><%= user.field_review_description %></p>
-              <p style="font-size: 12px; font-style: italic; text-align: right;"><%= user.created_at %></p>
+              <p style="font-size: 12px; font-style: italic; text-align: right;"><%= time_ago_in_words(user.created_at) %> ago</p>
             </div>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
-
-  <% if @group.end_date_time <= DateTime.now %>
+  <% if @group.end_date_time <= DateTime.now && @group.group_members.where(user: current_user)[0].field_review_description.empty? %>
     <%= render "shared/review_form", group_member: @group_member %>
   <% end %>
 </div>

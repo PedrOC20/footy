@@ -1,17 +1,14 @@
 .rating-div {
-  option:first-child {
-    color: white;
-  }
   justify-content: center;
   display: flex;
   select {
+    color: rgba(255,255,255,0.8);
     border: none;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.4);
     margin-bottom: -20px;
     &:focus {
       border: none;
-      background: rgba(255, 255, 255, 0.4);
       border-radius: 15px;
       margin-bottom: -20px;
     }

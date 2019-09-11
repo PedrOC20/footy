@@ -1,38 +1,20 @@
 <% @group_members.each do |group_member| %>
   <% if group_member.group.end_date_time <= DateTime.now %>
-    <%= link_to group_chat_room_path(group_member.group_id, group_member.group.chat_room_id), style:"color: white" do %>
+    <%= link_to group_path(group_member.group), style:"color: white" do %>
       <div class="container mb-3">
         <div class="row relative-box">
           <%= cl_image_tag(group_member.group.field.photo, class: "md-avatar", style: "z-index: 1") %>
           <div class="col-10 booking-card-background">
             <div class="row justify-content-between" style="padding-left: 75px; padding-top: 2px">
-              <p class="location-search-group-card" style="max-width: 65%"><strong><%= group_member.group.field.name %></strong></p>
+              <p class=""><strong><%= group_member.group.field.name %></strong></p>
             </div>
             <div class="row justify-content-between pr-1" style="padding-left: 75px">
-              <p class="status-booking location-search-group-card" style="line-height: 15px; max-width: 65%"><%= group_member.group.start_time.strftime("%R") %>-<%= group_member.group.end_time.strftime("%R") %>, <%= group_member.group.date.strftime("%-d %B") %></p>
-              <div class="d-flex">
-                <% if group_member.group.field.parking %>
-                  <i class="fas fa-parking green md-icon pr-2"></i>
-                <% end %>
-                <% if group_member.group.field.locker_room %>
-                  <i class="fas fa-shower green md-icon pr-2"></i>
-                <% end %>
-                <% if group_member.group.field.indoor %>
-                  <i class="fas fa-warehouse green md-icon pr-2"></i>
-                <% end %>
-              </div>
+              <p class="status-booking" style="line-height: 15px"><%= group_member.group.start_time.strftime("%R") %>-<%= group_member.group.end_time.strftime("%R") %>, <%= group_member.group.date.strftime("%-d %B") %></p>
             </div>
             <div class="row">
-              <p class="status-booking location-search-group-card location-book-p"><%= group_member.group.field.location %></p>
+              <p class="status-booking" style="padding-left: 75px"><%= group_member.group.field.location %></p>
             </div>
-            <div class="row message-show-in-card">
-              <% if group_member.group.chat_room.messages.empty? %>
-                <p>No messages yet.</p>
-              <% else %>
-                <p class="location-search-group-card"><%= group_member.group.chat_room.messages.last.user.first_name %>: <%= group_member.group.chat_room.messages.last.content %></p>
-              <% end %>
-            </div>
-            <div class="row pd-left-sm-avatar align-items-center justify-content-between">
+            <div class="row pd-left-sm-avatar align-items-center justify-content-between" style="position: absolute; bottom: 0px; width: 100%">
               <div class="d-flex align-items-center">
                 <% if group_member.group.group_members.count <= 3 %>
                   <% group_member.group.group_members.each do |player| %>
