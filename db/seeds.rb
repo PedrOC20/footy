@@ -105,7 +105,7 @@ user7 = User.create!(
   last_name: "Pinto da Costa",
   username: "Pitinho",
   birth_date: "1937-12-28",
-  # remote_avatar_url: 'http://images-cdn.impresa.pt/caras/2017-09-24-0.jpg?v=w870h555'
+  remote_avatar_url: 'http://images-cdn.impresa.pt/caras/2017-09-24-0.jpg?v=w870h555'
 )
 
 user8 = User.create!(
@@ -149,7 +149,7 @@ puts "Creating new users Player"
 #   last_name: "",
 #   username: "",
 #   birth_date: "ano-mes-dia",
-#   remote_avatar_url: ''
+# remote_avatar_url: ''
 # )
 
 user11 = User.create!(
@@ -1139,6 +1139,17 @@ group39 = Group.create!(
   price: 15000
 )
 
+group40 = Group.create!(
+  field: field23,
+  date: "2019-09-01",
+  start_time: "14:00",
+  end_time: "16:00",
+  min_members: 22,
+  max_members: 36,
+  status: "Full",
+  price: 15000
+)
+
 puts "Creating new group members"
 
 
@@ -1160,6 +1171,11 @@ groupmember3 = GroupMember.create!(
 groupmember4 = GroupMember.create!(
   user: user15,
   group: group30,
+)
+
+groupmember5 = GroupMember.create!(
+  user: user12,
+  group: group40,
 )
 
 

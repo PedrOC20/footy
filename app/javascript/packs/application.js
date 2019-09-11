@@ -8,11 +8,12 @@ import { navScroll } from '../plugins/scroll_navbar';
 import { hoverCard } from '../plugins/hover_card';
 import { navNoLogWithScroll } from '../plugins/nav_no_log_with_scroll';
 import { notifyMe } from '../plugins/stupid_notification';
-
+import { checkbox } from '../plugins/checkbox';
 
 initMapbox();
 initAutocomplete();
-
+hoverCard();
+checkbox();
 notifyMe();
 
 const navbar = document.querySelector(".footy-navbar")

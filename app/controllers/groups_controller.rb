@@ -14,10 +14,12 @@ class GroupsController < ApplicationController
         @groups = @groups - current_user.groups
       end
       if params.dig(:search, :parking).present? || params.dig(:search, :indoor).present? || params.dig(:search, :locker_room).present? || params.dig(:search, :field_type).present? || params.dig(:search, :field_size).present?
+
         filter_by_field_size
         filter_by_field_type
         @filtered_fields = @filtered_fields.by_filter(params.dig(:search, :parking), params.dig(:search)[:indoor], params.dig(:search)[:locker_room])
         fields_groups
+        session[:past_params]
       end
       @markers = @groups.map do |group|
         {
@@ -48,7 +50,11 @@ class GroupsController < ApplicationController
 
   def fields_groups
     fields_ids = @filtered_fields.pluck(:id)
-    @groups = Group.where(field: [fields_ids])
+    if params.dig(:search, :location).present? && params.dig(:search, :start_time).present? && params.dig(:search, :end_time).present? && params.dig(:search, :date).present?
+    @groups = Group.where(field: [fields_ids]).search(params.dig(:search, :location), params.dig(:search, :start_time), params.dig(:search, :end_time), params.dig(:search, :date))
+    else
+      @groups = Group.where(field: [fields_ids])
+    end
     @groups
   end
 
