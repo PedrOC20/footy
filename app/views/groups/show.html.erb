@@ -34,12 +34,23 @@
       <div id="map-show" class="field-img-show-group">
         <%= cl_image_tag(@group.field.photo) %>
         <div class="overlay-info-div">
-          <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
-          <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
-          <% if @group.users.include?(current_user) %>
-            <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
-          <% else %>
-            <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
+          <% if current_user.role == "Player" %>
+            <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+            <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
+            <% if @group.users.include?(current_user) %>
+              <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
+            <% else %>
+              <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
+            <% end %>
+          <% elsif current_user.role == "Owner" %>
+            <div class="d-flex justify-content-around" style="width: 100%">
+              <%= link_to group_path(@group) do %>
+                <p class="edit-field-btn shadow-for-btns-edit-delete">Edit Group</p>
+              <% end %>
+              <%= link_to group_path(@group), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} do %>
+                <p class="delete-field-btn shadow-for-btns-edit-delete">Delete Group</p>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
@@ -153,7 +164,7 @@
 
 <div class="container">
   <div class="row justify-content-center mt-2 mb-2">
-    <% if !@group.users.include?(current_user) %>
+    <% if !@group.users.include?(current_user) && current_user.role == "Player" %>
       <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
     <% end %>
   </div>
