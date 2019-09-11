@@ -8,7 +8,9 @@ import { navScroll } from '../plugins/scroll_navbar';
 import { navNoLogWithScroll } from '../plugins/nav_no_log_with_scroll';
 import { notifyMe } from '../plugins/stupid_notification';
 import { checkbox } from '../plugins/checkbox';
+import { initStarRating } from '../plugins/init_star_rating';
 
+initStarRating();
 initMapbox();
 initAutocomplete();
 checkbox();
