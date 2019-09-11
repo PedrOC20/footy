@@ -42,6 +42,11 @@ class GroupsController < ApplicationController
       @group_member = @group_member.first
     end
     @chat_room = ChatRoom.includes(messages: :group_member).find(@group.chat_room.id)
+    @group_member_has_reviews = !@group.group_members.pluck(:field_review_description).compact.empty?
+    if @group_member_has_reviews
+      @avg_rating = @group.group_members.pluck(:field_review_rating).compact.sum.to_f / @group.group_members.pluck(:field_review_rating).compact.count
+    end
+
 
     authorize @group
     @markers =
