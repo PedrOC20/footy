@@ -8,11 +8,11 @@
 puts "Destroying all group members"
 GroupMember.destroy_all
 
-puts "Destroying all chat_rooms"
-ChatRoom.destroy_all
-
 puts "Destroying all groups"
 Group.destroy_all
+
+puts "Destroying all chat_rooms"
+ChatRoom.destroy_all
 
 puts "Destroying all fields"
 Field.destroy_all
