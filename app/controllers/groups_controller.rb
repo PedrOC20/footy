@@ -37,6 +37,10 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     #@chat_room = @group.chat_room.includes(messages: :group_member)
+    @group_member = @group.group_members.where(user: current_user)
+    if @group_member
+      @group_member = @group_member.first
+    end
     @chat_room = ChatRoom.includes(messages: :group_member).find(@group.chat_room.id)
 
     authorize @group

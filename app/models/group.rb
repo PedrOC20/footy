@@ -41,4 +41,10 @@ class Group < ApplicationRecord
     create_chat_room(name: field.name)
     save
   end
+
+  def end_date_time
+    d = self.date
+    t = self.end_time
+    DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
+  end
 end
