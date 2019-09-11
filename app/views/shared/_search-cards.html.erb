@@ -1,27 +1,50 @@
-
-
-
-<div class="card-field">
-
-  <img src="http://asmav.org/wp-content/uploads/2019/03/terrain-de-football-but-eclairage-nuit-196194.jpg" />
-
-  <div class="card-info">
-
-
-    <div class="card-primary-infos">
-      <h3>Estadio da Luz</h3>
-      <p>Avenida Soares Monteiro, n°12, Lisboa</p>
+<% @fields.each do |field| %>
+  <%= link_to field_path(field), style: "color: white" do %>
+    <div class="card-contain" style="position: relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 px-0 py-0">
+            <div class="stadium">
+              <%= cl_image_tag(field.photo) %>
+            </div>
+          </div>
+          <div class="col-9 px-0 py-0">
+            <div class="col-12 group-index-card">
+              <h3 class="mb-0 bold"><%= field.name %></h2>
+              <p class="mt-1 location-search-group-card" style="font-size: 14px"><%= field.location %></p>
+              <div class="row mb-2 mt-2">
+                <div class="col-2 pl-3">
+                  <% if field.locker_room %>
+                    <i class="fas fa-shower green"></i>
+                  <% else %>
+                    <i class="fas fa-shower gray"></i>
+                  <% end %>
+                </div>
+                <div class="col-1 pl-2 pr-2 mr-3">
+                  <% if field.parking %>
+                    <i class="fas fa-parking green"></i>
+                  <% else %>
+                    <i class="fas fa-parking gray"></i>
+                  <% end %>
+                </div>
+                <div class="col-2 pl-2 pr-0">
+                  <%if field.indoor %>
+                    <i class="fas fa-warehouse green"></i>
+                  <% else %>
+                    <i class="fas fa-warehouse gray"></i>
+                  <% end %>
+                </div>
+                <div class="col-3 pl-0 bord-left">
+                  <p style="font-size: 14px"><%= field.field_type %></p>
+                </div>
+                <div class="col-3 pl-0 pr-2 bord-left">
+                  <p style="font-size: 14px"><%= field.field_size %> vs <%= field.field_size %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="card-segundary-infos">
-      <p>Field Size: 11 vs 11</p>
-      <p>Field type: Grass</p>
-      <ul>
-        <li style="color:green;" ><i class="fas fa-parking"></i></li>
-        <li><i class="fas fa-shower"></i></li>
-        <li><i class="fas fa-home"></i></li>
-      </ul>
-    </div>
-
-  </div>
-</div>
+  <% end %>
+<% end %>
