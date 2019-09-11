@@ -45,6 +45,8 @@ class GroupsController < ApplicationController
     @group_member_has_reviews = !@group.group_members.pluck(:field_review_description).compact.empty?
     if @group_member_has_reviews
       @avg_rating = @group.group_members.pluck(:field_review_rating).compact.sum.to_f / @group.group_members.pluck(:field_review_rating).compact.count
+    else
+      @avg_rating = 0
     end
 
 
