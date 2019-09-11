@@ -121,6 +121,9 @@
         <p style="font-weight: bold" class="mt-2">Reviews:</p>
       </div>
     </div>
+    <% if @group.end_date_time <= DateTime.now %>
+      <%= render "shared/review_form", group_member: @group_member %>
+    <% end %>
     <% if @group.group_members.pluck(:field_review_description).uniq[0].nil? %>
       <p class="pb-2">No Reviews Yet.</p>
     <% end %>
@@ -157,3 +160,5 @@
 </div>
 
 <%= render "/shared/cancellation-policy" %>
+
+
