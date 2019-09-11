@@ -1,25 +1,31 @@
-function sendMessage() {
-  let dataMessageElement = document.querySelector(".home-background");
-  if (dataMessageElement) {
-    let messageData = JSON.parse(dataMessageElement.dataset.message);
-    if (Object.entries(messageData).length > 0) {
-      let options = {
-          body: messageData.content,
-          icon: ""
-      };
-      let notification = new Notification(messageData.first_name, options);
-      notification.onclick = function(event) {
-        event.preventDefault(); // prevent the browser from focusing the Notification's tab
-        window.open("groups/" + messageData.group_id + "/chat_rooms/" + messageData.chat_room_id, "_self");
-      }
+function showNotification() {
+  Notification.requestPermission(function(result) {
+    if (result === 'granted') {
+      navigator.serviceWorker.ready.then(function(registration) {
+
+        let dataMessageElement = document.querySelector(".home-background");
+        if (dataMessageElement) {
+          let messageData = JSON.parse(dataMessageElement.dataset.message);
+          if (Object.entries(messageData).length > 0) {
+            registration.showNotification(messageData.first_name, {
+              body: messageData.content,
+              vibrate: [200, 100, 200, 100, 200, 100, 200],
+              tag: 'vibration-sample'
+            });
+
+
+
+          }
+        }
+      });
     }
-  }
+  });
 }
 
 
 function notifyMe() {
   // Let's check if the browser supports notifications
-  if (!("Notification" in window)) {
+/*  if (!("Notification" in window)) {
     alert("This browser does not support desktop notification");
   }
 
@@ -38,7 +44,9 @@ function notifyMe() {
       }
     });
   }
+*/
 
+  showNotification();
   // At last, if the user has denied notifications, and you
   // want to be respectful there is no need to bother them any more.
 }

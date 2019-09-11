@@ -9,6 +9,9 @@ import { navNoLogWithScroll } from '../plugins/nav_no_log_with_scroll';
 import { notifyMe } from '../plugins/stupid_notification';
 import { checkbox } from '../plugins/checkbox';
 
+// register service worker
+navigator.serviceWorker.register('sw.js');
+
 initMapbox();
 initAutocomplete();
 checkbox();
