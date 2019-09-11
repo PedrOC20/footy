@@ -1,16 +1,108 @@
-<h1>Fields#show</h1>
-<p>Find me in app/views/fields/show.html.erb</p>
-<%= @field.name %>
+<%= render "/shared/navbar" %>
+<div style="padding-top: 100px; padding-bottom: 10px;">
+  <h2 class="text-center" style="padding: 0 15px"><strong><%= @field.name %></strong></h2>
 
+  <div class="d-flex justify-content-around mb-4">
+    <%= link_to edit_field_path(@field) do %>
+      <p class="edit-field-btn">Edit Field</p>
+    <% end %>
+    <%= link_to field_path(@field), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} do %>
+      <p class="delete-field-btn">Delete Field</p>
+    <% end %>
+  </div>
 
-<%= link_to "My Fields", fields_path %>
-<%= link_to "Upadte Field", edit_field_path(@field) %>
-<%= link_to "Delete Field", field_path(@field), method: :delete, data: { confirm: "Are you sure you want to delete this field?"} %>
+  <h4 class="text-center mt-2 my-groups-h4">MY GROUPS</h4>
+</div>
 
 <% @groups.each do |group| %>
-  <%= group.date %>
-  <%= group.start_time %>
+  <%= link_to group_path(group), style: "color: white" do %>
+    <div class="card-contain" style="position: relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-3 px-0 py-0">
+            <div class="stadium">
+              <%= cl_image_tag(group.field.photo) %>
+            </div>
+          </div>
+          <div class="col-9 px-0 py-0" style="position: relative">
+            <% if group.status == "Pending" %>
+              <i class="fas fa-circle yellow pr-1" style="position: absolute; position: absolute; top: 5px; right: 5px; font-size: 15px"></i>
+            <% elsif group.status == "Full" || group.status == "Booked" %>
+              <i class="fas fa-circle green pr-1" style="position: absolute; position: absolute; top: 5px; right: 5px; font-size: 15px"></i>
+            <% end %>
+            <div class="col-12 group-index-card">
+              <h5 class="location-search-group-card" style="max-width: 90%"><%= group.start_time.strftime("%R") %>-<%= group.end_time.strftime("%R") %>, <%= group.date.strftime("%-d %B") %></h5>
+              <p class="mt-1 location-search-group-card" style="font-size: 14px"><%= group.field.location %></p>
+              <div class="row mb-2 mt-2">
+                <div class="col-2 pl-3">
+                  <% if group.field.locker_room %>
+                    <i class="fas fa-shower green"></i>
+                  <% else %>
+                    <i class="fas fa-shower gray"></i>
+                  <% end %>
+                </div>
+                <div class="col-1 pl-2 pr-2 mr-3">
+                  <% if group.field.parking %>
+                    <i class="fas fa-parking green"></i>
+                  <% else %>
+                    <i class="fas fa-parking gray"></i>
+                  <% end %>
+                </div>
+                <div class="col-2 pl-2 pr-0">
+                  <%if group.field.indoor %>
+                    <i class="fas fa-warehouse green"></i>
+                  <% else %>
+                    <i class="fas fa-warehouse gray"></i>
+                  <% end %>
+                </div>
+                <div class="col-3 pl-0 bord-left">
+                  <p style="font-size: 14px"><%= group.field.field_type %></p>
+                </div>
+                <div class="col-3 pl-0 pr-2 bord-left">
+                  <p style="font-size: 14px"><%= group.field.field_size %> vs <%= group.field.field_size %></p>
+                </div>
+              </div>
+              <div class="row justify-content-between">
+                <p class="members-p" style="font-size: 14px; line-height: 33px"><%= group.group_members.count %>/<%= group.max_members %> members</p>
+                <h3 class="mb-0 price-group-card pr-2"><strong><%= group.price %>€</strong></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
+
+<div class="search-index mt-2">
+  <div class="container">
+    <div class="row justify-content-center">
+      <button type="button" class="sign-up-btn" style="border: none; background: transparent" data-toggle="collapse" href="#collapseAdd" role="button" aria-expanded="false" aria-controls="collapseExample"><p style="color: #CEFF1A; text-decoration: underline">Add Group</p>
+      </button>
+    </div>
+    <div class="row collapse" id="collapseAdd">
+      <div class="col-12">
+        <%= simple_form_for new_group_path do |f| %>
+          <%= f.hidden_field :field_id, value: @field.id %>
+          <%= f.input :status, value: "Pending", as: :hidden %>
+          <%= f.input :price, autofocus: true, placeholder: "Price", label: false %>
+          <%= f.input :min_members, placeholder: "Min Members", label: false %>
+          <%= f.input :max_members, placeholder: "Max Members", label: false %>
+          <%= f.input :date, as: :date, html5: true, placeholder: "Day", label: false%>
+          <div class="row no-gutters">
+            <div class="col-6">
+              <%= f.input :start_time, as: :time, html5: true, placeholder: "Start Time", label: false %>
+            </div>
+            <div class="col-6">
+              <%= f.input :end_time, as: :time, html5: true, placeholder: "End Time", label: false %>
+            </div>
+          </div>
+          <p id="submit-wrapper"><%= f.submit "Add", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% @field.group_members.each do |review| %>
   <% if review.field_review_rating.present? %>
@@ -18,22 +110,3 @@
     <p>Description: <%= review.field_review_description %></p>
   <% end %>
 <% end %>
-
-<button type="button" class="btn btn-outline-secondary" data-toggle="collapse" href="#collapseAdd" role="button" aria-expanded="false" aria-controls="collapseExample">
-  Add new group <i class="fas fa-plus"></i>
-</button>
-
-<div class="collapse" id="collapseAdd">
-  <h2>Add a new Group</h2>
-  <%= simple_form_for @group do |f| %>
-    <%= f.hidden_field :field_id, value: @field.id %>
-    <%= f.input :date %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
-    <%= f.input :min_members %>
-    <%= f.input :max_members %>
-    <%= f.input :price %>
-    <%= f.input :status, value: "Pending", as: :hidden %>
-    <%= f.submit "Add Group", class: "btn btn-primary" %>
-  <% end %>
-</div>
