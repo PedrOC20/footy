@@ -149,7 +149,7 @@ puts "Creating new users Player"
 #   last_name: "",
 #   username: "",
 #   birth_date: "ano-mes-dia",
-  remote_avatar_url: ''
+#  remote_avatar_url: ''
 # )
 
 user11 = User.create!(
