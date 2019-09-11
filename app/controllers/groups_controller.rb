@@ -91,7 +91,6 @@ class GroupsController < ApplicationController
   end
 
   def join
-    @group = Group.find(params[:id])
     # @current_user_group_member = @group.group_members.where(user: current_user).first
     joined_members = @group.group_members.count
     # check if max members < group members
@@ -125,6 +124,7 @@ class GroupsController < ApplicationController
   end
 
   def check_if_player_is_in_group
-    redirect_to root_path, alert: "You are already in this group!" if @group.group_members.pluck(:user_id).includes? current_user.id
+    @group = Group.find(params[:id])
+    redirect_to root_path, alert: "You are already in this group!" if @group.group_members.any? && @group.group_members.pluck(:user_id).include?(current_user.id)
   end
 end
