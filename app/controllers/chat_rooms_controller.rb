@@ -5,6 +5,8 @@ class ChatRoomsController < ApplicationController
   def show
     @chat_room = ChatRoom.includes(messages: :group_member).find(params[:id])
     authorize @chat_room
+    @chat_room.messages.joins(:group_member)
+                       .where("group_members.user_id != ?", current_user.id).update_all(read: true)
   end
 
   private
