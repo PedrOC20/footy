@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   before_action :check_if_owner, only: [:create]
   before_action :check_if_player, only: [:join]
+  before_action :check_if_player_is_in_group, only: [:join]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -92,7 +93,7 @@ class GroupsController < ApplicationController
         @group.change_status!
         redirect_to my_bookings_path
       else
-        redirect_to group_path(@group), alert: "You are already in that group!"
+        redirect_to group_path(@group), alert: "You are already in this group!"
       end
     else
       redirect_to group_path(@group)
@@ -111,5 +112,9 @@ class GroupsController < ApplicationController
 
   def check_if_player
     redirect_to root_path, alert: "Action not allowed!" unless current_user.Player?
+  end
+
+  def check_if_player_is_in_group
+    redirect_to root_path, alert: "You are already in this group!" if @group.group_members.pluck(:user_id).includes? current_user.id
   end
 end
