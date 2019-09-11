@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
   before_action :check_if_owner, only: [:create]
+  before_action :fetch_group, only: [:show, :join]
   before_action :check_if_player, only: [:join]
-  # before_action :check_if_player_is_in_group, only: [:join]
+  before_action :check_if_player_is_in_group, only: [:join]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -35,7 +36,6 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
     #@chat_room = @group.chat_room.includes(messages: :group_member)
     @group_member = @group.group_members.where(user: current_user)
     if @group_member
@@ -123,8 +123,11 @@ class GroupsController < ApplicationController
     redirect_to root_path, alert: "Action not allowed!" unless current_user.Player?
   end
 
-  def check_if_player_is_in_group
+  def fetch_group
     @group = Group.find(params[:id])
+  end
+
+  def check_if_player_is_in_group
     redirect_to root_path, alert: "You are already in this group!" if @group.group_members.any? && @group.group_members.pluck(:user_id).include?(current_user.id)
   end
 end
