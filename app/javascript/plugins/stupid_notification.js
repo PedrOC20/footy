@@ -1,15 +1,19 @@
-const notificate = () => {
-  Notification.requestPermission();
-  let theTitle = "TIIIITLEEE";
-  let theBody = "oiiii";
-  let theIcon = "sjsdjijidjisjsdi";
-
-  var options = {
-      body: theBody,
-      icon: theIcon
+function sendMessage() {
+  let dataMessageElement = document.querySelector(".home-background");
+  if (dataMessageElement) {
+    let messageData = JSON.parse(dataMessageElement.dataset.message);
+    if (Object.entries(messageData).length > 0) {
+      let options = {
+          body: messageData.content,
+          icon: ""
+      };
+      let notification = new Notification(messageData.first_name, options);
+      notification.onclick = function(event) {
+        event.preventDefault(); // prevent the browser from focusing the Notification's tab
+        window.open("groups/" + messageData.group_id + "/chat_rooms/" + messageData.chat_room_id, "_self");
+      }
+    }
   }
-  var n = new Notification(theTitle,options);
-
 }
 
 
@@ -22,7 +26,7 @@ function notifyMe() {
   // Let's check whether notification permissions have alredy been granted
   else if (Notification.permission === "granted") {
     // If it's okay let's create a notification
-    var notification = new Notification("Hi there!");
+    sendMessage();
   }
 
   // Otherwise, we need to ask the user for permission
@@ -30,7 +34,7 @@ function notifyMe() {
     Notification.requestPermission(function (permission) {
       // If the user accepts, let's create a notification
       if (permission === "granted") {
-        var notification = new Notification("Hi there!");
+        sendMessage();
       }
     });
   }

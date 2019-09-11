@@ -1,4 +1,4 @@
-<div class="home-background">
+<div class="home-background" data-message="<%= @new_message ? @new_message.to_json : '{}' %>">
   <% if user_signed_in? %>
     <%= render "/shared/navbar" %>
   <% else %>
