@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     end
   end
 
+as :user do
+  get 'users/profile', :to => 'pages#profile', :as => :user_root
+end
   # List my bookings as a player
   get "my_bookings", to: 'group_members#index'
   patch "my_bookings/:id", to: 'group_members#update', as: 'group_member'

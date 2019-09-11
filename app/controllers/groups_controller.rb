@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :check_if_owner, only: [:create]
   before_action :check_if_player, only: [:join]
-  before_action :check_if_player_is_in_group, only: [:join]
+  # before_action :check_if_player_is_in_group, only: [:join]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index

@@ -1,5 +1,5 @@
 <% @group_members.each do |group_member| %>
-  <% if group_member.group.end_date_time > DateTime.now %>
+  <% if group_member.group.end_date_time <= DateTime.now %>
     <%= link_to group_chat_room_path(group_member.group_id, group_member.group.chat_room_id), style:"color: white" do %>
       <div class="container mb-3">
         <div class="row relative-box">
@@ -7,11 +7,6 @@
           <div class="col-10 booking-card-background">
             <div class="row justify-content-between" style="padding-left: 75px; padding-top: 2px">
               <p class="location-search-group-card" style="max-width: 65%"><strong><%= group_member.group.field.name %></strong></p>
-              <% if group_member.group.status == "Pending" %>
-                <div class="d-flex align-items-center"><i class="fas fa-circle yellow small-icon pr-1"></i><p class="status-booking"><%= group_member.group.status %></p></div>
-              <% else %>
-                <div class="d-flex align-items-center"><i class="fas fa-circle green pr-1 small-icon"></i><p class="status-booking"><%= group_member.group.status %></p></div>
-              <% end %>
             </div>
             <div class="row justify-content-between pr-1" style="padding-left: 75px">
               <p class="status-booking location-search-group-card" style="line-height: 15px; max-width: 65%"><%= group_member.group.start_time.strftime("%R") %>-<%= group_member.group.end_time.strftime("%R") %>, <%= group_member.group.date.strftime("%-d %B") %></p>

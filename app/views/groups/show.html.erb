@@ -1,16 +1,16 @@
 <% if user_signed_in? %>
   <%= render "/shared/navbar" %>
 <% else %>
-<div class="container">
-  <div class="row justify-content-between align-items-center nav-no-log" style="margin-top: 15px; margin-bottom: -60px">
-    <%= link_to '<h2>FOOTY</h2>'.html_safe, :root, class: "footy-link-navbar pl-3" %>
-    <div class="d-flex align-items-center">
-      <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn pr-2" %>
-      <p>|</p>
-      <%= link_to "SIGN UP", new_user_registration_path, class: "pl-2", style: "font-weight: bold; margin-right: 15px"%>
+  <div class="container">
+    <div class="row justify-content-between align-items-center nav-no-log" style="margin-top: 15px; margin-bottom: -60px">
+      <%= link_to '<h2>FOOTY</h2>'.html_safe, :root, class: "footy-link-navbar pl-3" %>
+      <div class="d-flex align-items-center">
+        <%= link_to "LOG IN", new_user_session_path, class: "log-in-btn pr-2" %>
+        <p>|</p>
+        <%= link_to "SIGN UP", new_user_registration_path, class: "pl-2", style: "font-weight: bold; margin-right: 15px"%>
+      </div>
     </div>
   </div>
-</div>
 <% end %>
 
 <div class="show-nav">
@@ -25,7 +25,8 @@
 </div>
 
 <div class="field-name-show-group">
-  <h3><%= @group.field.name %></h3>
+  <h3 class="mb-0"><%= @group.field.name %></h3>
+  <p class="mt-1 text-center mb-2"><strong><%= @group.start_time.strftime("%R") %> - <%= @group.end_time.strftime("%R") %>, <%= @group.date.strftime("%-d %B") %></strong></p>
 </div>
 
 <div class="back-transp-black">
@@ -132,9 +133,6 @@
         <p style="font-weight: bold" class="mt-2">Reviews:</p>
       </div>
     </div>
-    <% if @group.end_date_time <= DateTime.now %>
-      <%= render "shared/review_form", group_member: @group_member %>
-    <% end %>
     <% if @group.group_members.pluck(:field_review_description).uniq[0].nil? %>
       <p class="pb-2">No Reviews Yet.</p>
     <% end %>
@@ -160,7 +158,12 @@
       <% end %>
     <% end %>
   </div>
+
+  <% if @group.end_date_time <= DateTime.now %>
+    <%= render "shared/review_form", group_member: @group_member %>
+  <% end %>
 </div>
+
 
 <div class="container">
   <div class="row justify-content-center mt-2 mb-2">
