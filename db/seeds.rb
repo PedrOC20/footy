@@ -176,8 +176,6 @@ user12 = User.create!(
   first_name: "Miguel",
   last_name: "Figueiredo",
   birth_date: "1994-01-24",
-  foot: "Left",
-  position: "Forward",
   remote_avatar_url: 'https://avatars3.githubusercontent.com/u/40830749?v=4'
 )
 
