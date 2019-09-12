@@ -16,6 +16,18 @@ initMapbox();
 initAutocomplete();
 checkbox();
 
+
+
+const alert = document.querySelector(".alert");
+
+if (alert) {
+  const close = document.querySelector(".alert .close");
+  console.log("hello");
+  setTimeout(function() { console.log(close); close.click(); }, 3000);
+};
+
+
+
 const navbar = document.querySelector(".footy-navbar")
 if(navbar) {
   navAction();
@@ -41,3 +53,5 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   console.warn('Push messaging is not supported');
 }
 notifyMe();
+
+

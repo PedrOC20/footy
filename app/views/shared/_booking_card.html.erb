@@ -41,7 +41,7 @@
               <div class="d-flex align-items-center">
                 <% if group_member.group.group_members.count <= 3 %>
                   <% group_member.group.group_members.each do |player| %>
-                    <%= cl_image_tag(player.user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
+                    <%= cl_image_tag(player.user.avatar.url, class: "sm-avatar", style: "margin-right: 5px") %>
                   <% end %>
                 <% else %>
                   <%= cl_image_tag(group_member.group.group_members[0].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
