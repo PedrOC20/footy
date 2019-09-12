@@ -3,6 +3,16 @@ class GroupMembersController < ApplicationController
 
   def index
     @group_members = policy_scope(GroupMember)
+
+    @group_members_upcoming = []
+    @group_members_past = []
+    @group_members.each do |gp|
+      if gp.group.end_date_time > DateTime.now
+        @group_members_upcoming << gp
+      else
+        @group_members_past << gp
+      end
+    end
   end
 
   def update
