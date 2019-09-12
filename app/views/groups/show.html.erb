@@ -163,7 +163,7 @@
         <div class="row">
           <div class="avatar-link">
             <div class="col-12 d-flex align-items-center pt-2">
-              <%= image_tag("avatar_player.jpg") %>
+              <%= cl_image_tag(user.user.avatar.url) %>
               <p class="pl-1"><strong><%= user.user.first_name %></strong></p>
               <p id="stars" style="padding-left: 5px;">
                 <% user.field_review_rating.times do %>

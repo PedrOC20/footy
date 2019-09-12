@@ -2,6 +2,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .lg-avatar {
@@ -15,10 +16,12 @@
   width: 112px;
   height: 112px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .sm-avatar {
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  object-fit: cover;
 }
