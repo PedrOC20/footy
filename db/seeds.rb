@@ -139,6 +139,9 @@ user10 = User.create!(
   remote_avatar_url: 'https://www.gmcrafts.co.uk/wp-content/uploads/2018/11/Football-Main-Product-Image.jpg'
 )
 
+puts "Created Owners"
+
+
 puts "Creating new users Player"
 
 # user = User.create!(
@@ -149,7 +152,9 @@ puts "Creating new users Player"
 #   last_name: "",
 #   username: "",
 #   birth_date: "ano-mes-dia",
-#  remote_avatar_url: ''
+#   foot: "Right",
+#   position: "Defense",
+#   remote_avatar_url: ''
 # )
 
 user11 = User.create!(
@@ -159,6 +164,8 @@ user11 = User.create!(
   first_name: "Pedro",
   last_name: "Andrade",
   birth_date: "1998-05-04",
+  foot: "Right",
+  position: "Defense",
   remote_avatar_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/dzizijdgey43gmb8ybza.jpg'
 )
 
@@ -169,6 +176,8 @@ user12 = User.create!(
   first_name: "Miguel",
   last_name: "Figueiredo",
   birth_date: "1994-01-24",
+  foot: "Left",
+  position: "Forward",
   remote_avatar_url: 'https://avatars3.githubusercontent.com/u/40830749?v=4'
 )
 
@@ -189,6 +198,8 @@ user14 = User.create!(
   first_name: "Pedro",
   last_name: "Candeias",
   birth_date: "1988-05-31",
+  foot: "Right",
+  position: "Defense",
   remote_avatar_url: 'https://avatars3.githubusercontent.com/u/52099157?s=400&v=4'
 )
 
@@ -200,6 +211,8 @@ user15 = User.create!(
   last_name: "Ronaldo",
   username: "Champ",
   birth_date: "1985-02-05",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://www.noticiasdecoimbra.pt/wp-content/uploads/2019/06/cristiano-ronaldo-liga-das-na%C3%A7%C3%B5es.jpg?x75216'
 )
 
@@ -211,6 +224,8 @@ user16 = User.create!(
   last_name: "Souza",
   username: "Deco",
   birth_date: "1977-08-27 ",
+  foot: "Right",
+  position: "Midfielder",
   remote_avatar_url: 'https://static-img.zz.pt/history/imgS620I11694T20190325175353.jpg'
 )
 
@@ -222,6 +237,8 @@ user17 = User.create!(
   last_name: "Quaresma",
   username: "Ciganinho",
   birth_date: "1983-09-26",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=MzU5M8bHI4vUyYFaO+YIATqaLsRgao0fAz2HBv566bDWrHeqoltoM84OEBBjpHoOjY9xn+8eBBUCp78GBteA8cXriXiqysHrfmWxYdnbsH3+cQU=&W=1550&H=0&delay_optim=1'
 )
 
@@ -233,6 +250,8 @@ user18 = User.create!(
   last_name: "Coentrão",
   username: "Figo da Vila",
   birth_date: "1988-03-11",
+  foot: "Left",
+  position: "Defense",
   remote_avatar_url: 'https://www.abola.pt//img/fotos/abola2015/RIOAVE/2018/fabiocoentrao6.jpg'
 )
 
@@ -244,6 +263,8 @@ user19 = User.create!(
   last_name: "Paím",
   username: "Dorgas",
   birth_date: "1988-02-15",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/58136d1a0cf2d549d555ed01/800'
 )
 
@@ -251,10 +272,12 @@ user20 = User.create!(
   role: "Player",
   email: "pizzi@gmail.com",
   password: "123456",
-  first_name: "Luís Fernandes",
+  first_name: "Luís",
   last_name: "Fernandes",
   username: "Pizzi",
   birth_date: "1989-10-06",
+  foot: "Right",
+  position: "Midfielder",
   remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=YjM0nhwLJDFnSHvAE/DyaT7ickMIkNizNT0vYsuVCyUM7ZqXrKQCRfX3qOBLWpFPC6QfO2svC3ZrZk4faQ3T4YmVTgY9a6emy1y5qfUaju9Yvjc=&W=1550&H=0&delay_optim=1'
 )
 
@@ -266,6 +289,8 @@ user21 = User.create!(
   last_name: "Cunha",
   username: "Nani",
   birth_date: "1986-11-17",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/New_Zealand-Portugal_Nani.jpg'
 )
 
@@ -277,6 +302,8 @@ user22 = User.create!(
   last_name: "Ribeiro",
   username: "Maniche",
   birth_date: "1977-11-11",
+  foot: "Right",
+  position: "Midfielder",
   remote_avatar_url: 'https://tmssl.akamaized.net//images/portrait/header/9822-1486128348.jpg?lm=1486128361'
 )
 
@@ -287,6 +314,8 @@ user23 = User.create!(
   first_name: "Bruno",
   last_name: "Alves",
   birth_date: "1981-11-27",
+  foot: "Right",
+  position: "Defense",
   remote_avatar_url: 'https://cdn.record.pt/images/2018-07/img_920x518$2018_07_12_09_49_05_1422659.jpg'
 )
 
@@ -297,6 +326,8 @@ user24 = User.create!(
   first_name: "Simão",
   last_name: "Sabrosa",
   birth_date: "1979-08-31",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://www.iol.pt/multimedia/oratvi/multimedia/imagem/id/12032507/960'
 )
 
@@ -307,6 +338,8 @@ user25 = User.create!(
   first_name: "Renato",
   last_name: "Sanches",
   birth_date: "1997-08-18",
+  foot: "Right",
+  position: "Midfielder",
   remote_avatar_url: 'https://www.opinantes.pt/wp-content/uploads/2017/09/renato-sanches.jpg'
 )
 
@@ -318,6 +351,8 @@ user26 = User.create!(
   last_name: "Pimparel",
   username: "Beto",
   birth_date: "1982-05-01",
+  foot: "Right",
+  position: "Goalkeeper",
   remote_avatar_url: 'https://cdn.record.pt/images/2018-11/img_920x518$2018_11_20_22_06_23_1474629.jpg'
 )
 
@@ -329,6 +364,8 @@ user27 = User.create!(
   last_name: "Correia",
   username: "Bebé",
   birth_date: "1990-07-12",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://thumbs.web.sapo.io/?epic=MjI3BI3LNg0AjMyrwGv3R9Z7YqqJ9YUQ8TdmTbBWRAsnRyNAgEo6tkqOu2HNQ3I8GsnrcS/ujFSCk/KCQixFyB7y4w==&W=1550&H=0&delay_optim=1'
 )
 
@@ -340,6 +377,8 @@ user28 = User.create!(
   last_name: "Ferreira",
   username: "Pepe",
   birth_date: "1983-02-26",
+  foot: "Right",
+  position: "Defense",
   remote_avatar_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Russia-Portugal_CC2017_%2811_%28cropped%29.jpg'
 )
 
@@ -351,6 +390,8 @@ user29 = User.create!(
   last_name: "Monteiro",
   username: "Ukra",
   birth_date: "1988-03-16",
+  foot: "Right",
+  position: "Forward",
   remote_avatar_url: 'https://images.impresa.pt/olimpia/2016-10-20-untitled-3-3185/original/mw-1920'
 )
 
@@ -362,6 +403,8 @@ user30 = User.create!(
   last_name: "Passos",
   username: "Pelé",
   birth_date: "1987-09-14",
+  foot: "Right",
+  position: "Midfielder",
   remote_avatar_url: 'https://www.pronounceitright.com/upload/pronuncia/5289/0000245.jpg'
 )
 
@@ -373,8 +416,13 @@ user31 = User.create!(
   last_name: "Monteiro",
   username: "Tarantini",
   birth_date: "1983-10-07",
+  foot: "Right",
+  position: "Midfielder",
   remote_avatar_url: 'https://jornaleconomico.sapo.pt/wp-content/uploads/2018/01/tarantini-rio-ave.jpg?w=850&h=531&q=60&compress=auto,format&fit=crop'
 )
+
+puts "Created Players"
+
 
 puts "Creating new fields"
 # field = Field.create!(
@@ -387,7 +435,7 @@ puts "Creating new fields"
 #   indoor: false,
 #   description: "",
 #   user: user,
-# remote_photo_url: ''
+#   remote_photo_url: ''
 # )
 
 field1 = Field.create!(
@@ -685,11 +733,13 @@ field23 = Field.create!(
   field_type: "Grass",
   parking: true,
   locker_room: true,
-  indoor: true,
+  indoor: false,
   description: "Located on Avenida Rio de Janeiro, this park offers the ideal conditions for soccer practice. It has field with natural grass. It is also possible to practice other sports such as tennis or athletics. In this space there is also room for family leisure activities.",
   user: user10,
   remote_photo_url: 'https://thumbs.web.sapo.io/?epic=9p1dT4n88DuKlIpr0MndfWAKkaON6PxPXwZDngo/oj//SwqeomVTs+Fk6GiG/pmL/wbgS1jfXrksDNDZ98A/5ToYJg==&Q=85&crop=center&errorpic=transparent&W=160'
 )
+
+puts "Created Fields"
 
 
 puts "Creating new groups"
@@ -704,11 +754,6 @@ puts "Creating new groups"
 #   status: "Pending",
 #   price:
 # )
-
-
-chat_room1 = ChatRoom.create!(
-  name: "Test"
-)
 
 group1 = Group.create!(
   field: field1,
@@ -1150,41 +1195,6 @@ group40 = Group.create!(
   price: 15000
 )
 
-puts "Creating new group members"
-
-
-groupmember1 = GroupMember.create!(
-  user: user11,
-  group: group30,
-)
-
-groupmember2 = GroupMember.create!(
-  user: user13,
-  group: group30,
-)
-
-groupmember3 = GroupMember.create!(
-  user: user14,
-  group: group30,
-)
-
-groupmember4 = GroupMember.create!(
-  user: user15,
-  group: group30,
-)
-
-groupmember5 = GroupMember.create!(
-  user: user12,
-  group: group40,
-)
-
-
-Group.all.each do |group|
-  @overdue = User.where("id >= ?", 11).sample
-  groupmember = GroupMember.create!(
-  user: @overdue,
-  group: group,
-)
-end
+puts "Created groups"
 
 puts "Done!!"
