@@ -3,7 +3,7 @@
     <div class="col-10 offset-1">
       <%= simple_form_for :search, url: groups_path, method: "GET" do |f| %>
         <%= f.input :location, autofocus: true, value: params[:search], placeholder: "Location", label: false, required: true %>
-        <%= f.input :date, as: :date, html5: true, value: params[:search], label: false, input_html: { placeholder: "DD-MM-YYY" }, required: true %>
+        <%= f.input :date, as: :date, html5: true, value: params[:search], input_html: { placeholder: "YYYY-MM-DD" }, label: false, required: true %>
         <div class="row no-gutters">
           <div class="col-6">
             <%= f.input :start_time, as: :time, html5: true, value: params[:search], input_html: {placeholder: "Start Time" }, label: false, required: true %>
