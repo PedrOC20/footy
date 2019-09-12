@@ -43,9 +43,9 @@
                   <%= cl_image_tag(player.user.avatar.url, class: "sm-avatar", style: "margin-right: 5px") %>
                 <% end %>
               <% else %>
-                <%= cl_image_tag(group_member.group.group_members[0].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
-                <%= cl_image_tag(group_member.group.group_members[1].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
-                <%= cl_image_tag(group_member.group.group_members[2].user.avatar, class: "sm-avatar", style: "margin-right: 5px") %>
+                <%= cl_image_tag(group_member.group.group_members[0].user.avatar.url, class: "sm-avatar", style: "margin-right: 5px") %>
+                <%= cl_image_tag(group_member.group.group_members[1].user.avatar.url, class: "sm-avatar", style: "margin-right: 5px") %>
+                <%= cl_image_tag(group_member.group.group_members[2].user.avatar.url, class: "sm-avatar", style: "margin-right: 5px") %>
                 <i class="fas fa-plus-circle small-icon"></i> <p style="font-size: 12px"> <%= group_member.group.group_members.count - 3 %></p>
               <% end %>
             </div>
