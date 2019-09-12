@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :check_if_owner, only: [:create]
+  before_action :fetch_group, only: [:show, :join]
   before_action :check_if_player, only: [:join]
   before_action :check_if_player_is_in_group, only: [:join]
   skip_before_action :authenticate_user!, only: [:index, :show]
@@ -35,9 +36,19 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
     #@chat_room = @group.chat_room.includes(messages: :group_member)
+    @group_member = @group.group_members.where(user: current_user)
+    if @group_member
+      @group_member = @group_member.first
+    end
     @chat_room = ChatRoom.includes(messages: :group_member).find(@group.chat_room.id)
+    @group_member_has_reviews = !@group.group_members.pluck(:field_review_description).compact.empty?
+    if @group_member_has_reviews
+      @avg_rating = @group.group_members.pluck(:field_review_rating).compact.sum.to_f / @group.group_members.pluck(:field_review_rating).compact.count
+    else
+      @avg_rating = 0
+    end
+
 
     authorize @group
     @markers =
@@ -87,7 +98,6 @@ class GroupsController < ApplicationController
   end
 
   def join
-    @group = Group.find(params[:id])
     # @current_user_group_member = @group.group_members.where(user: current_user).first
     joined_members = @group.group_members.count
     # check if max members < group members
@@ -120,7 +130,11 @@ class GroupsController < ApplicationController
     redirect_to root_path, alert: "Action not allowed!" unless current_user.Player?
   end
 
+  def fetch_group
+    @group = Group.find(params[:id])
+  end
+
   def check_if_player_is_in_group
-    redirect_to root_path, alert: "You are already in this group!" if @group.group_members.pluck(:user_id).includes? current_user.id
+    redirect_to root_path, alert: "You are already in this group!" if @group.group_members.any? && @group.group_members.pluck(:user_id).include?(current_user.id)
   end
 end

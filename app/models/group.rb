@@ -1,13 +1,11 @@
 class Group < ApplicationRecord
   after_create :add_chat_room
 
-
   belongs_to :field
   belongs_to :chat_room, optional: true
-  has_many :group_members
+  has_many :group_members, dependent: :destroy
   has_many :users, through: :group_members
   enum status: [:Pending, :Booked, :Full]
-
 
   def self.between_dates(start_time, end_time, date)
     condition = '((start_time <= :start_time_param and end_time > :start_time_param) ' \
@@ -40,5 +38,11 @@ class Group < ApplicationRecord
   def add_chat_room
     create_chat_room(name: field.name)
     save
+  end
+
+  def end_date_time
+    d = self.date
+    t = self.end_time
+    DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
   end
 end

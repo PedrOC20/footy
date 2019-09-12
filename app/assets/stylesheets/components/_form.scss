@@ -14,3 +14,16 @@
     text-align: center;
   }
 }
+
+input[type="date"]::before,
+input[type="time"]::before {
+  content: attr(placeholder);
+  width: 100%;
+  color: grey;
+}
+​
+input[type="date"]:focus::before,
+input[type="date"]:valid::before,
+input[type="time"]:valid::before {
+  display: none;
+}

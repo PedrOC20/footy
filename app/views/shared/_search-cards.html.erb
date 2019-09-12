@@ -2,7 +2,7 @@
   <%= link_to field_path(field), style: "color: white" do %>
     <div class="card-contain" style="position: relative">
       <div class="container">
-        <div class="row">
+        <div class="row" style="position: relative">
           <div class="col-3 px-0 py-0">
             <div class="stadium">
               <%= cl_image_tag(field.photo) %>
@@ -48,3 +48,4 @@
     </div>
   <% end %>
 <% end %>
+
