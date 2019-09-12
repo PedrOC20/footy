@@ -37,7 +37,13 @@
         <% if @group.end_date_time > DateTime.now %>
           <div class="overlay-info-div">
             <% if current_user && current_user.role == "Player" %>
-              <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+              <h2 style="margin-bottom: 0"><strong>
+              <% if @group.group_members.count != 0 %>
+                <%= @group.price / @group.group_members.count %>
+              <% else %>
+                <%= @group.price %>
+              <% end %>
+              € </strong> p/ player</h2>
               <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
               <% if @group.users.include?(current_user) && @group.end_date_time > DateTime.now %>
                 <%= link_to "Chat Room", group_chat_room_path(@group, @chat_room), class: "solid-btn with-shadow", style:"color: black;" %>
@@ -55,7 +61,13 @@
               </div>
             <% else %>
               <div>
-                <h2 style="margin-bottom: 0"><strong><%= @group.price / @group.group_members.count %> € </strong> p/ player</h2>
+                <h2 style="margin-bottom: 0"><strong>
+                  <% if @group.group_members.count != 0 %>
+                    <%= @group.price / @group.group_members.count %>
+                  <% else %>
+                    <%= @group.price %>
+                  <% end %>
+                € </strong> p/ player</h2>
                 <p style="margin-bottom: 10px">(minimum <%= @group.min_members %> players)</p>
                 <%= link_to "JOIN GROUP!", "#", data: {toggle: "modal", target: "#exampleModalCenter"}, class: "solid-btn", style:"color: black;" %>
               </div>
@@ -123,7 +135,13 @@
             <p>Members: <strong><%= @group.group_members.count %>/<%= @group.max_members %></strong> <p style="font-size: 14px; padding-left: 10px;">(minimum players: <%= @group.min_members %>)</p></p>
           </li>
           <li style="display: inline-flex;">
-            <p>Current Price: <strong><%= @group.price / @group.group_members.count %> €</strong> <p style="font-size: 14px; padding-left: 10px;">(<%= @group.price %>€ / <%= @group.group_members.count %>)</p></p>
+            <p>Current Price: <strong>
+              <% if @group.group_members.count != 0 %>
+                <%= @group.price / @group.group_members.count %>
+              <% else %>
+                <%= @group.price %>
+              <% end %>
+            €</strong> <p style="font-size: 14px; padding-left: 10px;">(<%= @group.price %>€ / <%= @group.group_members.count %>)</p></p>
           </li>
           <li>
             <p>Average Rating:

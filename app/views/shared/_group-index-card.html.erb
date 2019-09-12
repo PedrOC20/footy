@@ -41,8 +41,15 @@
             </div>
           </div>
           <div class="row justify-content-between">
-            <p class="members-p" style="font-size: 14px; line-height: 33px"><%= group.group_members.count %>/<%= group.max_members %> members</p>
-            <h3 class="bold mb-0 price-group-card pr-2"><%= group.price / group.group_members.count %>€</h3>
+            <p class="members-p" style="font-size: 14px; line-height: 33px">
+                <%= group.group_members.count %>/<%= group.max_members %> members</p>
+            <h3 class="bold mb-0 price-group-card pr-2">
+              <% if group.group_members.count != 0 %>
+                <%= group.price / group.group_members.count %>
+              <% else %>
+                <%= group.price %>
+              <% end %>
+            €</h3>
           </div>
         </div>
       </div>
