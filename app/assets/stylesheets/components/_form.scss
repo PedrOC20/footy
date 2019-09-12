@@ -24,5 +24,5 @@ input[type="time"]::before {
 ​
 input[type="date"]:valid::before,
 input[type="time"]:valid::before {
-  display: none
+  display: none;
 }
