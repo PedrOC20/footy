@@ -59,10 +59,9 @@ self.addEventListener('activate', function(e) {
 });
 
 
-self.addEventListener('notificationclick', function(event) {
+self.onnotificationclick = function(event) {
   console.log('On notification click: ', event.notification.tag);
   event.notification.close();
-
   // This looks to see if the current is already open and
   // focuses if it is
   event.waitUntil(clients.matchAll({
@@ -70,10 +69,12 @@ self.addEventListener('notificationclick', function(event) {
   }).then(function(clientList) {
     for (var i = 0; i < clientList.length; i++) {
       var client = clientList[i];
-      if (client.url == '/' && 'focus' in client)
+      if (client.url == event.notification.data.url && 'focus' in client)
         return client.focus();
     }
-    if (clients.openWindow)
-      return clients.openWindow('/');
+    if (clients.openWindow) {
+      console.log(event);
+      return clients.openWindow(event.notification.data.url);
+    }
   }));
-});
+};
