@@ -1,66 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Erro oitxtenta e otxo (500)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    body {
+      margin: 0;
+      text-align: center;
+      background: #02131F;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    #gif {
+      left: 7%;
+      object-fit: cover;
+      width: 73%;
+      position: absolute;
+      top: 12px;
+      height: 206px;
+      border-radius: 10px;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    #tv-set {
+      width: 95%;
+      left: 10px;
+      border-radius: 10px;
+      position: absolute;
+      box-shadow: 4px 3px 31px -1px white;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .tv {
+      position: relative;
+      margin-top: 60px;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .tv p {
+      font-size: 20px;
+      color: white;
+      font-family: "Exo", sans-serif;
+      position: absolute;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 3px 3px rgba(0,0,0,0.4);
+      top: 165px;
+      left: 35px;
+    }
+
+    a {
+      left: 37.5%;
+      position: absolute;
+      top: 44%;
+      text-decoration: none;
+      color: white;
+      font-family: "Exo", sans-serif;
+      text-shadow: 2px 3px rgba(206, 255, 26, 0.4);
+      font-weight: bold;
+      font-size: 20px;
+      background: #02131F;
+      border-radius: 15px;
+      padding: 5px 9px;
+      border: 1px solid white;
+      text-shadow: 1px 1px 4px white;
+      box-shadow: 1px 0px 7px 2px white;
+    }
+
+    #comando {
+      width: 28%;
+      margin-top: 250px;
+      border-radius: 9px;
+    }
   </style>
+
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+<body>
+  <div class="tv">
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81sAk4juJzL._SL1500_.jpg" alt="" id="tv-set">
+    <img src="https://media1.tenor.com/images/b087ef80b4b0dfe8d293c1a83e9a6b0a/tenor.gif" id="gif">
+    <p>ERRO OITXENTA E OTXO</p>
   </div>
+  <img src="/assets/controller.jpg" alt="" id="comando">
+  <a href="https://www.footylewagon.club">FOOTY</a>
 </body>
 </html>
