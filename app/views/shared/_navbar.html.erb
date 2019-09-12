@@ -31,7 +31,7 @@
   <ul class="no-list-icon">
     <li class="nav-item avatar-link">
       <%= link_to profile_path do %>
-        <%= cl_image_tag current_user.avatar %>
+        <%= cl_image_tag current_user.avatar.url %>
       <% end %>
     </li>
   </ul>

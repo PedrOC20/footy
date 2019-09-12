@@ -6,7 +6,7 @@
 <div class="back-transp-black my-profile-container">
   <div class="container profile mb-3">
     <div class="row justify-content-center image-my-profile">
-      <%= cl_image_tag current_user.avatar, class: "lg-avatar" %>
+      <%= cl_image_tag current_user.avatar.url, class: "lg-avatar" %>
     </div>
     <div class="row justify-content-center">
       <div class="col-12 my-profile-info">
@@ -38,34 +38,40 @@
               </div>
             <% end %>
           </li>
-          <li class="d-flex justify-content-center">
-            <%= link_to "My Bookings", my_bookings_path, class: "underline" %>
-          </li>
-          <li id="field_icon" class="d-flex justify-content-center">
-            <div class="d-flex" style="position: relative">
-              <%= image_tag("field_icon.png") %>
-              <% if current_user.position == "Goalkeeper" %>
-                <div class="d-flex position-absolute position-gk">
-                  <p class="position-text">GK</p>
-                  <i class="fas fa-running"></i>
-                </div>
-              <% elsif current_user.position == "Defense" %>
-                <div class="d-flex position-absolute position-de">
-                  <p class="position-text">DE</p>
-                  <i class="fas fa-running"></i>
-              <% elsif current_user.position == "Midfielder" %>
-                <div class="d-flex position-absolute position-md">
-                  <p class="position-text">MD</p>
-                  <i class="fas fa-running position-md"></i>
-                </div>
-              <% elsif current_user.position == "Forward" %>
-                <div class="d-flex position-absolute position-fw">
-                  <p class="position-text">FW</p>
-                  <i class="fas fa-running position-fw"></i>
-                </div>
-              <% end %>
-            </div>
-          </li>
+          <% if current_user.role == "Player" %>
+            <li class="d-flex justify-content-center">
+              <%= link_to "My Bookings", my_bookings_path, class: "underline" %>
+            </li>
+            <li id="field_icon" class="d-flex justify-content-center">
+              <div class="d-flex" style="position: relative">
+                <%= image_tag("field_icon.png") %>
+                <% if current_user.position == "Goalkeeper" %>
+                  <div class="d-flex position-absolute position-gk">
+                    <p class="position-text">GK</p>
+                    <i class="fas fa-running"></i>
+                  </div>
+                <% elsif current_user.position == "Defense" %>
+                  <div class="d-flex position-absolute position-de">
+                    <p class="position-text">DE</p>
+                    <i class="fas fa-running"></i>
+                <% elsif current_user.position == "Midfielder" %>
+                  <div class="d-flex position-absolute position-md">
+                    <p class="position-text">MD</p>
+                    <i class="fas fa-running position-md"></i>
+                  </div>
+                <% elsif current_user.position == "Forward" %>
+                  <div class="d-flex position-absolute position-fw">
+                    <p class="position-text">FW</p>
+                    <i class="fas fa-running position-fw"></i>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+          <% else %>
+            <li class="d-flex justify-content-center">
+              <%= link_to "My Fields", fields_path, class: "underline mb-3" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
