@@ -12,13 +12,9 @@ import { initStarRating } from '../plugins/init_star_rating';
 
 initStarRating();
 
-// register service worker
-navigator.serviceWorker.register('sw.js');
-
 initMapbox();
 initAutocomplete();
 checkbox();
-notifyMe();
 
 const navbar = document.querySelector(".footy-navbar")
 if(navbar) {
@@ -31,3 +27,17 @@ if (navbarNoLog) {
   navNoLogWithScroll();
 }
 
+// register service worker
+if ('serviceWorker' in navigator && 'PushManager' in window) {
+  console.log('Service Worker and Push is supported');
+  navigator.serviceWorker.register('/sw.js')
+  .then(function(swReg) {
+    console.log('Service Worker is registered', swReg);
+  })
+  .catch(function(error) {
+    console.error('Service Worker Error', error);
+  });
+} else {
+  console.warn('Push messaging is not supported');
+}
+notifyMe();
