@@ -31,7 +31,7 @@ class GroupsController < ApplicationController
       end
     else
       flash[:alert] = "You must fill all search fields"
-      render pages: "home"
+      redirect_to root_path
     end
   end
 
