@@ -1026,7 +1026,7 @@ group25 = Group.create!(
   end_time: "16:00",
   min_members: 6,
   max_members: 8,
-  status: "Pending",
+  status: "Booked",
   price: 76
 )
 
