@@ -11,7 +11,7 @@ class Field < ApplicationRecord
   validates :indoor, inclusion: { in: [true, false] }
   validates :indoor, exclusion: { in: [nil] }
   belongs_to :user
-  has_many :groups
+  has_many :groups, dependent: :destroy
   has_many :group_members, through: :groups
   mount_uploader :photo, PhotoUploader
 

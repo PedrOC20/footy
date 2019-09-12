@@ -82,7 +82,7 @@
     </div>
     <div class="row collapse" id="collapseAdd">
       <div class="col-12">
-        <%= simple_form_for new_group_path do |f| %>
+        <%= simple_form_for @group, url: groups_path, method: :post  do |f| %>
           <%= f.hidden_field :field_id, value: @field.id %>
           <%= f.input :status, value: "Pending", as: :hidden %>
           <%= f.input :price, autofocus: true, placeholder: "Price", label: false %>
@@ -97,7 +97,7 @@
               <%= f.input :end_time, as: :time, html5: true, placeholder: "End Time", label: false %>
             </div>
           </div>
-          <p id="submit-wrapper"><%= f.submit "Add", class: "solid-btn", id: "go-solid-btn-homepage" %></p>
+          <p id="submit-wrapper"><%= f.submit "Add",class: "solid-btn", id: "go-solid-btn-homepage" %></p>
         <% end  %>
       </div>
     </div>
