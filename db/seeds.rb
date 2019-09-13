@@ -1183,11 +1183,6 @@ groupmember30 = GroupMember.create!(
   group: group25,
 )
 
-groupmember33 = GroupMember.create!(
-  user: user19,
-  group: group25,
-)
-
 groupmember34 = GroupMember.create!(
   user: user25,
   group: group25,
