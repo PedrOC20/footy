@@ -912,8 +912,8 @@ group14 = Group.create!(
 group15 = Group.create!(
   field: field7,
   date: "2019-09-20",
-  start_time: "11:00",
-  end_time: "13:00",
+  start_time: "20:00",
+  end_time: "21:00",
   min_members: 22,
   max_members: 35,
   status: "Pending",
@@ -923,8 +923,8 @@ group15 = Group.create!(
 group16 = Group.create!(
   field: field8,
   date: "2019-09-20",
-  start_time: "9:00",
-  end_time: "10:00",
+  start_time: "19:00",
+  end_time: "20:00",
   min_members: 10,
   max_members: 15,
   status: "Pending",
@@ -934,8 +934,8 @@ group16 = Group.create!(
 group17 = Group.create!(
   field: field8,
   date: "2019-09-20",
-  start_time: "12:00",
-  end_time: "13:00",
+  start_time: "22:00",
+  end_time: "23:00",
   min_members: 10,
   max_members: 15,
   status: "Pending",
@@ -945,8 +945,8 @@ group17 = Group.create!(
 group18 = Group.create!(
   field: field13,
   date: "2019-09-20",
-  start_time: "9:00",
-  end_time: "10:00",
+  start_time: "19:00",
+  end_time: "20:00",
   min_members: 6,
   max_members: 8,
   status: "Pending",
@@ -956,8 +956,8 @@ group18 = Group.create!(
 group19 = Group.create!(
   field: field13,
   date: "2019-09-20",
-  start_time: "11:00",
-  end_time: "12:00",
+  start_time: "19:30",
+  end_time: "20:30",
   min_members: 6,
   max_members: 10,
   status: "Pending",
@@ -967,8 +967,8 @@ group19 = Group.create!(
 group20 = Group.create!(
   field: field18,
   date: "2019-09-20",
-  start_time: "9:00",
-  end_time: "10:00",
+  start_time: "19:00",
+  end_time: "20:00",
   min_members: 14,
   max_members: 20,
   status: "Pending",
@@ -978,8 +978,8 @@ group20 = Group.create!(
 group21 = Group.create!(
   field: field18,
   date: "2019-09-20",
-  start_time: "11:00",
-  end_time: "12:00",
+  start_time: "21:00",
+  end_time: "22:00",
   min_members: 14,
   max_members: 20,
   status: "Pending",
@@ -989,8 +989,8 @@ group21 = Group.create!(
 group22 = Group.create!(
   field: field13,
   date: "2019-09-01",
-  start_time: "14:00",
-  end_time: "16:00",
+  start_time: "21:00",
+  end_time: "22:00",
   min_members: 6,
   max_members: 9,
   status: "Pending",
@@ -1000,8 +1000,8 @@ group22 = Group.create!(
 group23 = Group.create!(
   field: field21,
   date: "2019-09-02",
-  start_time: "14:00",
-  end_time: "16:00",
+  start_time: "19:00",
+  end_time: "20:00",
   min_members: 10,
   max_members: 15,
   status: "Pending",
@@ -1011,8 +1011,8 @@ group23 = Group.create!(
 group24 = Group.create!(
   field: field13,
   date: "2019-09-20",
-  start_time: "14:00",
-  end_time: "16:00",
+  start_time: "20:00",
+  end_time: "21:00",
   min_members: 6,
   max_members: 8,
   status: "Pending",
@@ -1022,8 +1022,8 @@ group24 = Group.create!(
 group25 = Group.create!(
   field: field9,
   date: "2019-09-20",
-  start_time: "14:00",
-  end_time: "16:00",
+  start_time: "20:00",
+  end_time: "21:00",
   min_members: 6,
   max_members: 8,
   status: "Booked",
@@ -1182,16 +1182,6 @@ groupmember29 = GroupMember.create!(
 
 groupmember30 = GroupMember.create!(
   user: user11,
-  group: group25,
-)
-
-groupmember31 = GroupMember.create!(
-  user: user13,
-  group: group25,
-)
-
-groupmember32 = GroupMember.create!(
-  user: user14,
   group: group25,
 )
 
