@@ -755,7 +755,7 @@ puts "Creating new groups"
 
 group1 = Group.create!(
   field: field1,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 22,
@@ -766,7 +766,7 @@ group1 = Group.create!(
 
 group2 = Group.create!(
   field: field1,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 22,
@@ -777,7 +777,7 @@ group2 = Group.create!(
 
 group3 = Group.create!(
   field: field2,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 10,
@@ -788,7 +788,7 @@ group3 = Group.create!(
 
 group4 = Group.create!(
   field: field2,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "21:00",
   end_time: "22:00",
   min_members: 10,
@@ -799,7 +799,7 @@ group4 = Group.create!(
 
 group5 = Group.create!(
   field: field3,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 10,
@@ -810,7 +810,7 @@ group5 = Group.create!(
 
 group6 = Group.create!(
   field: field3,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "21:00",
   end_time: "22:00",
   min_members: 10,
@@ -821,7 +821,7 @@ group6 = Group.create!(
 
 group7 = Group.create!(
   field: field3,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 10,
@@ -832,7 +832,7 @@ group7 = Group.create!(
 
 group8 = Group.create!(
   field: field4,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 22,
@@ -843,7 +843,7 @@ group8 = Group.create!(
 
 group9 = Group.create!(
   field: field4,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 22,
@@ -854,7 +854,7 @@ group9 = Group.create!(
 
 group10 = Group.create!(
   field: field5,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:30",
   end_time: "20:30",
   min_members: 22,
@@ -865,7 +865,7 @@ group10 = Group.create!(
 
 group11 = Group.create!(
   field: field5,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "21:00",
   end_time: "22:00",
   min_members: 22,
@@ -876,7 +876,7 @@ group11 = Group.create!(
 
 group12 = Group.create!(
   field: field6,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 10,
@@ -887,7 +887,7 @@ group12 = Group.create!(
 
 group13 = Group.create!(
   field: field6,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 10,
@@ -898,7 +898,7 @@ group13 = Group.create!(
 
 group14 = Group.create!(
   field: field7,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 22,
@@ -909,7 +909,7 @@ group14 = Group.create!(
 
 group15 = Group.create!(
   field: field7,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 22,
@@ -920,7 +920,7 @@ group15 = Group.create!(
 
 group16 = Group.create!(
   field: field8,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 10,
@@ -931,7 +931,7 @@ group16 = Group.create!(
 
 group17 = Group.create!(
   field: field8,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "22:00",
   end_time: "23:00",
   min_members: 10,
@@ -942,7 +942,7 @@ group17 = Group.create!(
 
 group18 = Group.create!(
   field: field13,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 6,
@@ -953,7 +953,7 @@ group18 = Group.create!(
 
 group19 = Group.create!(
   field: field13,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:30",
   end_time: "20:30",
   min_members: 6,
@@ -964,7 +964,7 @@ group19 = Group.create!(
 
 group20 = Group.create!(
   field: field18,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "19:00",
   end_time: "20:00",
   min_members: 14,
@@ -975,7 +975,7 @@ group20 = Group.create!(
 
 group21 = Group.create!(
   field: field18,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "21:00",
   end_time: "22:00",
   min_members: 14,
@@ -1008,7 +1008,7 @@ group23 = Group.create!(
 
 group24 = Group.create!(
   field: field13,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 6,
@@ -1019,7 +1019,7 @@ group24 = Group.create!(
 
 group25 = Group.create!(
   field: field9,
-  date: "2019-09-20",
+  date: Date.today,
   start_time: "20:00",
   end_time: "21:00",
   min_members: 6,
