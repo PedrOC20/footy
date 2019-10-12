@@ -756,286 +756,266 @@ puts "Creating new groups"
 # 100.times do
 #   Group.create!(
 #     field: ,
-#     date: Date.today,
+#     date: "#{date}",
 #     start_time:
 #   )
 # end
 
+(Date.new(2019, 10, 10)..Date.new(2020, 01, 30)).each do |date|
+  group1 = Group.create!(
+    field: field1,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 22,
+    max_members: 30,
+    status: "Pending",
+    price: 5000
+  )
 
-group1 = Group.create!(
-  field: field1,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 22,
-  max_members: 30,
-  status: "Pending",
-  price: 5000
-)
+  group2 = Group.create!(
+    field: field1,
+    date: "#{date}",
+    start_time: "20:00",
+    end_time: "21:00",
+    min_members: 22,
+    max_members: 30,
+    status: "Pending",
+    price: 5000
+  )
 
-group2 = Group.create!(
-  field: field1,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 22,
-  max_members: 30,
-  status: "Pending",
-  price: 5000
-)
+  group3 = Group.create!(
+    field: field2,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group3 = Group.create!(
-  field: field2,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group4 = Group.create!(
+    field: field2,
+    date: "#{date}",
+    start_time: "21:00",
+    end_time: "22:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group4 = Group.create!(
-  field: field2,
-  date: Date.today,
-  start_time: "21:00",
-  end_time: "22:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group5 = Group.create!(
+    field: field3,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group5 = Group.create!(
-  field: field3,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group6 = Group.create!(
+    field: field3,
+    date: "#{date}",
+    start_time: "21:00",
+    end_time: "22:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group6 = Group.create!(
-  field: field3,
-  date: Date.today,
-  start_time: "21:00",
-  end_time: "22:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group7 = Group.create!(
+    field: field3,
+    date: "#{date}",
+    start_time: "20:00",
+    end_time: "21:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group7 = Group.create!(
-  field: field3,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group8 = Group.create!(
+    field: field4,
+    date: "#{date}",
+    start_time: "20:00",
+    end_time: "21:00",
+    min_members: 22,
+    max_members: 36,
+    status: "Pending",
+    price: 2000
+  )
 
-group8 = Group.create!(
-  field: field4,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 22,
-  max_members: 36,
-  status: "Pending",
-  price: 2000
-)
+  group9 = Group.create!(
+    field: field4,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 22,
+    max_members: 36,
+    status: "Pending",
+    price: 2000
+  )
 
-group9 = Group.create!(
-  field: field4,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 22,
-  max_members: 36,
-  status: "Pending",
-  price: 2000
-)
+  group10 = Group.create!(
+    field: field5,
+    date: "#{date}",
+    start_time: "19:30",
+    end_time: "20:30",
+    min_members: 22,
+    max_members: 33,
+    status: "Pending",
+    price: 5000
+  )
 
-group10 = Group.create!(
-  field: field5,
-  date: Date.today,
-  start_time: "19:30",
-  end_time: "20:30",
-  min_members: 22,
-  max_members: 33,
-  status: "Pending",
-  price: 5000
-)
+  group11 = Group.create!(
+    field: field5,
+    date: "#{date}",
+    start_time: "21:00",
+    end_time: "22:00",
+    min_members: 22,
+    max_members: 33,
+    status: "Pending",
+    price: 5000
+  )
 
-group11 = Group.create!(
-  field: field5,
-  date: Date.today,
-  start_time: "21:00",
-  end_time: "22:00",
-  min_members: 22,
-  max_members: 33,
-  status: "Pending",
-  price: 5000
-)
+  group12 = Group.create!(
+    field: field6,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group12 = Group.create!(
-  field: field6,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group13 = Group.create!(
+    field: field6,
+    date: "#{date}",
+    start_time: "20:00",
+    end_time: "21:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group13 = Group.create!(
-  field: field6,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group14 = Group.create!(
+    field: field7,
+    date: "#{date}",
+    start_time: "20:00",
+    end_time: "21:00",
+    min_members: 22,
+    max_members: 35,
+    status: "Pending",
+    price: 5000
+  )
 
-group14 = Group.create!(
-  field: field7,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 22,
-  max_members: 35,
-  status: "Pending",
-  price: 5000
-)
+  group15 = Group.create!(
+    field: field7,
+    date: "#{date}",
+    start_time: "20:00",
+    end_time: "21:00",
+    min_members: 22,
+    max_members: 35,
+    status: "Pending",
+    price: 5000
+  )
 
-group15 = Group.create!(
-  field: field7,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 22,
-  max_members: 35,
-  status: "Pending",
-  price: 5000
-)
+  group16 = Group.create!(
+    field: field8,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group16 = Group.create!(
-  field: field8,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group17 = Group.create!(
+    field: field8,
+    date: "#{date}",
+    start_time: "22:00",
+    end_time: "23:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Pending",
+    price: 200
+  )
 
-group17 = Group.create!(
-  field: field8,
-  date: Date.today,
-  start_time: "22:00",
-  end_time: "23:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 200
-)
+  group18 = Group.create!(
+    field: field13,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 6,
+    max_members: 8,
+    status: "Pending",
+    price: 45
+  )
 
-group18 = Group.create!(
-  field: field13,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 6,
-  max_members: 8,
-  status: "Pending",
-  price: 45
-)
+  group19 = Group.create!(
+    field: field13,
+    date: "#{date}",
+    start_time: "19:30",
+    end_time: "20:30",
+    min_members: 6,
+    max_members: 10,
+    status: "Pending",
+    price: 45
+  )
 
-group19 = Group.create!(
-  field: field13,
-  date: Date.today,
-  start_time: "19:30",
-  end_time: "20:30",
-  min_members: 6,
-  max_members: 10,
-  status: "Pending",
-  price: 45
-)
+  group20 = Group.create!(
+    field: field18,
+    date: "#{date}",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 14,
+    max_members: 20,
+    status: "Pending",
+    price: 50
+  )
 
-group20 = Group.create!(
-  field: field18,
-  date: Date.today,
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 14,
-  max_members: 20,
-  status: "Pending",
-  price: 50
-)
+  group21 = Group.create!(
+    field: field18,
+    date: "#{date}",
+    start_time: "21:00",
+    end_time: "22:00",
+    min_members: 14,
+    max_members: 20,
+    status: "Pending",
+    price: 45
+  )
 
-group21 = Group.create!(
-  field: field18,
-  date: Date.today,
-  start_time: "21:00",
-  end_time: "22:00",
-  min_members: 14,
-  max_members: 20,
-  status: "Pending",
-  price: 45
-)
+end
 
-group22 = Group.create!(
-  field: field13,
-  date: "2019-09-01",
-  start_time: "21:00",
-  end_time: "22:00",
-  min_members: 6,
-  max_members: 9,
-  status: "Pending",
-  price: 50
-)
+  group22 = Group.create!(
+    field: field13,
+    date: "2019-09-01",
+    start_time: "21:00",
+    end_time: "22:00",
+    min_members: 6,
+    max_members: 9,
+    status: "Booked",
+    price: 50
+  )
 
-group23 = Group.create!(
-  field: field21,
-  date: "2019-09-02",
-  start_time: "19:00",
-  end_time: "20:00",
-  min_members: 10,
-  max_members: 15,
-  status: "Pending",
-  price: 76
-)
-
-group24 = Group.create!(
-  field: field13,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 6,
-  max_members: 8,
-  status: "Pending",
-  price: 76
-)
-
-group25 = Group.create!(
-  field: field9,
-  date: Date.today,
-  start_time: "20:00",
-  end_time: "21:00",
-  min_members: 6,
-  max_members: 8,
-  status: "Booked",
-  price: 76
-)
+  group23 = Group.create!(
+    field: field21,
+    date: "2019-09-02",
+    start_time: "19:00",
+    end_time: "20:00",
+    min_members: 10,
+    max_members: 15,
+    status: "Booked",
+    price: 76
+  )
 
 puts "Created groups"
 
@@ -1150,51 +1130,6 @@ groupmember21 = GroupMember.create!(
 groupmember22 = GroupMember.create!(
   user: user12,
   group: group23,
-)
-
-groupmember23 = GroupMember.create!(
-  user: user11,
-  group: group24,
-)
-
-groupmember24 = GroupMember.create!(
-  user: user13,
-  group: group24,
-)
-
-groupmember25 = GroupMember.create!(
-  user: user14,
-  group: group24,
-)
-
-groupmember26 = GroupMember.create!(
-  user: user19,
-  group: group24,
-)
-
-groupmember27 = GroupMember.create!(
-  user: user25,
-  group: group24,
-)
-
-groupmember28 = GroupMember.create!(
-  user: user16,
-  group: group25,
-)
-
-groupmember29 = GroupMember.create!(
-  user: user29,
-  group: group25,
-)
-
-groupmember30 = GroupMember.create!(
-  user: user11,
-  group: group25,
-)
-
-groupmember34 = GroupMember.create!(
-  user: user25,
-  group: group25,
 )
 
 puts "Created group members"
