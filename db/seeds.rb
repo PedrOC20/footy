@@ -993,6 +993,8 @@ puts "Creating new groups"
     price: 45
   )
 
+end
+
   group22 = Group.create!(
     field: field13,
     date: "2019-09-01",
@@ -1000,7 +1002,7 @@ puts "Creating new groups"
     end_time: "22:00",
     min_members: 6,
     max_members: 9,
-    status: "Pending",
+    status: "Booked",
     price: 50
   )
 
@@ -1011,34 +1013,9 @@ puts "Creating new groups"
     end_time: "20:00",
     min_members: 10,
     max_members: 15,
-    status: "Pending",
-    price: 76
-  )
-
-  group24 = Group.create!(
-    field: field13,
-    date: "#{date}",
-    start_time: "20:00",
-    end_time: "21:00",
-    min_members: 6,
-    max_members: 8,
-    status: "Pending",
-    price: 76
-  )
-
-  group25 = Group.create!(
-    field: field9,
-    date: "#{date}",
-    start_time: "20:00",
-    end_time: "21:00",
-    min_members: 6,
-    max_members: 8,
     status: "Booked",
     price: 76
   )
-end
-
-
 
 puts "Created groups"
 
@@ -1153,51 +1130,6 @@ groupmember21 = GroupMember.create!(
 groupmember22 = GroupMember.create!(
   user: user12,
   group: group23,
-)
-
-groupmember23 = GroupMember.create!(
-  user: user11,
-  group: group24,
-)
-
-groupmember24 = GroupMember.create!(
-  user: user13,
-  group: group24,
-)
-
-groupmember25 = GroupMember.create!(
-  user: user14,
-  group: group24,
-)
-
-groupmember26 = GroupMember.create!(
-  user: user19,
-  group: group24,
-)
-
-groupmember27 = GroupMember.create!(
-  user: user25,
-  group: group24,
-)
-
-groupmember28 = GroupMember.create!(
-  user: user16,
-  group: group25,
-)
-
-groupmember29 = GroupMember.create!(
-  user: user29,
-  group: group25,
-)
-
-groupmember30 = GroupMember.create!(
-  user: user11,
-  group: group25,
-)
-
-groupmember34 = GroupMember.create!(
-  user: user25,
-  group: group25,
 )
 
 puts "Created group members"
